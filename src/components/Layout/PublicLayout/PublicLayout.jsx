@@ -1,6 +1,7 @@
 // src/components/Layout/PublicLayout/PublicLayout.jsx
 
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import styles from "./PublicLayout.module.css";
 
 export default function PublicLayout({ children }) {
@@ -10,7 +11,7 @@ export default function PublicLayout({ children }) {
 
       <main className={styles.main}>{children}</main>
 
-      <footer className={styles.footer}>Footer</footer>
+      <Footer />
     </div>
   );
 }

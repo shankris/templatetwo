@@ -1,0 +1,5 @@
+/* src/components/Layout/Footer/Footer.module.css */
+
+.footer {
+  flex-shrink: 0;
+}
