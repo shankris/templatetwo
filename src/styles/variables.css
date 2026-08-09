@@ -1,32 +1,103 @@
 /* src/styles/variable.css */
 
 :root {
+  /* Layout & Typography */
   --header-height: 64px;
+  --footer-height: 64px;
+  --content-max-width: 1200px;
 
   --sidebar-expanded: 240px;
   --sidebar-collapsed: 64px;
 
   --font-size: 16px;
-  --font-stack: system-ui, sans-serif;
+  --font-stack: system-ui, -apple-system, sans-serif;
   --line-height: 1.6;
 
-  --text-color: #333;
-  --muted-color: #6b7280;
-  --bg-color: #f4f4f4;
-  --surface-color: #fff;
-  --border-color: #ddd;
-
-  --accent-color: #0070f3;
+  --heading-1: clamp(2rem, 4vw, 3rem);
+  --heading-2: clamp(1.6rem, 3vw, 2.25rem);
+  --heading-3: clamp(1.35rem, 2.5vw, 1.75rem);
+  --heading-4: clamp(1.15rem, 2vw, 1.5rem);
+  --heading-5: clamp(1rem, 1.5vw, 1.25rem);
+  --heading-6: clamp(0.95rem, 1.25vw, 1.125rem);
 
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 2rem;
+
+  /* Global Shared Muted Accents */
+  --muted-color: #6b7280;
+  --muted-slate: #64748b;
+  --muted-sage: #788c74;
+  --muted-sand: #a39382;
+  --muted-mauve: #8e7a8e;
+  --muted-terracotta: #b87d6e;
+
+  /* LIGHT MODE DEFAULT SEMANTICS  */
+  --bg-app: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --border-subtle: #e2e8f0;
+  --border-bold: #cbd5e1;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+
+  /* Muted Badge Pairs (Light Mode) */
+  --muted-slate-bg: rgba(100, 116, 139, 0.12);
+  --muted-slate-text: #334155;
+
+  --muted-sage-bg: rgba(107, 127, 99, 0.12);
+  --muted-sage-text: #3b4836;
+
+  --muted-sand-bg: rgba(146, 128, 110, 0.12);
+  --muted-sand-text: #4d4135;
+
+  --muted-mauve-bg: rgba(136, 112, 136, 0.12);
+  --muted-mauve-text: #4a3a4a;
+
+  --muted-terracotta-bg: rgba(168, 106, 91, 0.12);
+  --muted-terracotta-text: #5c342b;
 }
 
+/* src/styles/variables.css */
+
 [data-theme="dark"] {
-  --text-color: #f5f5f5;
-  --muted-color: #aaa;
-  --bg-color: #111;
-  --surface-color: #1b1b1b;
-  --border-color: #333;
+  /* App surfaces */
+  --bg-app: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-surface-elevated: #334155;
+
+  /* Text */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  /* Borders */
+  --border-subtle: #334155;
+  --border-bold: #475569;
+
+  /* Primary */
+  --primary: #60a5fa;
+  --primary-hover: #93c5fd;
+
+  /* Muted badge pairs */
+  --muted-slate-bg: rgba(148, 163, 184, 0.15);
+  --muted-slate-text: #cbd5e1;
+
+  --muted-sage-bg: rgba(163, 186, 154, 0.15);
+  --muted-sage-text: #d2e0cc;
+
+  --muted-sand-bg: rgba(199, 181, 163, 0.15);
+  --muted-sand-text: #e8ded3;
+
+  --muted-mauve-bg: rgba(194, 172, 194, 0.15);
+  --muted-mauve-text: #e6d8e6;
+
+  --muted-terracotta-bg: rgba(219, 155, 140, 0.15);
+  --muted-terracotta-text: #f2ceb8;
 }

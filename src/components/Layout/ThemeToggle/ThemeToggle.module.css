@@ -1,0 +1,59 @@
+/* src/components/Layout/ThemeToggle/ThemeToggle.module.css */
+
+.toggleButton {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.toggleButton:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.toggleButton:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   View Transition
+   ========================================================= */
+
+:global(::view-transition-old(root)) {
+  animation: none;
+}
+
+:global(::view-transition-new(root)) {
+  animation: themeReveal 1500ms ease-out forwards;
+
+  clip-path: circle(0 at var(--vt-x) var(--vt-y));
+}
+
+@keyframes themeReveal {
+  from {
+    clip-path: circle(0 at var(--vt-x) var(--vt-y));
+  }
+
+  to {
+    clip-path: circle(150vmax at var(--vt-x) var(--vt-y));
+  }
+}

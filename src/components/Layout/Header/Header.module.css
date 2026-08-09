@@ -6,13 +6,181 @@
   left: 0;
   right: 0;
 
-  height: var(--header-height, 64px);
+  height: var(--header-height);
+
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+
+  z-index: 40;
+}
+
+.content {
+  width: 100%;
+  max-width: var(--content-max-width);
+
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
 
   display: flex;
   align-items: center;
+}
 
-  background-color: var(--surface-color, #fff);
-  border-bottom: 1px solid var(--border-color, #ddd);
+.brand {
+  flex: 0 1 auto;
+  min-width: 0;
 
-  z-index: 1000;
+  color: var(--text-primary);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+
+  margin: 0 auto;
+}
+
+.link {
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.link:hover {
+  color: var(--text-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.iconButton {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.iconButton:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.iconButton:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+
+/* Theme icon */
+
+.themeIcon {
+  width: 18px;
+  height: 18px;
+
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+
+/* Hamburger */
+
+.menuButton {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--text-secondary);
+
+  cursor: pointer;
+}
+
+.menuButton:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.menuButton:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.menuIcon {
+  width: 25px;
+  height: 25px;
+
+  overflow: visible;
+}
+
+.menuLine {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 8;
+  stroke-linecap: round;
+
+  transform-origin: 50% 50%;
+
+  transition:
+    transform 350ms ease,
+    opacity 250ms ease;
+}
+
+
+/* ---------------------------------------------------------
+   Open state
+   --------------------------------------------------------- */
+
+/*
+   Top line → upper arm of X
+*/
+.menuOpen .menuLine:nth-child(1) {
+  transform: translateY(20px) rotate(45deg);
+}
+
+/*
+   Middle line disappears
+*/
+.menuOpen .menuLine:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+/*
+   Bottom line → lower arm of X
+*/
+.menuOpen .menuLine:nth-child(3) {
+  transform: translateY(-20px) rotate(-45deg);
 }

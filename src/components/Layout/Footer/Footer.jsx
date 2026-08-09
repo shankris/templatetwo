@@ -5,7 +5,10 @@ import styles from "./Footer.module.css";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div>Footer</div>
+      <div className={styles.content}>
+        <span>Project Template</span>
+        <span>© 2026</span>
+      </div>
     </footer>
   );
 }

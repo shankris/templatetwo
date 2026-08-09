@@ -11,11 +11,12 @@ html {
 
 body {
   min-height: 100vh;
-  font-size: var(--fontSize, 16px);
-  font-family: var(--font-inter), system-ui, sans-serif;
-  line-height: var(--lineHeight, 1.6);
-  color: var(--txtColor, #333);
-  background-color: var(--bgColor, #f4f4f4);
+  font-family: var(--font-stack, 'Inter', system-ui, -apple-system, sans-serif);
+  font-size: var(--font-size, 14px);
+  line-height: var(--line-height, 1.5);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  margin: 0;
 }
 
 /* Accessibility */
@@ -40,11 +41,38 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: var(--headingFontWeight, 500);
+  font-weight: var(--headingFontWeight, 300);
   line-height: 1.2;
   margin-block: 0.75em 0.5em;
   text-wrap: balance;
 }
+
+
+
+h1 {
+  font-size: var(--heading-1);
+}
+
+h2 {
+  font-size: var(--heading-2);
+}
+
+h3 {
+  font-size: var(--heading-3);
+}
+
+h4 {
+  font-size: var(--heading-4);
+}
+
+h5 {
+  font-size: var(--heading-5);
+}
+
+h6 {
+  font-size: var(--heading-6);
+}
+
 
 p, li, figcaption {
   max-width: 65ch;

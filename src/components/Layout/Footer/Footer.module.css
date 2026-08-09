@@ -1,5 +1,17 @@
 /* src/components/Layout/Footer/Footer.module.css */
 
 .footer {
-  flex-shrink: 0;
+  border-top: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  padding: var(--space-md, 16px);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }

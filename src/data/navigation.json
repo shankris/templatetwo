@@ -1,0 +1,17 @@
+[
+  {
+    "id": "home",
+    "label": "Home",
+    "href": "/"
+  },
+  {
+    "id": "components",
+    "label": "Components",
+    "href": "/components"
+  },
+  {
+    "id": "about",
+    "label": "About",
+    "href": "/about"
+  }
+]

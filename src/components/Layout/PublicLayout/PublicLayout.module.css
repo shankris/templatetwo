@@ -8,6 +8,14 @@
 
 .main {
   flex: 1;
+  padding-top: var(--header-height);
+}
+
+.content {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
 }
 
 .footer {

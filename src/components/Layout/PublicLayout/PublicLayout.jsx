@@ -9,7 +9,9 @@ export default function PublicLayout({ children }) {
     <div className={styles.layout}>
       <Header />
 
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        <div className={styles.content}>{children}</div>
+      </main>
 
       <Footer />
     </div>
