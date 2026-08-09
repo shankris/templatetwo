@@ -1,0 +1,92 @@
+/* src/components/Layout/MenuButton/MenuButton.module.css */
+
+.button {
+  position: relative;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   Three hamburger lines
+   --------------------------------------------------------- */
+
+.line {
+  position: absolute;
+
+  left: 50%;
+
+  width: 24px;
+  height: 3px;
+
+  background-color: currentColor;
+
+  border-radius: 999px;
+
+  transform: translateX(-50%);
+
+  transition:
+    top 300ms ease-out,
+    transform 300ms ease-out,
+    opacity 100ms ease-out;
+}
+
+
+/* Closed */
+
+.line:nth-child(1) {
+  top: 10px;
+}
+
+.line:nth-child(2) {
+  top: 16px;
+}
+
+.line:nth-child(3) {
+  top: 22px;
+}
+
+
+/* ---------------------------------------------------------
+   Open → X
+   --------------------------------------------------------- */
+
+.active .line:nth-child(1) {
+  top: 16px;
+
+  transform:
+    translateX(-50%) rotate(45deg);
+}
+
+.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.active .line:nth-child(3) {
+  top: 16px;
+
+  transform:
+    translateX(-50%) rotate(-45deg);
+}

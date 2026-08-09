@@ -8,6 +8,7 @@ import { useState } from "react";
 
 import navigation from "@/data/navigation.json";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import MenuButton from "../MenuButton/MenuButton";
 
 import styles from "./Header.module.css";
 
@@ -41,39 +42,16 @@ export default function Header() {
             <Bell
               size={20}
               strokeWidth={1.8}
+              aria-hidden='true'
             />
           </button>
 
           <ThemeToggle />
 
-          <button
-            type='button'
-            className={`${styles.menuButton} ${menuOpen ? styles.menuOpen : ""}`}
+          <MenuButton
+            isOpen={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
-          >
-            <svg
-              viewBox='0 0 100 100'
-              className={styles.menuIcon}
-              aria-hidden='true'
-            >
-              <path
-                className={styles.menuLine}
-                d='M 20,30 H 80'
-              />
-
-              <path
-                className={styles.menuLine}
-                d='M 20,50 H 80'
-              />
-
-              <path
-                className={styles.menuLine}
-                d='M 20,70 H 80'
-              />
-            </svg>
-          </button>
+          />
         </div>
       </div>
     </header>
