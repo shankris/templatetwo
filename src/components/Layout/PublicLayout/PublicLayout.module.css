@@ -1,0 +1,15 @@
+/* src/components/Layout/PublicLayout/PublicLayout.module.css */
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  flex-shrink: 0;
+}

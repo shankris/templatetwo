@@ -1,0 +1,18 @@
+/* src/components/Layout/Header/Header.module.css */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: var(--header-height, 64px);
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--surface-color, #fff);
+  border-bottom: 1px solid var(--border-color, #ddd);
+
+  z-index: 1000;
+}
