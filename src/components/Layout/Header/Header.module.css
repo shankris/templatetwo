@@ -40,11 +40,16 @@
 }
 
 .navigation {
-  display: flex;
+  display: none;
   align-items: center;
   gap: var(--space-md);
-
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    display: flex;
+  }
 }
 
 .link {
