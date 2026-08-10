@@ -1,0 +1,383 @@
+/* ---------------------------------------------------------
+   Container
+   --------------------------------------------------------- */
+
+.container {
+  position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   Bell button
+   --------------------------------------------------------- */
+
+.trigger {
+  position: relative;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+
+.trigger:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+
+.trigger:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   Unread badge
+   --------------------------------------------------------- */
+
+.badge {
+  position: absolute;
+
+  top: -1px;
+  right: -1px;
+
+  min-width: 17px;
+  height: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 4px;
+
+  background-color: #dc2626;
+  color: #ffffff;
+
+  border: 2px solid var(--bg-surface);
+  border-radius: 999px;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1;
+
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   Dropdown
+   --------------------------------------------------------- */
+
+.dropdown {
+  position: absolute;
+
+  top: calc(100% + 8px);
+  right: 0;
+
+  width: min(380px, calc(100vw - 32px));
+
+  background-color: var(--bg-surface);
+
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+
+  z-index: 50;
+}
+
+
+/* ---------------------------------------------------------
+   Header
+   --------------------------------------------------------- */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: var(--space-sm);
+
+  padding: var(--space-md);
+
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+
+.title {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+.markAll {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 4px 6px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--primary);
+
+  font-size: 0.75rem;
+
+  cursor: pointer;
+}
+
+
+.markAll:hover {
+  text-decoration: underline;
+}
+
+
+/* ---------------------------------------------------------
+   Notification list
+   --------------------------------------------------------- */
+
+.list {
+  max-height: 360px;
+
+  overflow-y: auto;
+}
+
+
+/* ---------------------------------------------------------
+   Notification item
+   --------------------------------------------------------- */
+
+.item {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+
+  padding: var(--space-md);
+
+  border: 0;
+  border-bottom: 1px solid var(--border-subtle);
+
+  background: transparent;
+
+  color: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 140ms ease;
+}
+
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+
+.item:hover {
+  background-color: var(--bg-surface-elevated);
+}
+
+
+/* ---------------------------------------------------------
+   Notification type icon
+   --------------------------------------------------------- */
+
+.typeIcon {
+  flex: 0 0 auto;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: var(--space-sm);
+
+  border-radius: 50%;
+}
+
+
+/* Information */
+
+.info {
+  color: var(--primary);
+
+  background-color: color-mix(in srgb,
+      var(--primary) 12%,
+      transparent);
+}
+
+
+/* Success */
+
+.success {
+  color: #16a34a;
+
+  background-color: #16a34a1f;
+}
+
+
+/* Warning */
+
+.warning {
+  color: #d97706;
+
+  background-color: #d977061f;
+}
+
+
+/* Error */
+
+.error {
+  color: #dc2626;
+
+  background-color: #dc26261f;
+}
+
+
+/* ---------------------------------------------------------
+   Notification content
+   --------------------------------------------------------- */
+
+.itemContent {
+  min-width: 0;
+
+  padding-right: 12px;
+}
+
+
+.itemTitle {
+  color: var(--text-primary);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+
+.description {
+  margin-top: 3px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.8rem;
+
+  line-height: 1.4;
+}
+
+
+.time {
+  margin-top: 6px;
+
+  color: var(--text-muted);
+
+  font-size: 0.7rem;
+}
+
+
+/* ---------------------------------------------------------
+   Unread notification
+   --------------------------------------------------------- */
+
+.unread {
+  background-color: var(--bg-surface-elevated);
+}
+
+
+.unreadDot {
+  flex: 0 0 auto;
+
+  width: 7px;
+  height: 7px;
+
+  margin-top: 6px;
+
+  background-color: #dc2626;
+
+  border-radius: 50%;
+}
+
+
+/* ---------------------------------------------------------
+   Empty state
+   --------------------------------------------------------- */
+
+.empty {
+  padding: 32px 16px;
+
+  color: var(--text-muted);
+
+  text-align: center;
+
+  font-size: 0.85rem;
+}
+
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
+
+.footer {
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid var(--border-subtle);
+
+  background-color: var(--bg-surface);
+
+  color: var(--primary);
+
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+
+.footer:hover {
+  background-color: var(--bg-surface-elevated);
+
+  color: var(--text-primary);
+}

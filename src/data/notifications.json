@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "type": "info",
+    "title": "Welcome",
+    "description": "Welcome to TemplateTwo.",
+    "time": "Just now",
+    "read": false
+  },
+  {
+    "id": 2,
+    "type": "warning",
+    "title": "Template updated",
+    "description": "The latest template changes are now available.",
+    "time": "2 hours ago",
+    "read": false
+  },
+  {
+    "id": 3,
+    "type": "success",
+    "title": "Profile updated",
+    "description": "Your profile information was successfully updated.",
+    "time": "Yesterday",
+    "read": true
+  },
+  {
+    "id": 4,
+    "type": "error",
+    "title": "Connection problem",
+    "description": "We were unable to connect to the service.",
+    "time": "2 days ago",
+    "read": true
+  }
+]

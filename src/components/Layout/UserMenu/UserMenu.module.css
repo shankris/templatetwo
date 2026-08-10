@@ -1,0 +1,173 @@
+/* src/components/Layout/UserMenu/UserMenu.module.css */
+
+.container {
+  position: relative;
+}
+
+.trigger {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.trigger:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+
+/* Avatar */
+
+.avatar,
+.initials {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+}
+
+.avatar {
+  display: block;
+  object-fit: cover;
+}
+
+.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+
+/* Dropdown */
+
+.dropdown {
+  position: absolute;
+
+  top: calc(100% + 8px);
+  right: 0;
+
+  width: 220px;
+
+  padding: var(--space-sm);
+
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  z-index: 50;
+}
+
+
+/* User information */
+
+.userInfo {
+  padding: 0.5rem 0.625rem;
+}
+
+.userName {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.userEmail {
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 0.8rem;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* Guest */
+
+.guest {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+
+  padding: 0.625rem;
+
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+
+/* Menu items */
+
+.item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+
+  padding: 0.625rem;
+
+  border: 0;
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  font: inherit;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.item:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+
+/* Divider */
+
+.divider {
+  height: 1px;
+
+  margin: 0.4rem 0;
+
+  background-color: var(--border-subtle);
+}

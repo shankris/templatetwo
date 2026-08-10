@@ -11,6 +11,8 @@ import navigation from "@/data/navigation.json";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import MenuButton from "../MenuButton/MenuButton";
 import FullScreenMenu from "../FullScreenMenu/FullScreenMenu";
+import UserMenu from "../UserMenu/UserMenu";
+import Notification from "../Notification/Notification";
 
 import styles from "./Header.module.css";
 
@@ -40,20 +42,9 @@ export default function Header() {
           </nav>
 
           <div className={styles.actions}>
-            <button
-              type='button'
-              className={styles.iconButton}
-              aria-label='Notifications'
-            >
-              <Bell
-                size={20}
-                strokeWidth={1.8}
-                aria-hidden='true'
-              />
-            </button>
-
+            <Notification />
             <ThemeToggle />
-
+            <UserMenu />
             <MenuButton
               isOpen={menuOpen}
               onClick={() => setMenuOpen((open) => !open)}
