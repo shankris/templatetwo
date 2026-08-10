@@ -1,0 +1,12 @@
+{
+  "sidebar": {
+    "desktop": {
+      "enabled": true,
+      "collapsible": true,
+      "defaultExpanded": true
+    },
+    "mobile": {
+      "enabled": false
+    }
+  }
+}

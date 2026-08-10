@@ -7,6 +7,8 @@ import { Bell } from "lucide-react";
 import { useState } from "react";
 
 import navigation from "@/data/navigation.json";
+import applicationNavigation from "@/data/applicationNavigation.json";
+import loggedInNavigation from "@/data/loggedInNavigation.json";
 
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import MenuButton from "../MenuButton/MenuButton";
@@ -18,6 +20,15 @@ import styles from "./Header.module.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const isLoggedIn = true;
+
+  // temporary - remove later
+  const user = isLoggedIn
+    ? {
+        name: "Shankar Krishnasamy",
+        email: "shankar@example.com",
+      }
+    : null;
 
   function closeMenu() {
     setMenuOpen(false);
@@ -44,7 +55,7 @@ export default function Header() {
           <div className={styles.actions}>
             <Notification />
             <ThemeToggle />
-            <UserMenu />
+            <UserMenu user={user} />
             <MenuButton
               isOpen={menuOpen}
               onClick={() => setMenuOpen((open) => !open)}
@@ -55,8 +66,9 @@ export default function Header() {
 
       <FullScreenMenu
         isOpen={menuOpen}
-        items={navigation}
-        onNavigate={closeMenu}
+        items={isLoggedIn ? loggedInNavigation : navigation}
+        sideItems={isLoggedIn ? applicationNavigation : []}
+        onNavigate={() => setMenuOpen(false)}
       />
     </>
   );

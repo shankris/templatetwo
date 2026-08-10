@@ -1,0 +1,22 @@
+[
+  {
+    "id": "overview",
+    "label": "Overview",
+    "href": "/dashboard"
+  },
+  {
+    "id": "activity",
+    "label": "Activity",
+    "href": "/dashboard/activity"
+  },
+  {
+    "id": "analytics",
+    "label": "Analytics",
+    "href": "/dashboard/analytics"
+  },
+  {
+    "id": "settings",
+    "label": "Settings",
+    "href": "/settings"
+  }
+]

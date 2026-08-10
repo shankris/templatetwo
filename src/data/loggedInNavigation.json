@@ -1,0 +1,17 @@
+[
+  {
+    "id": "dashboard",
+    "label": "Dashboard",
+    "href": "/dashboard"
+  },
+  {
+    "id": "components",
+    "label": "Components",
+    "href": "/components"
+  },
+  {
+    "id": "settings",
+    "label": "Settings",
+    "href": "/settings"
+  }
+]

@@ -2,6 +2,7 @@
 
 .container {
   position: relative;
+  box-sizing: border-box;
 }
 
 .trigger {
@@ -75,6 +76,7 @@
   right: 0;
 
   width: 220px;
+  max-width: calc(100vw - 2rem);
 
   padding: var(--space-sm);
 
@@ -85,6 +87,8 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 
   z-index: 50;
+
+  box-sizing: border-box;
 }
 
 
@@ -141,7 +145,6 @@
   border-radius: 6px;
 
   background: transparent;
-
   color: var(--text-secondary);
 
   font: inherit;

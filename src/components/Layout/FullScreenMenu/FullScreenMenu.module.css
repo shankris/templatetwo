@@ -1,5 +1,10 @@
 /* src/components/Layout/FullScreenMenu/FullScreenMenu.module.css */
 
+
+/* ---------------------------------------------------------
+   Full screen menu
+   --------------------------------------------------------- */
+
 .menu {
   position: fixed;
 
@@ -23,11 +28,17 @@
     visibility 350ms ease;
 }
 
+
 .open {
   transform: translateY(0);
+
   visibility: visible;
+
   pointer-events: auto;
 }
+
+
+/* Hide completely on desktop */
 
 @media (min-width: 768px) {
   .menu {
@@ -41,25 +52,41 @@
    --------------------------------------------------------- */
 
 .content {
-  width: var(--content-width, 1200px);
-  max-width: 95%;
+  width: 100%;
+  max-width: var(--content-max-width);
 
   margin: 0 auto;
 
-  padding: var(--space-lg, 2rem) 0;
+  padding:
+    var(--space-lg, 2rem) var(--space-md, 1rem) 3rem;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 2.5rem;
+
+  box-sizing: border-box;
 }
 
 
 /* ---------------------------------------------------------
-   Navigation
+   Main navigation
    --------------------------------------------------------- */
+
+.main {
+  min-width: 0;
+}
+
 
 .navigation {
   display: flex;
+
   flex-direction: column;
 
   gap: 0.25rem;
 }
+
 
 .link {
   display: block;
@@ -68,7 +95,10 @@
 
   color: var(--text-primary);
 
-  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-size: clamp(1.25rem,
+      5vw,
+      2rem);
+
   font-weight: 500;
 
   text-decoration: none;
@@ -78,12 +108,90 @@
     padding-left 150ms ease;
 }
 
+
 .link:hover {
   color: var(--primary);
+
   padding-left: 0.5rem;
 }
 
+
 .link:focus-visible {
   outline: 2px solid var(--primary);
+
   outline-offset: 4px;
+}
+
+
+/* ---------------------------------------------------------
+   Sidebar / application menu
+   --------------------------------------------------------- */
+
+.sidebar {
+  padding-top: 1rem;
+
+  border-top: 1px solid var(--border-subtle);
+}
+
+
+.sidebarTitle {
+  margin: 0 0 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+.sideNavigation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+
+.sideLink {
+  display: block;
+  padding: 0.6rem 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-decoration: none;
+  transition:
+    color 150ms ease,
+    padding-left 150ms ease;
+}
+
+
+.sideLink:hover {
+  color: var(--text-primary);
+  padding-left: 0.4rem;
+}
+
+
+.sideLink:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+
+/* ---------------------------------------------------------
+   Larger mobile / tablet
+   --------------------------------------------------------- */
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .content {
+    grid-template-columns:
+      minmax(0, 1fr) minmax(180px, 0.45fr);
+    align-items: start;
+    gap: 3rem;
+  }
+
+
+  .sidebar {
+    padding-top: 0;
+    padding-left: 2rem;
+    border-top: 0;
+    border-left: 1px solid var(--border-subtle);
+  }
 }
