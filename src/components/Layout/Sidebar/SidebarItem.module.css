@@ -1,0 +1,199 @@
+.wrapper {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------
+   Row
+   --------------------------------------------------------- */
+
+.itemRow {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 7px;
+
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.itemRow:hover {
+  background-color: var(--bg-surface-elevated);
+}
+
+/* ---------------------------------------------------------
+   Expand / collapse button
+   --------------------------------------------------------- */
+
+.expandButton {
+  width: 38px;
+  min-width: 38px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: var(--text-muted);
+
+  cursor: pointer;
+}
+
+.expandButton:hover {
+  color: var(--text-primary);
+}
+
+.expandButton:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+  border-radius: 6px;
+}
+
+/* ---------------------------------------------------------
+   Placeholder
+   --------------------------------------------------------- */
+
+.expandPlaceholder {
+  width: 38px;
+  min-width: 38px;
+}
+
+/* ---------------------------------------------------------
+   Chevron
+   --------------------------------------------------------- */
+
+.chevron {
+  transition: transform 180ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(90deg);
+}
+
+/* ---------------------------------------------------------
+   Link
+   --------------------------------------------------------- */
+
+.link {
+  flex: 1;
+  min-width: 0;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.75rem;
+
+  padding: 0.625rem 0.75rem 0.625rem 0;
+
+  color: var(--text-secondary);
+
+  font: inherit;
+  font-size: 0.95rem;
+
+  text-decoration: none;
+
+  box-sizing: border-box;
+}
+
+.link:hover {
+  color: var(--text-primary);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+  border-radius: 6px;
+}
+
+/* ---------------------------------------------------------
+   Icon
+   --------------------------------------------------------- */
+
+.icon {
+  width: 20px;
+  min-width: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------------------------------------------------
+   Label
+   --------------------------------------------------------- */
+
+.label {
+  min-width: 0;
+  flex: 1;
+
+  overflow: hidden;
+
+  text-align: left;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ---------------------------------------------------------
+   Nested items
+   --------------------------------------------------------- */
+
+.children {
+  overflow: hidden;
+
+  margin-left: 0.75rem;
+  padding-left: 0.75rem;
+
+  border-left: 1px solid var(--border-subtle);
+}
+
+/* ---------------------------------------------------------
+   Nested levels
+   --------------------------------------------------------- */
+
+.wrapper[data-level="1"]>.itemRow .link {
+  font-size: 0.9rem;
+}
+
+.wrapper[data-level="2"]>.itemRow .link {
+  font-size: 0.875rem;
+}
+
+.wrapper[data-level="3"]>.itemRow .link {
+  font-size: 0.85rem;
+}
+
+/* ---------------------------------------------------------
+   Collapsed sidebar
+   --------------------------------------------------------- */
+
+[data-level] .expandPlaceholder {
+  display: none;
+}
+
+/* ---------------------------------------------------------
+   Reduced motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron {
+    transition: none;
+  }
+}
+
+.activeRow {
+  background-color: var(--bg-surface-elevated);
+}
+
+.activeLink {
+  color: var(--text-primary);
+  font-weight: 600;
+}

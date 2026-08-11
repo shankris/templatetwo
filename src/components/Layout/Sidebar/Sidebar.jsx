@@ -41,8 +41,8 @@ export default function Sidebar({ items = [], enabled = true, collapsible = true
 
   return (
     <aside className={`${styles.sidebar} ${!isExpanded ? styles.collapsed : ""}`}>
-      <div className={styles.header}>
-        {collapsible && (
+      {collapsible && (
+        <div className={styles.header}>
           <button
             type='button'
             className={styles.toggle}
@@ -52,8 +52,8 @@ export default function Sidebar({ items = [], enabled = true, collapsible = true
           >
             <span className={isExpanded ? styles.toggleIcon : styles.toggleIconCollapsed}>‹</span>
           </button>
-        )}
-      </div>
+        </div>
+      )}
 
       <nav
         className={styles.navigation}

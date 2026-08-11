@@ -1,0 +1,61 @@
+[
+  {
+    "id": "overview",
+    "label": "Overview",
+    "href": "/",
+    "icon": "home"
+  },
+  {
+    "id": "activity",
+    "label": "Activity",
+    "href": "/activity",
+    "icon": "activity"
+  },
+  {
+    "id": "reports",
+    "label": "Reports",
+    "href": "/reports",
+    "icon": "chart",
+    "children": [
+      {
+        "id": "daily",
+        "label": "Daily Reports",
+        "href": "/reports/daily"
+      },
+      {
+        "id": "monthly",
+        "label": "Monthly Reports",
+        "href": "/reports/monthly"
+      },
+      {
+        "id": "advanced",
+        "label": "Advanced",
+        "href": "/reports/advanced",
+        "children": [
+          {
+            "id": "comparison",
+            "label": "Comparison",
+            "href": "/reports/advanced/comparison"
+          },
+          {
+            "id": "trends",
+            "label": "Trends",
+            "href": "/reports/advanced/trends"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "documents",
+    "label": "Documents",
+    "href": "/documents",
+    "icon": "file"
+  },
+  {
+    "id": "settings",
+    "label": "Settings",
+    "href": "/settings",
+    "icon": "settings"
+  }
+]

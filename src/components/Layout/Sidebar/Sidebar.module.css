@@ -1,0 +1,153 @@
+.sidebar {
+  width: 240px;
+  min-width: 240px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border-subtle);
+
+  transition:
+    width 220ms ease,
+    min-width 220ms ease;
+}
+
+/* ---------------------------------------------------------
+   Collapsed
+   --------------------------------------------------------- */
+
+.collapsed {
+  width: 64px;
+  min-width: 64px;
+}
+
+/* ---------------------------------------------------------
+   Header
+   --------------------------------------------------------- */
+
+.header {
+  height: 56px;
+  min-height: 56px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 0.75rem;
+
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* ---------------------------------------------------------
+   Toggle
+   --------------------------------------------------------- */
+
+.toggle {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--text-secondary);
+
+  font-size: 1.5rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.toggle:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------
+   Toggle icon
+   --------------------------------------------------------- */
+
+.toggleIcon,
+.toggleIconCollapsed {
+  display: block;
+
+  transition: transform 180ms ease;
+}
+
+.toggleIcon {
+  transform: rotate(0deg);
+}
+
+.toggleIconCollapsed {
+  transform: rotate(180deg);
+}
+
+/* ---------------------------------------------------------
+   Navigation
+   --------------------------------------------------------- */
+
+.navigation {
+  flex: 1;
+
+  min-height: 0;
+
+  padding: var(--space-sm, 0.5rem);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+
+  color-scheme: light dark;
+}
+
+/* ---------------------------------------------------------
+   Collapsed navigation
+   --------------------------------------------------------- */
+
+.collapsed .navigation {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* ---------------------------------------------------------
+   Reduced motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .sidebar,
+  .toggle,
+  .toggleIcon,
+  .toggleIconCollapsed {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+}
