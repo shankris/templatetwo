@@ -1,7 +1,10 @@
+/* src/components/Layout/Sidebar/Sidebar.module.css */
+
 .sidebar {
   width: 240px;
   min-width: 240px;
-  height: 100%;
+
+  align-self: stretch;
 
   display: flex;
   flex-direction: column;

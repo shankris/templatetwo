@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import { Home, Activity, BarChart3, FileText, Settings } from "lucide-react";
 
 import SidebarItem from "./SidebarItem";
 import styles from "./Sidebar.module.css";
+
+const STORAGE_KEY = "templateTwo-sidebar-expanded";
 
 const iconMap = {
   home: Home,
@@ -16,8 +19,19 @@ const iconMap = {
 
 export default function Sidebar({ items = [], enabled = true, collapsible = true, defaultExpanded = true }) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
+  const [isReady, setIsReady] = useState(false);
 
-  if (!enabled) {
+  useEffect(() => {
+    const savedState = localStorage.getItem(STORAGE_KEY);
+
+    if (savedState !== null) {
+      setIsExpanded(savedState === "true");
+    }
+
+    setIsReady(true);
+  }, []);
+
+  if (!enabled || !isReady) {
     return null;
   }
 
@@ -26,7 +40,13 @@ export default function Sidebar({ items = [], enabled = true, collapsible = true
       return;
     }
 
-    setIsExpanded((current) => !current);
+    setIsExpanded((current) => {
+      const nextState = !current;
+
+      localStorage.setItem(STORAGE_KEY, String(nextState));
+
+      return nextState;
+    });
   }
 
   function Icon({ name, ...props }) {

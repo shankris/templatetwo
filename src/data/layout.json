@@ -1,11 +1,16 @@
 {
-  "sidebar": {
-    "desktop": {
+  "navigation": {
+    "type": "sidebar",
+
+    "sidebar": {
+      "type": "sidebar",
       "enabled": true,
       "collapsible": true,
       "defaultExpanded": true
     },
-    "mobile": {
+
+    "topbar": {
+      "type": "topbar",
       "enabled": false
     }
   }

@@ -80,6 +80,7 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
     <div
       className={styles.wrapper}
       data-level={level}
+      data-state={sidebarState}
     >
       <div className={`${styles.itemRow} ${isActive ? styles.activeRow : ""}`}>
         {hasChildren && !isCollapsed && (
@@ -105,6 +106,7 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
           href={item.href || "#"}
           className={`${styles.link} ${isActive ? styles.activeLink : ""}`}
           aria-current={isActive ? "page" : undefined}
+          title={isCollapsed ? item.label : undefined}
         >
           <span className={styles.icon}>
             {item.icon && (

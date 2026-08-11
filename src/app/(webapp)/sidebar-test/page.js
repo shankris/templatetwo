@@ -1,3 +1,5 @@
+// src/app/(webapp)/sidebar-test/page.js
+
 export default function SidebarTestPage() {
   return (
     <div>
