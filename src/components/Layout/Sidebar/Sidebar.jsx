@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
 import { Home, Activity, BarChart3, FileText, Settings } from "lucide-react";
 
 import SidebarItem from "./SidebarItem";

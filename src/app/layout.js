@@ -7,6 +7,8 @@ import "../styles/reset.css";
 import "../styles/variables.css";
 import "../styles/generic.css";
 
+import DevicePreview from "@/components/UI/DevicePreview/DevicePreview";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],

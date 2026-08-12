@@ -8,6 +8,7 @@
 
 .itemRow {
   width: 100%;
+  /* min-height: 42px; */
 
   display: flex;
   align-items: center;
@@ -23,16 +24,47 @@
   background-color: var(--bg-surface-elevated);
 }
 
+/* ---------------------------------------------------------
+   Collapsed row
+   --------------------------------------------------------- */
 
-[data-state="collapsed"] .itemRow {
+.wrapper[data-state="collapsed"] .itemRow {
   justify-content: center;
 }
 
+.wrapper[data-state="collapsed"] .link {
+  flex: 0 0 42px;
 
-[data-state="collapsed"] .icon {
-  width: 36px;
-  min-width: 36px;
-  height: 36px;
+  width: 3px;
+  min-width: 42px;
+  height: 40px;
+  min-height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border-radius: 7px;
+}
+
+.wrapper[data-state="collapsed"] .icon {
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper[data-state="collapsed"] .itemRow:hover {
+  background-color: transparent;
+}
+
+.wrapper[data-state="collapsed"] .link:hover {
+  background-color: var(--bg-surface-elevated);
 }
 
 /* ---------------------------------------------------------
@@ -96,13 +128,14 @@
 .link {
   flex: 1;
   min-width: 0;
-  min-height: 42px;
+
+  height: 42px;
 
   display: flex;
   align-items: center;
 
   gap: 0.75rem;
-  padding: 0.625rem 0.75rem 0.625rem 0;
+  padding: 0 0.75rem 0 0;
 
   color: var(--text-secondary);
 
@@ -110,7 +143,6 @@
   font-size: 0.95rem;
 
   text-decoration: none;
-
   box-sizing: border-box;
 }
 
@@ -160,8 +192,8 @@
 .children {
   overflow: hidden;
 
-  margin-left: 0.75rem;
-  padding-left: 0.75rem;
+  margin-left: 0.3rem;
+  padding-left: 0.3rem;
 
   border-left: 1px solid var(--border-subtle);
 }
@@ -183,11 +215,24 @@
 }
 
 /* ---------------------------------------------------------
-   Collapsed sidebar
+   Active
    --------------------------------------------------------- */
 
-[data-level] .expandPlaceholder {
-  display: none;
+.activeRow {
+  background-color: var(--bg-surface-elevated);
+}
+
+.activeLink {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.wrapper[data-state="collapsed"] .activeRow {
+  background-color: transparent;
+}
+
+.wrapper[data-state="collapsed"] .activeLink {
+  background-color: var(--bg-surface-elevated);
 }
 
 /* ---------------------------------------------------------
@@ -200,11 +245,12 @@
   }
 }
 
-.activeRow {
-  background-color: var(--bg-surface-elevated);
+.wrapper[data-level="1"]>.itemRow .link {
+  height: 26px;
+  font-size: 0.9rem;
 }
 
-.activeLink {
-  color: var(--text-primary);
-  font-weight: 600;
+.wrapper[data-level="2"]>.itemRow .link {
+  height: 26px;
+  font-size: 0.875rem;
 }
