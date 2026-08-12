@@ -5,6 +5,7 @@
   background-color: var(--bg-surface);
   color: var(--text-secondary);
   padding: var(--space-md, 16px);
+  width: 100%;
 }
 
 .content {

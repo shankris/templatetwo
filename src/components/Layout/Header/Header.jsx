@@ -2,13 +2,13 @@
 
 "use client";
 
-import Link from "next/link";
 import { Bell } from "lucide-react";
 import { useState } from "react";
 
 import navigation from "@/data/navigation.json";
 import applicationNavigation from "@/data/applicationNavigation.json";
 import loggedInNavigation from "@/data/loggedInNavigation.json";
+import PrimaryNavigation from "../PrimaryNavigation/PrimaryNavigation";
 
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import MenuButton from "../MenuButton/MenuButton";
@@ -40,17 +40,7 @@ export default function Header() {
         <div className={styles.content}>
           <div className={styles.brand}>Project Template</div>
 
-          <nav className={styles.navigation}>
-            {navigation.map((item) => (
-              <Link
-                key={item.id}
-                href={item.href}
-                className={styles.link}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <PrimaryNavigation />
 
           <div className={styles.actions}>
             <Notification />

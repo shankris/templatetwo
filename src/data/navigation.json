@@ -2,16 +2,25 @@
   {
     "id": "home",
     "label": "Home",
-    "href": "/"
+    "href": "/",
+    "icon": "home"
   },
   {
     "id": "components",
     "label": "Components",
-    "href": "/components"
+    "href": "/components",
+    "icon": "grid"
   },
   {
     "id": "about",
     "label": "About",
-    "href": "/about"
+    "href": "/about",
+    "icon": "info"
+  },
+  {
+    "id": "contact",
+    "label": "Contact",
+    "href": "/contact",
+    "icon": "mail"
   }
 ]

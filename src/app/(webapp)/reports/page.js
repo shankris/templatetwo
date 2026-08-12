@@ -1,6 +1,6 @@
 export default function ReportsPage() {
   return (
-    <main style={{ padding: "2rem" }}>
+    <main>
       <h1>Reports</h1>
       <p>Reports page placeholder.</p>
     </main>
