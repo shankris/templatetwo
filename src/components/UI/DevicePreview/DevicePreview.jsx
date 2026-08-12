@@ -14,6 +14,9 @@ const DEVICES = {
   mobile: 375,
 };
 
+const MIN_WIDTH = 320;
+const MAX_WIDTH = 1920;
+
 export default function DevicePreview({ src = "/", initialDevice = "desktop" }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -23,6 +26,13 @@ export default function DevicePreview({ src = "/", initialDevice = "desktop" }) 
 
   const [device, setDevice] = useState(initialDevice);
 
+  const [previewWidth, setPreviewWidth] = useState(DEVICES[initialDevice] || DEVICES.desktop);
+
+  const [isResizing, setIsResizing] = useState(false);
+
+  /*
+   * Track the actual browser width.
+   */
   useEffect(() => {
     const handleResize = () => {
       setBrowserWidth(window.innerWidth);
@@ -38,6 +48,59 @@ export default function DevicePreview({ src = "/", initialDevice = "desktop" }) 
   }, []);
 
   /*
+   * Resize the preview while dragging.
+   */
+  useEffect(() => {
+    if (!isResizing) {
+      return;
+    }
+
+    const handleMouseMove = (event) => {
+      const viewportWidth = window.innerWidth;
+
+      /*
+       * The preview is centered.
+       *
+       * Calculate the width based on the mouse position
+       * relative to the center of the browser.
+       */
+      const center = viewportWidth / 2;
+
+      const newWidth = Math.round(Math.abs(event.clientX - center) * 2);
+
+      const clampedWidth = Math.min(Math.max(newWidth, MIN_WIDTH), MAX_WIDTH);
+
+      setPreviewWidth(clampedWidth);
+
+      /*
+       * If the width no longer matches a preset,
+       * remove the active device.
+       */
+      if (clampedWidth === DEVICES.desktop) {
+        setDevice("desktop");
+      } else if (clampedWidth === DEVICES.tablet) {
+        setDevice("tablet");
+      } else if (clampedWidth === DEVICES.mobile) {
+        setDevice("mobile");
+      } else {
+        setDevice(null);
+      }
+    };
+
+    const handleMouseUp = () => {
+      setIsResizing(false);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isResizing]);
+
+  /*
    * Hide the entire preview on a real mobile browser.
    */
   if (browserWidth === null || browserWidth < 768) {
@@ -45,7 +108,10 @@ export default function DevicePreview({ src = "/", initialDevice = "desktop" }) 
   }
 
   const changeDevice = (newDevice) => {
+    const newWidth = DEVICES[newDevice];
+
     setDevice(newDevice);
+    setPreviewWidth(newWidth);
 
     const params = new URLSearchParams(searchParams.toString());
 
@@ -54,19 +120,35 @@ export default function DevicePreview({ src = "/", initialDevice = "desktop" }) 
     router.push(`${pathname}?${params.toString()}`);
   };
 
-  const width = DEVICES[device];
+  const startResize = (event) => {
+    event.preventDefault();
+
+    setIsResizing(true);
+  };
 
   return (
-    <div className={styles.previewArea}>
+    <div className={`${styles.previewArea} ${isResizing ? styles.resizing : ""}`}>
       <div
         className={styles.preview}
-        style={{ width: `${width}px` }}
+        style={{
+          width: `${previewWidth}px`,
+        }}
       >
         <iframe
           src={src}
           className={styles.iframe}
           title='Application preview'
         />
+
+        <div
+          className={styles.resizeHandle}
+          onMouseDown={startResize}
+          title='Drag to resize'
+        >
+          <span />
+          <span />
+          <span />
+        </div>
       </div>
 
       <div className={styles.switcher}>
@@ -112,6 +194,8 @@ export default function DevicePreview({ src = "/", initialDevice = "desktop" }) 
             strokeWidth={1.8}
           />
         </button>
+
+        <div className={styles.widthDisplay}>{previewWidth}px</div>
       </div>
     </div>
   );
