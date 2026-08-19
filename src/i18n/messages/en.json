@@ -10,5 +10,31 @@
     "analytics": "Analytics",
     "settings": "Settings",
     "application": "Application"
+  },
+  "Sidebar": {
+    "dashboard": "Dashboard",
+    "components": "Components",
+    "ui": "UI",
+    "buttons": "Buttons",
+    "forms": "Forms",
+    "inputs": "Inputs",
+    "selects": "Selects",
+    "dataDisplay": "Data Display",
+    "tables": "Tables",
+    "cards": "Cards",
+    "feedback": "Feedback",
+    "alerts": "Alerts",
+    "modals": "Modals",
+    "navigation": "Navigation",
+    "header": "Header",
+    "sidebar": "Sidebar",
+    "tabs": "Tabs",
+    "layout": "Layout",
+    "container": "Container",
+    "grid": "Grid",
+    "devicePreview": "Device Preview",
+    "settings": "Settings",
+    "collapse": "Collapse sidebar",
+    "expand": "Expand sidebar"
   }
 }

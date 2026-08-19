@@ -1,16 +1,12 @@
-"use client";
-
-import Sidebar from "./Sidebar";
-// import sidebarItems from "@/data/sidebarTest.json";
+import Sidebar from "@/components/Layout/Sidebar/Sidebar";
 import componentNavigation from "@/data/componentNavigation.json";
 
-export default function SidebarTest() {
+export default function ComponentsLayout({ children }) {
   return (
     <div
       style={{
-        height: "500px",
         display: "flex",
-        border: "1px solid var(--border-subtle)",
+        minHeight: "calc(100vh - var(--header-height))",
       }}
     >
       <Sidebar
@@ -24,13 +20,12 @@ export default function SidebarTest() {
       <main
         style={{
           flex: 1,
+          minWidth: 0,
           padding: "2rem",
           color: "var(--text-primary)",
         }}
       >
-        <h1>Sidebar Test</h1>
-
-        <p>This area represents the application content.</p>
+        {children}
       </main>
     </div>
   );

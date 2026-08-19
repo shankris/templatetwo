@@ -16,7 +16,7 @@ const iconMap = {
   settings: Settings,
 };
 
-export default function Sidebar({ items = [], enabled = true, collapsible = true, defaultExpanded = true }) {
+export default function Sidebar({ items = [], enabled = true, collapsible = true, defaultExpanded = true, defaultExpandedLevel = 0 }) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const [isReady, setIsReady] = useState(false);
 

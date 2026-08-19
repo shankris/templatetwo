@@ -3,19 +3,24 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import styles from "./SidebarItem.module.css";
 
-export default function SidebarItem({ item, level = 0, Icon, sidebarState = "expanded" }) {
+export default function SidebarItem({ item, level = 0, Icon, sidebarState = "expanded", defaultExpandedLevel = 0 }) {
   const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations("Sidebar");
 
   const hasChildren = Array.isArray(item.children) && item.children.length > 0;
 
   const isCollapsed = sidebarState === "collapsed";
 
-  const isActive = item.href && item.href !== "#" && pathname === item.href;
+  const localizedHref = item.href && item.href !== "#" ? `/${locale}${item.href === "/" ? "" : item.href}` : "#";
+
+  const isActive = item.href && item.href !== "#" && pathname === localizedHref;
 
   function hasActiveChild(children) {
     if (!Array.isArray(children)) {
@@ -23,7 +28,7 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
     }
 
     return children.some((child) => {
-      if (child.href && child.href !== "#" && pathname === child.href) {
+      if (child.href && child.href !== "#" && pathname === `/${locale}${child.href === "/" ? "" : child.href}`) {
         return true;
       }
 
@@ -43,7 +48,7 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
    * Local state is only used for manual expansion
    * while the user remains in the same route area.
    */
-  const [manuallyOpen, setManuallyOpen] = useState(false);
+  const [manuallyOpen, setManuallyOpen] = useState(level <= defaultExpandedLevel);
 
   /*
    * When the route changes:
@@ -55,9 +60,9 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
     if (routeRequiresOpen) {
       setManuallyOpen(true);
     } else {
-      setManuallyOpen(false);
+      setManuallyOpen(level <= defaultExpandedLevel);
     }
-  }, [pathname, routeRequiresOpen]);
+  }, [pathname, routeRequiresOpen, level, defaultExpandedLevel]);
 
   const isOpen = routeRequiresOpen || manuallyOpen;
 
@@ -88,7 +93,7 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
             type='button'
             className={styles.expandButton}
             onClick={toggleChildren}
-            aria-label={isOpen ? `Collapse ${item.label}` : `Expand ${item.label}`}
+            aria-label={isOpen ? `${t("collapse")} ${t(item.id)}` : `${t("expand")} ${t(item.id)}`}
             aria-expanded={isOpen}
           >
             <ChevronRight
@@ -103,10 +108,10 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
         {!hasChildren && !isCollapsed && <span className={styles.expandPlaceholder} />}
 
         <Link
-          href={item.href || "#"}
+          href={localizedHref}
           className={`${styles.link} ${isActive ? styles.activeLink : ""}`}
           aria-current={isActive ? "page" : undefined}
-          title={isCollapsed ? item.label : undefined}
+          title={isCollapsed ? t(item.id) : undefined}
         >
           <span className={styles.icon}>
             {item.icon && (
@@ -118,7 +123,7 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
             )}
           </span>
 
-          {!isCollapsed && <span className={styles.label}>{item.label}</span>}
+          {!isCollapsed && <span className={styles.label}>{t(item.id)}</span>}
         </Link>
       </div>
 
@@ -151,6 +156,7 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
                   level={level + 1}
                   Icon={Icon}
                   sidebarState={sidebarState}
+                  defaultExpandedLevel={defaultExpandedLevel}
                 />
               ))}
             </motion.div>

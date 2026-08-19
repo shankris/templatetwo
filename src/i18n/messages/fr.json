@@ -10,5 +10,31 @@
     "analytics": "Analyses",
     "settings": "Paramètres",
     "application": "Application"
+  },
+  "Sidebar": {
+    "dashboard": "Tableau de bord",
+    "components": "Composants",
+    "ui": "UI",
+    "buttons": "Boutons",
+    "forms": "Formulaires",
+    "inputs": "Champs",
+    "selects": "Sélecteurs",
+    "dataDisplay": "Affichage des données",
+    "tables": "Tableaux",
+    "cards": "Cartes",
+    "feedback": "Retour utilisateur",
+    "alerts": "Alertes",
+    "modals": "Fenêtres modales",
+    "navigation": "Navigation",
+    "header": "En-tête",
+    "sidebar": "Barre latérale",
+    "tabs": "Onglets",
+    "layout": "Mise en page",
+    "container": "Conteneur",
+    "grid": "Grille",
+    "devicePreview": "Aperçu de l'appareil",
+    "settings": "Paramètres",
+    "collapse": "Réduire la barre latérale",
+    "expand": "Développer la barre latérale"
   }
 }
