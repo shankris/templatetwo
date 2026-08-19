@@ -1,0 +1,348 @@
+# Device Preview Tool
+
+## Purpose
+
+`DevicePreview` is a reusable development/prototyping tool for testing a Next.js application at different screen widths without resizing the actual browser window.
+
+It uses an **iframe** to load an application route at a controlled width.
+
+This is useful when building application prototypes and testing responsive layouts on a desktop/laptop screen.
+
+---
+
+## What it provides
+
+The preview has three preset device sizes:
+
+| Device   |  Width  |
+|----------|---------|
+| Desktop  |  1280px |
+| Tablet   |   768px |
+| Mobile   |   375px |
+
+It also has a draggable resize handle that allows custom widths between:
+
+- Minimum: **320px**
+- Maximum: **1920px**
+
+The iframe width changes physically, rather than scaling the application.
+
+This means CSS media queries inside the application respond exactly as they would at that viewport width.
+
+---
+
+# File Structure
+
+The component lives in:
+
+```text
+src/
+└── components/
+    └── UI/
+        └── DevicePreview/
+            ├── DevicePreview.jsx
+            └── DevicePreview.module.css
+
+
+A development/test page is used to launch the preview:
+
+src/
+└── app/
+    └── device-test/
+        └── page.js
+
+
+Important Architecture
+
+DevicePreview should not be placed in the root layout.
+
+The root layout should remain independent:
+<body>{children}</body>
+
+If the iframe loads a page whose layout also contains DevicePreview, it would create a recursive situation:
+DevicePreview
+    ↓
+iframe
+    ↓
+Application page
+    ↓
+DevicePreview
+    ↓
+iframe
+    ↓
+...
+
+
+Instead, /device-test is a separate development tool.
+The application pages themselves do not need to know that they are being previewed.
+
+import DevicePreview from "@/components/UI/DevicePreview/DevicePreview";
+
+export default async function DeviceTestPage({ searchParams }) {
+  const params = await searchParams;
+
+  const requestedSrc = params?.src || "/sidebar-test";
+  const requestedDevice = params?.device || "desktop";
+
+  const src =
+    requestedSrc.startsWith("/") &&
+    !requestedSrc.startsWith("//")
+      ? requestedSrc
+      : "/sidebar-test";
+
+  const device = ["desktop", "tablet", "mobile"].includes(
+    requestedDevice
+  )
+    ? requestedDevice
+    : "desktop";
+
+  return (
+    <DevicePreview
+      src={src}
+      initialDevice={device}
+    />
+  );
+}
+
+
+
+Previewing a Page
+Start the Next.js development server and open:
+
+http://localhost:3000/device-test
+
+Example
+http://localhost:3000/device-test?src=/reports
+
+This displays:
+/reports
+inside the simulated screen.
+
+Other examples:
+/device-test?src=/settings
+/device-test?src=/sidebar-test
+/device-test?src=/reports
+
+The application page itself does not need any changes.
+
+Selecting the Initial Device
+
+Use the device query parameter.
+
+Desktop
+/device-test?src=/reports&device=desktop
+Preview width:
+1280px
+
+Tablet
+/device-test?src=/reports&device=tablet
+Preview width:
+768px
+
+Mobile
+/device-test?src=/reports&device=mobile
+Preview width:
+375px
+
+
+Sharing a Preview
+
+The selected device is stored in the URL.
+For example:
+/device-test?src=/reports&device=mobile
+
+This means the URL can be copied and shared with someone else.
+When they open it, they will see:
+/reports
+at:
+375px
+
+This is particularly useful for demonstrating responsive prototypes.
+
+
+Device Buttons
+
+The control panel contains three buttons:
+
+Desktop
+Tablet
+Mobile
+
+They correspond to:
+
+Desktop → 1280px
+Tablet  → 768px
+Mobile  → 375px
+
+Clicking a button changes the iframe width.
+
+The selected device is also reflected in the URL.
+
+Custom Resizing
+
+The right edge of the simulated screen has a resize handle.
+
+Drag the handle horizontally to create a custom viewport width.
+
+For example:
+
+1280px
+   ↓
+1300px
+   ↓
+1350px
+   ↓
+1400px
+   ↓
+1440px
+
+The application is not scaled.
+
+The iframe itself becomes that width.
+
+Therefore responsive CSS works normally.
+
+For example:
+
+@media (max-width: 767px) {
+  /* mobile layout */
+}
+
+will activate when the simulated iframe is 767px or narrower.
+
+Current Responsive Breakpoint
+
+The TemplateTwo navigation uses:
+
+@media (max-width: 767px) {
+  ...
+}
+
+Therefore:
+
+768px → tablet/desktop navigation
+767px → mobile navigation
+
+This is why the DevicePreview tablet preset is 768px, rather than 767px.
+
+The mobile preset is 375px.
+
+Real Browser Width Rules
+
+The DevicePreview itself responds to the width of the actual browser.
+
+Browser ≥ 1280px
+
+Show:
+
+Desktop
+Tablet
+Mobile
+Browser 768–1279px
+
+Show:
+
+Tablet
+Mobile
+
+Desktop is hidden because a 1280px preview cannot fit comfortably.
+
+Browser < 768px
+
+Hide the entire DevicePreview.
+
+This prevents the development tool from appearing when the user is actually using a mobile-sized browser.
+
+Background and Screen Boundary
+
+The area surrounding the simulated application has a separate background.
+
+This makes the boundary between:
+
+Preview tool
+
+and:
+
+Application screen
+
+obvious in both light and dark application themes.
+
+The simulated screen also has a subtle border and shadow.
+
+Using It in Another Next.js Project
+
+Copy:
+
+src/components/UI/DevicePreview/
+
+into the new project.
+
+The component requires:
+
+Next.js
+React
+lucide-react
+
+Install Lucide if necessary:
+
+npm install lucide-react
+
+Then create a development page such as:
+
+src/app/device-test/page.js
+
+and use:
+
+import DevicePreview from "@/components/UI/DevicePreview/DevicePreview";
+
+export default function DeviceTestPage() {
+  return (
+    <DevicePreview
+      src="/some-page"
+      initialDevice="desktop"
+    />
+  );
+}
+
+The important thing is that the page being loaded in src should not itself render DevicePreview.
+
+Removing the Tool Later
+
+The actual application does not depend on the preview tool.
+
+When it is no longer required, remove:
+
+src/components/UI/DevicePreview/
+
+and:
+
+src/app/device-test/
+
+No changes should be required to the application's actual pages or layouts.
+
+Quick Reference
+Open the preview
+/device-test
+Preview a page
+/device-test?src=/reports
+Preview mobile
+/device-test?src=/reports&device=mobile
+Preview tablet
+/device-test?src=/reports&device=tablet
+Preview desktop
+/device-test?src=/reports&device=desktop
+Preset widths
+Desktop = 1280px
+Tablet  = 768px
+Mobile  = 375px
+Custom width
+
+Drag the resize handle.
+
+320px ─────────────── 1440px
+Key principle
+
+DevicePreview is a development/prototyping tool, not part of the application layout.
+
+Keep it outside the normal application layout and use an iframe to preview any route that needs responsive testing.
+
