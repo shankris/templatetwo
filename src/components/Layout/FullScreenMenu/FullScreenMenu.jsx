@@ -1,11 +1,18 @@
-// src/components/Layout/FullScreenMenu/FullScreenMenu.jsx
-
 "use client";
 
 import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+
 import styles from "./FullScreenMenu.module.css";
 
 export default function FullScreenMenu({ isOpen, items = [], sideItems = [], onNavigate }) {
+  const locale = useLocale();
+  const t = useTranslations("Header");
+
+  function getLocalizedHref(href) {
+    return `/${locale}${href === "/" ? "" : href}`;
+  }
+
   return (
     <div
       className={`${styles.menu} ${isOpen ? styles.open : ""}`}
@@ -23,12 +30,12 @@ export default function FullScreenMenu({ isOpen, items = [], sideItems = [], onN
               {items.map((item) => (
                 <Link
                   key={item.id}
-                  href={item.href}
+                  href={getLocalizedHref(item.href)}
                   className={styles.link}
                   tabIndex={isOpen ? 0 : -1}
                   onClick={onNavigate}
                 >
-                  {item.label}
+                  {t(item.id)}
                 </Link>
               ))}
             </div>
@@ -39,7 +46,7 @@ export default function FullScreenMenu({ isOpen, items = [], sideItems = [], onN
 
         {sideItems.length > 0 && (
           <aside className={styles.sidebar}>
-            <h2 className={styles.sidebarTitle}>Application</h2>
+            <h2 className={styles.sidebarTitle}>{t("application")}</h2>
 
             <nav
               className={styles.sideNavigation}
@@ -48,12 +55,12 @@ export default function FullScreenMenu({ isOpen, items = [], sideItems = [], onN
               {sideItems.map((item) => (
                 <Link
                   key={item.id}
-                  href={item.href}
+                  href={getLocalizedHref(item.href)}
                   className={styles.sideLink}
                   tabIndex={isOpen ? 0 : -1}
                   onClick={onNavigate}
                 >
-                  {item.label}
+                  {t(item.id)}
                 </Link>
               ))}
             </nav>

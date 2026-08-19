@@ -1,0 +1,14 @@
+{
+  "Header": {
+    "home": "Accueil",
+    "components": "Composants",
+    "about": "À propos",
+    "contact": "Contact",
+    "dashboard": "Tableau de bord",
+    "overview": "Vue d'ensemble",
+    "activity": "Activité",
+    "analytics": "Analyses",
+    "settings": "Paramètres",
+    "application": "Application"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "Header": {
+    "home": "Home",
+    "components": "Components",
+    "about": "About",
+    "contact": "Contact",
+    "dashboard": "Dashboard",
+    "overview": "Overview",
+    "activity": "Activity",
+    "analytics": "Analytics",
+    "settings": "Settings",
+    "application": "Application"
+  }
+}

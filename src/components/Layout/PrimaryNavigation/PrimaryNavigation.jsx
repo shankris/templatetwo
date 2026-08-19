@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
+
 import { Home, LayoutGrid, Info, Mail } from "lucide-react";
 
 import navigation from "@/data/navigation.json";
@@ -17,6 +19,8 @@ const iconMap = {
 
 export default function PrimaryNavigation() {
   const pathname = usePathname();
+  const t = useTranslations("Header");
+  const locale = useLocale();
 
   return (
     <nav
@@ -26,12 +30,13 @@ export default function PrimaryNavigation() {
       {navigation.map((item) => {
         const Icon = iconMap[item.icon];
 
-        const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+        const localizedHref = item.href === "/" ? `/${locale}` : `/${locale}${item.href}`;
+        const isActive = item.href === "/" ? pathname === localizedHref : pathname.startsWith(localizedHref);
 
         return (
           <Link
             key={item.id}
-            href={item.href}
+            href={`/${locale}${item.href === "/" ? "" : item.href}`}
             className={`${styles.link} ${isActive ? styles.active : ""}`}
           >
             {Icon && (
@@ -43,7 +48,7 @@ export default function PrimaryNavigation() {
               />
             )}
 
-            <span>{item.label}</span>
+            <span>{t(item.id)}</span>
           </Link>
         );
       })}

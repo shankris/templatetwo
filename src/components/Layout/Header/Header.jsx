@@ -9,6 +9,7 @@ import navigation from "@/data/navigation.json";
 import applicationNavigation from "@/data/applicationNavigation.json";
 import loggedInNavigation from "@/data/loggedInNavigation.json";
 import PrimaryNavigation from "../PrimaryNavigation/PrimaryNavigation";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import MenuButton from "../MenuButton/MenuButton";
@@ -45,6 +46,7 @@ export default function Header() {
           <div className={styles.actions}>
             <Notification />
             <ThemeToggle />
+            <LanguageSwitcher />
             <UserMenu user={user} />
             <MenuButton
               isOpen={menuOpen}
