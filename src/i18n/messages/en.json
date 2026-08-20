@@ -57,6 +57,7 @@
   "Components": {
     "title": "Components",
     "description": "A collection of reusable interface components.",
+
     "categories": {
       "accordion": "Accordion",
       "faq": "FAQ",
@@ -65,6 +66,7 @@
       "tables": "Tables",
       "toast": "Toast"
     },
+
     "items": {
       "imageAccordion": {
         "name": "Image Accordion",
@@ -77,6 +79,38 @@
       "faq2": {
         "name": "FAQ 2",
         "description": "FAQ with Tabs."
+      },
+      "faq3": {
+        "name": "FAQ 3",
+        "description": "FAQ with Images"
+      },
+      "faq4": {
+        "name": "FAQ 4",
+        "description": "Accordion FAQ"
+      },
+      "episodeGrid": {
+        "name": "Episode Grid - Layout Animation",
+        "description": "Layout Animation using CSS"
+      },
+      "modal": {
+        "name": "Modal",
+        "description": "Modal dialog component"
+      },
+      "dataTable": {
+        "name": "DataTable",
+        "description": "DataTable with search, sorting and pagination"
+      },
+      "salaryTable": {
+        "name": "DataTable - Numeric Filters",
+        "description": "DataTable demonstrating numeric and date filtering"
+      },
+      "marketTable": {
+        "name": "Market Table",
+        "description": "Market Table with Timeline"
+      },
+      "toast1": {
+        "name": "Toast Notification 1",
+        "description": "Toast Notification using Motion animation"
       }
     }
   }

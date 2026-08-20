@@ -48,15 +48,18 @@
     "description": "TemplateTwo est un modèle Next.js réutilisable conçu pour fournir une base solide aux applications web modernes.",
     "details": "Il comprend des mises en page responsives, une navigation, l'internationalisation, la gestion des thèmes et des composants d'interface réutilisables."
   },
+
   "Contact": {
     "title": "Contact",
     "intro": "Contactez-nous.",
     "description": "Si vous avez une question, une suggestion ou souhaitez discuter d'un projet, nous serions ravis de vous entendre.",
     "email": "Envoyer un e-mail"
   },
+
   "Components": {
     "title": "Composants",
     "description": "Une collection de composants d'interface réutilisables.",
+
     "categories": {
       "accordion": "Accordéon",
       "faq": "FAQ",
@@ -65,6 +68,7 @@
       "tables": "Tableaux",
       "toast": "Notification"
     },
+
     "items": {
       "imageAccordion": {
         "name": "Accordéon avec images",
