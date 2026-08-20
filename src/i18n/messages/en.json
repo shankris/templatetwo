@@ -36,5 +36,48 @@
     "settings": "Settings",
     "collapse": "Collapse sidebar",
     "expand": "Expand sidebar"
+  },
+  "Home": {
+    "title": "Welcome to TemplateTwo",
+    "intro": "A reusable Next.js template for modern web applications.",
+    "description": "TemplateTwo provides a flexible foundation with responsive layouts, navigation, internationalization, themes, and reusable components."
+  },
+  "About": {
+    "title": "About",
+    "intro": "Welcome to TemplateTwo.",
+    "description": "TemplateTwo is a reusable Next.js template designed to provide a solid foundation for modern web applications.",
+    "details": "It includes responsive layouts, navigation, internationalization, theme support, and reusable interface components."
+  },
+  "Contact": {
+    "title": "Contact",
+    "intro": "Get in touch.",
+    "description": "If you have a question, suggestion, or would like to discuss a project, we'd be happy to hear from you.",
+    "email": "Email us"
+  },
+  "Components": {
+    "title": "Components",
+    "description": "A collection of reusable interface components.",
+    "categories": {
+      "accordion": "Accordion",
+      "faq": "FAQ",
+      "layoutAnimation": "Layout Animation",
+      "modal": "Modal",
+      "tables": "Tables",
+      "toast": "Toast"
+    },
+    "items": {
+      "imageAccordion": {
+        "name": "Image Accordion",
+        "description": "Accordion with Images"
+      },
+      "faq1": {
+        "name": "FAQ 1",
+        "description": "Uses Motion for animation"
+      },
+      "faq2": {
+        "name": "FAQ 2",
+        "description": "FAQ with Tabs."
+      }
+    }
   }
 }
