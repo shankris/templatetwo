@@ -185,17 +185,15 @@
 }
 
 .flag {
-  width: 18px;
-  height: 13px;
-  object-fit: cover;
+  width: 24px;
+  height: auto;
   border-radius: 2px;
   flex-shrink: 0;
 }
 
 .optionFlag {
-  width: 18px;
-  height: 13px;
-  object-fit: cover;
+  width: 24px;
+  height: auto;
   border-radius: 2px;
   flex-shrink: 0;
 }
