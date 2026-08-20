@@ -15,7 +15,12 @@
   "UserMenu": {
     "profile": "Profil",
     "settings": "Paramètres",
-    "logout": "Se déconnecter"
+    "logout": "Se déconnecter",
+    "openUserMenu": "Ouvrir le menu utilisateur",
+    "openAccountMenu": "Ouvrir le menu du compte",
+    "welcome": "Bienvenue",
+    "login": "Se connecter",
+    "register": "S'inscrire"
   },
 
   "Footer": {
