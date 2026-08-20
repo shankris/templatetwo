@@ -1,14 +1,16 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 export default async function ContactPage() {
+  const locale = await getLocale();
   const t = await getTranslations("Contact");
 
   return (
-    <main>
+    <>
+      <p>Current locale: {locale}</p>
+
       <h1>{t("title")}</h1>
-      <h2>{t("intro")}</h2>
+      <p>{t("intro")}</p>
       <p>{t("description")}</p>
-      <p>{t("email")}</p>
-    </main>
+    </>
   );
 }

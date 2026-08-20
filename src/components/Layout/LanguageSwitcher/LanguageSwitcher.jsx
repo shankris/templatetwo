@@ -2,29 +2,46 @@
 
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
-
 import styles from "./LanguageSwitcher.module.css";
+
+const languages = [
+  { code: "en", label: "English" },
+  { code: "fr", label: "Français" },
+  { code: "de", label: "Deutsch" },
+];
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
 
-  const otherLocale = locale === "en" ? "fr" : "en";
+  function switchLanguage(event) {
+    const newLocale = event.target.value;
 
-  function switchLanguage() {
-    const pathWithoutLocale = pathname.replace(/^\/(en|fr)/, "");
+    if (newLocale === locale) {
+      return;
+    }
 
-    router.push(`/${otherLocale}${pathWithoutLocale || ""}`);
+    const pathWithoutLocale = pathname.replace(/^\/(en|fr|de)/, "");
+
+    router.push(`/${newLocale}${pathWithoutLocale || ""}`);
   }
 
   return (
-    <button
-      type='button'
-      className={styles.button}
-      onClick={switchLanguage}
+    <select
+      value={locale}
+      onChange={switchLanguage}
+      className={styles.select}
+      aria-label='Select language'
     >
-      {otherLocale.toUpperCase()}
-    </button>
+      {languages.map((language) => (
+        <option
+          key={language.code}
+          value={language.code}
+        >
+          {language.label}
+        </option>
+      ))}
+    </select>
   );
 }
