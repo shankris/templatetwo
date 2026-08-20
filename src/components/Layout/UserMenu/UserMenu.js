@@ -5,12 +5,14 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { User, LogIn, UserPlus, Settings, LogOut } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import styles from "./UserMenu.module.css";
 
 export default function UserMenu({ user = null }) {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
+  const t = useTranslations("UserMenu");
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -61,7 +63,7 @@ export default function UserMenu({ user = null }) {
         type='button'
         className={styles.trigger}
         onClick={toggleMenu}
-        aria-label={user ? "Open user menu" : "Open account menu"}
+        aria-label={user ? t("openUserMenu") : t("openAccountMenu")}
         aria-expanded={isOpen}
         aria-haspopup='menu'
       >
@@ -104,7 +106,7 @@ export default function UserMenu({ user = null }) {
                 onClick={closeMenu}
               >
                 <User size={17} />
-                <span>Profile</span>
+                <span>{t("profile")}</span>
               </Link>
 
               <Link
@@ -114,7 +116,7 @@ export default function UserMenu({ user = null }) {
                 onClick={closeMenu}
               >
                 <Settings size={17} />
-                <span>Settings</span>
+                <span>{t("settings")}</span>
               </Link>
 
               <div className={styles.divider} />
@@ -126,7 +128,7 @@ export default function UserMenu({ user = null }) {
                 onClick={closeMenu}
               >
                 <LogOut size={17} />
-                <span>Log out</span>
+                <span>{t("logout")}</span>
               </button>
             </>
           ) : (
@@ -138,7 +140,7 @@ export default function UserMenu({ user = null }) {
                   aria-hidden='true'
                 />
 
-                <span>Welcome</span>
+                <span>{t("welcome")}</span>
               </div>
 
               <div className={styles.divider} />
@@ -150,7 +152,7 @@ export default function UserMenu({ user = null }) {
                 onClick={closeMenu}
               >
                 <LogIn size={17} />
-                <span>Log in</span>
+                <span>{t("login")}</span>
               </Link>
 
               <Link
@@ -160,7 +162,7 @@ export default function UserMenu({ user = null }) {
                 onClick={closeMenu}
               >
                 <UserPlus size={17} />
-                <span>Register</span>
+                <span>{t("register")}</span>
               </Link>
             </>
           )}

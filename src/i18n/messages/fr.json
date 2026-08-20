@@ -11,6 +11,18 @@
     "settings": "Paramètres",
     "application": "Application"
   },
+
+  "UserMenu": {
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "logout": "Se déconnecter"
+  },
+
+  "Footer": {
+    "projectTemplate": "Modèle de projet",
+    "copyright": "© 2026"
+  },
+
   "Sidebar": {
     "dashboard": "Tableau de bord",
     "components": "Composants",
@@ -37,11 +49,13 @@
     "collapse": "Réduire la barre latérale",
     "expand": "Développer la barre latérale"
   },
+
   "Home": {
     "title": "Bienvenue sur TemplateTwo",
     "intro": "Un modèle Next.js réutilisable pour les applications web modernes.",
     "description": "TemplateTwo fournit une base flexible avec des mises en page responsives, une navigation, l'internationalisation, des thèmes et des composants réutilisables."
   },
+
   "About": {
     "title": "À propos",
     "intro": "Bienvenue sur TemplateTwo.",
