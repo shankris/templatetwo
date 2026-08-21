@@ -1,0 +1,129 @@
+{
+  "Header": {
+    "home": "Home",
+    "components": "Componenten",
+    "about": "Over",
+    "contact": "Contact",
+    "dashboard": "Dashboard",
+    "overview": "Overzicht",
+    "activity": "Activiteit",
+    "analytics": "Analyses",
+    "settings": "Instellingen",
+    "application": "Applicatie"
+  },
+  "UserMenu": {
+    "profile": "Profiel",
+    "settings": "Instellingen",
+    "logout": "Uitloggen",
+    "openUserMenu": "Gebruikersmenu openen",
+    "openAccountMenu": "Accountmenu openen",
+    "welcome": "Welkom",
+    "login": "Inloggen",
+    "register": "Registreren"
+  },
+  "Footer": {
+    "projectTemplate": "Projectsjabloon",
+    "copyright": "© 2026"
+  },
+  "Sidebar": {
+    "dashboard": "Dashboard",
+    "components": "Componenten",
+    "ui": "Gebruikersinterface",
+    "buttons": "Knoppen",
+    "forms": "Formulieren",
+    "inputs": "Invoervelden",
+    "selects": "Selectievelden",
+    "dataDisplay": "Gegevensweergave",
+    "tables": "Tabellen",
+    "cards": "Kaarten",
+    "feedback": "Feedback",
+    "alerts": "Meldingen",
+    "modals": "Modale vensters",
+    "navigation": "Navigatie",
+    "header": "Koptekst",
+    "sidebar": "Zijbalk",
+    "tabs": "Tabbladen",
+    "layout": "Lay-out",
+    "container": "Container",
+    "grid": "Raster",
+    "devicePreview": "Apparaatweergave",
+    "settings": "Instellingen",
+    "collapse": "Zijbalk invouwen",
+    "expand": "Zijbalk uitvouwen"
+  },
+  "Home": {
+    "title": "Welkom bij TemplateTwo",
+    "intro": "Een herbruikbaar Next.js-sjabloon voor moderne webapplicaties.",
+    "description": "TemplateTwo biedt een flexibele basis met responsieve lay-outs, navigatie, internationalisering, thema's en herbruikbare componenten."
+  },
+  "About": {
+    "title": "Over",
+    "intro": "Welkom bij TemplateTwo.",
+    "description": "TemplateTwo is een herbruikbaar Next.js-sjabloon dat is ontworpen om een solide basis te bieden voor moderne webapplicaties.",
+    "details": "Het bevat responsieve lay-outs, navigatie, internationalisering, ondersteuning voor thema's en herbruikbare interface-componenten."
+  },
+  "Contact": {
+    "title": "Contact",
+    "intro": "Neem contact op.",
+    "description": "Als je een vraag of suggestie hebt, of een project wilt bespreken, horen we graag van je.",
+    "email": "E-mail ons"
+  },
+  "Components": {
+    "title": "Componenten",
+    "description": "Een verzameling herbruikbare interface-componenten.",
+    "categories": {
+      "accordion": "Accordeon",
+      "faq": "Veelgestelde vragen",
+      "layoutAnimation": "Lay-outanimatie",
+      "modal": "Modaal venster",
+      "tables": "Tabellen",
+      "toast": "Toast-melding"
+    },
+    "items": {
+      "imageAccordion": {
+        "name": "Afbeeldingenaccordeon",
+        "description": "Accordeon met afbeeldingen"
+      },
+      "faq1": {
+        "name": "Veelgestelde vragen 1",
+        "description": "Gebruikt Motion voor animatie"
+      },
+      "faq2": {
+        "name": "Veelgestelde vragen 2",
+        "description": "Veelgestelde vragen met tabbladen."
+      },
+      "faq3": {
+        "name": "Veelgestelde vragen 3",
+        "description": "Veelgestelde vragen met afbeeldingen"
+      },
+      "faq4": {
+        "name": "Veelgestelde vragen 4",
+        "description": "Accordeon veelgestelde vragen"
+      },
+      "episodeGrid": {
+        "name": "Afleveringen-raster - Lay-outanimatie",
+        "description": "Lay-outanimatie met behulp van CSS"
+      },
+      "modal": {
+        "name": "Modaal venster",
+        "description": "Modaal dialoogvenster-component"
+      },
+      "dataTable": {
+        "name": "Gegevenstabel",
+        "description": "Gegevenstabel met zoeken, sorteren en paginering"
+      },
+      "salaryTable": {
+        "name": "Gegevenstabel - Numerieke filters",
+        "description": "Gegevenstabel die numerieke en datumfiltering demonstreert"
+      },
+      "marketTable": {
+        "name": "Markttabel",
+        "description": "Markttabel met tijdlijn"
+      },
+      "toast1": {
+        "name": "Toast-melding 1",
+        "description": "Toast-melding met Motion-animatie"
+      }
+    }
+  }
+}

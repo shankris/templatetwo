@@ -1,0 +1,129 @@
+{
+  "Header": {
+    "home": "Hjem",
+    "components": "Komponenter",
+    "about": "Om",
+    "contact": "Kontakt",
+    "dashboard": "Dashbord",
+    "overview": "Oversikt",
+    "activity": "Aktivitet",
+    "analytics": "Analyse",
+    "settings": "Innstillinger",
+    "application": "Applikasjon"
+  },
+  "UserMenu": {
+    "profile": "Profil",
+    "settings": "Innstillinger",
+    "logout": "Logg ut",
+    "openUserMenu": "Åpne brukermeny",
+    "openAccountMenu": "Åpne kontomeny",
+    "welcome": "Velkommen",
+    "login": "Logg inn",
+    "register": "Registrer deg"
+  },
+  "Footer": {
+    "projectTemplate": "Prosjektmal",
+    "copyright": "© 2026"
+  },
+  "Sidebar": {
+    "dashboard": "Dashbord",
+    "components": "Komponenter",
+    "ui": "Brukergrensesnitt",
+    "buttons": "Knapper",
+    "forms": "Skjemaer",
+    "inputs": "Inndatafelter",
+    "selects": "Rullegardinmenyer",
+    "dataDisplay": "Datavisning",
+    "tables": "Tabeller",
+    "cards": "Kort",
+    "feedback": "Tilbakemelding",
+    "alerts": "Varsler",
+    "modals": "Modale vinduer",
+    "navigation": "Navigasjon",
+    "header": "Overskrift",
+    "sidebar": "Sidemeny",
+    "tabs": "Faner",
+    "layout": "Oppsett",
+    "container": "Beholder",
+    "grid": "Rutenett",
+    "devicePreview": "Enhetsvisning",
+    "settings": "Innstillinger",
+    "collapse": "Skjul sidemeny",
+    "expand": "Utvid sidemeny"
+  },
+  "Home": {
+    "title": "Velkommen til TemplateTwo",
+    "intro": "En gjenbrukbar Next.js-mal for moderne nettapplikasjoner.",
+    "description": "TemplateTwo gir et fleksibelt fundament med responsive oppsett, navigasjon, internasjonalisering, temaer og gjenbrukbare komponenter."
+  },
+  "About": {
+    "title": "Om",
+    "intro": "Velkommen til TemplateTwo.",
+    "description": "TemplateTwo er en gjenbrukbar Next.js-mal designet for å gi et solid fundament for moderne nettapplikasjoner.",
+    "details": "Den inkluderer responsive oppsett, navigasjon, internasjonalisering, temastøtte og gjenbrukbare grensesnittkomponenter."
+  },
+  "Contact": {
+    "title": "Kontakt",
+    "intro": "Ta kontakt.",
+    "description": "Hvis du har et spørsmål, et forslag eller ønsker å diskutere et prosjekt, vil vi gjerne høre fra deg.",
+    "email": "Send oss en e-post"
+  },
+  "Components": {
+    "title": "Komponenter",
+    "description": "En samling av gjenbrukbare grensesnittkomponenter.",
+    "categories": {
+      "accordion": "Trekkspill",
+      "faq": "Ofte stilte spørsmål",
+      "layoutAnimation": "Oppsettsanimasjon",
+      "modal": "Modalt vindu",
+      "tables": "Tabeller",
+      "toast": "Toast-varsel"
+    },
+    "items": {
+      "imageAccordion": {
+        "name": "Bilde-trekkspill",
+        "description": "Trekkspill med bilder"
+      },
+      "faq1": {
+        "name": "Ofte stilte spørsmål 1",
+        "description": "Bruker Motion for animasjon"
+      },
+      "faq2": {
+        "name": "Ofte stilte spørsmål 2",
+        "description": "Ofte stilte spørsmål med faner."
+      },
+      "faq3": {
+        "name": "Ofte stilte spørsmål 3",
+        "description": "Ofte stilte spørsmål med bilder"
+      },
+      "faq4": {
+        "name": "Ofte stilte spørsmål 4",
+        "description": "Trekkspill-FAQ"
+      },
+      "episodeGrid": {
+        "name": "Episode-rutenett - Oppsettsanimasjon",
+        "description": "Oppsettsanimasjon ved hjælp av CSS"
+      },
+      "modal": {
+        "name": "Modalt vindu",
+        "description": "Modalt dialogkomponent"
+      },
+      "dataTable": {
+        "name": "Datatabell",
+        "description": "Datatabell med søk, sortering og paginering"
+      },
+      "salaryTable": {
+        "name": "Datatabell - Numeriske filtre",
+        "description": "Datatabell som viser numerisk og datofiltrering"
+      },
+      "marketTable": {
+        "name": "Markedstabell",
+        "description": "Markedstabell med tidslinje"
+      },
+      "toast1": {
+        "name": "Toast-varsel 1",
+        "description": "Toast-varsel med Motion-animasjon"
+      }
+    }
+  }
+}

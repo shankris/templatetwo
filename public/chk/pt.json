@@ -1,0 +1,129 @@
+{
+  "Header": {
+    "home": "Início",
+    "components": "Componentes",
+    "about": "Sobre",
+    "contact": "Contacto",
+    "dashboard": "Painel",
+    "overview": "Visão geral",
+    "activity": "Atividade",
+    "analytics": "Análises",
+    "settings": "Definições",
+    "application": "Aplicação"
+  },
+  "UserMenu": {
+    "profile": "Perfil",
+    "settings": "Definições",
+    "logout": "Terminar sessão",
+    "openUserMenu": "Abrir menu do utilizador",
+    "openAccountMenu": "Abrir menu da conta",
+    "welcome": "Bem-vindo",
+    "login": "Iniciar sessão",
+    "register": "Registar"
+  },
+  "Footer": {
+    "projectTemplate": "Modelo de projeto",
+    "copyright": "© 2026"
+  },
+  "Sidebar": {
+    "dashboard": "Painel",
+    "components": "Componentes",
+    "ui": "Interface",
+    "buttons": "Botões",
+    "forms": "Formulários",
+    "inputs": "Campos de entrada",
+    "selects": "Seleções",
+    "dataDisplay": "Exibição de dados",
+    "tables": "Tabelas",
+    "cards": "Cartões",
+    "feedback": "Feedback",
+    "alerts": "Alertas",
+    "modals": "Janelas modais",
+    "navigation": "Navegação",
+    "header": "Cabeçalho",
+    "sidebar": "Barra lateral",
+    "tabs": "Separadores",
+    "layout": "Layout",
+    "container": "Contentor",
+    "grid": "Grelha",
+    "devicePreview": "Pré-visualização do dispositivo",
+    "settings": "Definições",
+    "collapse": "Ocultar barra lateral",
+    "expand": "Expandir barra lateral"
+  },
+  "Home": {
+    "title": "Bem-vindo ao TemplateTwo",
+    "intro": "Um modelo Next.js reutilizável para aplicações web modernas.",
+    "description": "O TemplateTwo oferece uma base flexível com layouts responsivos, navegação, internacionalização, temas e componentes reutilizáveis."
+  },
+  "About": {
+    "title": "Sobre",
+    "intro": "Bem-vindo ao TemplateTwo.",
+    "description": "O TemplateTwo é um modelo Next.js reutilizável concebido para fornecer uma base sólida para aplicações web modernas.",
+    "details": "Inclui layouts responsivos, navegação, internacionalização, suporte a temas e componentes de interface reutilizáveis."
+  },
+  "Contact": {
+    "title": "Contacto",
+    "intro": "Entre em contacto.",
+    "description": "Se tiver alguma dúvida, sugestão ou quiser discutir um projeto, teremos todo o gosto em ouvi-lo.",
+    "email": "Envie-nos um e-mail"
+  },
+  "Components": {
+    "title": "Componentes",
+    "description": "Uma coleção de componentes de interface reutilizáveis.",
+    "categories": {
+      "accordion": "Acordeão",
+      "faq": "Perguntas frequentes",
+      "layoutAnimation": "Animação de layout",
+      "modal": "Janela modal",
+      "tables": "Tabelas",
+      "toast": "Notificação toast"
+    },
+    "items": {
+      "imageAccordion": {
+        "name": "Acordeão de imagens",
+        "description": "Acordeão com imagens"
+      },
+      "faq1": {
+        "name": "Perguntas frequentes 1",
+        "description": "Utiliza Motion para animação"
+      },
+      "faq2": {
+        "name": "Perguntas frequentes 2",
+        "description": "Perguntas frequentes com separadores."
+      },
+      "faq3": {
+        "name": "Perguntas frequentes 3",
+        "description": "Perguntas frequentes com imagens"
+      },
+      "faq4": {
+        "name": "Perguntas frequentes 4",
+        "description": "Acordeão de perguntas frequentes"
+      },
+      "episodeGrid": {
+        "name": "Grelha de episódios - Animação de layout",
+        "description": "Animação de layout usando CSS"
+      },
+      "modal": {
+        "name": "Janela modal",
+        "description": "Componente de diálogo modal"
+      },
+      "dataTable": {
+        "name": "Tabela de dados",
+        "description": "Tabela de dados com pesquisa, ordenação e paginação"
+      },
+      "salaryTable": {
+        "name": "Tabela de dados - Filtros numéricos",
+        "description": "Tabela de dados demonstrando filtragem numérica e por data"
+      },
+      "marketTable": {
+        "name": "Tabela de mercado",
+        "description": "Tabela de mercado com linha do tempo"
+      },
+      "toast1": {
+        "name": "Notificação toast 1",
+        "description": "Notificação toast usando animação Motion"
+      }
+    }
+  }
+}

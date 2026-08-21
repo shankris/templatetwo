@@ -1,17 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
+import { AnimatePresence, motion } from "motion/react";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown, Globe } from "lucide-react";
 
-import { AnimatePresence, motion } from "motion/react";
-
-import { useLocale } from "next-intl";
-
-import { usePathname, useRouter } from "next/navigation";
-
 import { languages } from "@/i18n/languages";
+import { routing } from "@/i18n/routing";
 
+import LanguageModal from "./LanguageModal";
 import styles from "./LanguageSwitcher.module.css";
 
 const wrapperVariants = {
@@ -50,6 +48,7 @@ export default function LanguageSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const [open, setOpen] = useState(false);
 
@@ -84,14 +83,16 @@ export default function LanguageSwitcher() {
   function switchLanguage(newLocale) {
     if (newLocale === locale) {
       setOpen(false);
+      setModalOpen(false);
       return;
     }
 
-    const pathWithoutLocale = pathname.replace(/^\/(en|fr|de)(?=\/|$)/, "");
+    const pathWithoutLocale = pathname.replace(new RegExp(`^/(${routing.locales.join("|")})(?=/|$)`), "");
 
     router.push(`/${newLocale}${pathWithoutLocale || ""}`);
 
     setOpen(false);
+    setModalOpen(false);
   }
 
   return (
@@ -169,8 +170,8 @@ export default function LanguageSwitcher() {
               type='button'
               className={styles.moreLanguages}
               onClick={() => {
-                // We'll implement the full language panel next.
                 setOpen(false);
+                setModalOpen(true);
               }}
             >
               <Globe
@@ -184,6 +185,14 @@ export default function LanguageSwitcher() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <LanguageModal
+        open={modalOpen}
+        languages={languages}
+        currentLocale={locale}
+        onSelect={switchLanguage}
+        onClose={() => setModalOpen(false)}
+      />
     </div>
   );
 }

@@ -1,0 +1,129 @@
+{
+  "Header": {
+    "home": "Hjem",
+    "components": "Komponenter",
+    "about": "Om",
+    "contact": "Kontakt",
+    "dashboard": "Kontrolpanel",
+    "overview": "Oversigt",
+    "activity": "Aktivitet",
+    "analytics": "Analyse",
+    "settings": "Indstillinger",
+    "application": "Applikation"
+  },
+  "UserMenu": {
+    "profile": "Profil",
+    "settings": "Indstillinger",
+    "logout": "Log ud",
+    "openUserMenu": "Åbn brugermenu",
+    "openAccountMenu": "Åbn kontomenu",
+    "welcome": "Velkommen",
+    "login": "Log ind",
+    "register": "Opret bruger"
+  },
+  "Footer": {
+    "projectTemplate": "Projektskabelon",
+    "copyright": "© 2026"
+  },
+  "Sidebar": {
+    "dashboard": "Kontrolpanel",
+    "components": "Komponenter",
+    "ui": "Brugerflade",
+    "buttons": "Knapper",
+    "forms": "Formularer",
+    "inputs": "Inputfelter",
+    "selects": "Valgfelter",
+    "dataDisplay": "Datavisning",
+    "tables": "Tabeller",
+    "cards": "Kort",
+    "feedback": "Feedback",
+    "alerts": "Advarsler",
+    "modals": "Modaler",
+    "navigation": "Navigation",
+    "header": "Overskrift",
+    "sidebar": "Sidepanel",
+    "tabs": "Faner",
+    "layout": "Layout",
+    "container": "Beholder",
+    "grid": "Gitter",
+    "devicePreview": "Enhedsvisning",
+    "settings": "Indstillinger",
+    "collapse": "Skjul sidepanel",
+    "expand": "Udvid sidepanel"
+  },
+  "Home": {
+    "title": "Velkommen til TemplateTwo",
+    "intro": "En genanvendelig Next.js-skabelon til moderne webapplikationer.",
+    "description": "TemplateTwo giver et fleksibelt fundament med responsive layouts, navigation, internationalisering, temaer og genanvendelige komponenter."
+  },
+  "About": {
+    "title": "Om",
+    "intro": "Velkommen til TemplateTwo.",
+    "description": "TemplateTwo er en genanvendelig Next.js-skabelon designet til at give et solidt fundament for moderne webapplikationer.",
+    "details": "Den indeholder responsive layouts, navigation, internationalisering, temasupport og genanvendelige brugerfladekomponenter."
+  },
+  "Contact": {
+    "title": "Kontakt",
+    "intro": "Kom i kontakt.",
+    "description": "Hvis du har et spørgsmål, et forslag eller ønsker at drøfte et projekt, vil vi meget gerne høre fra dig.",
+    "email": "Send os en e-mail"
+  },
+  "Components": {
+    "title": "Komponenter",
+    "description": "En samling af genanvendelige brugerfladekomponenter.",
+    "categories": {
+      "accordion": "Harmonika",
+      "faq": "Ofte stillede spørgsmål",
+      "layoutAnimation": "Layoutanimation",
+      "modal": "Modal",
+      "tables": "Tabeller",
+      "toast": "Toast-meddelelse"
+    },
+    "items": {
+      "imageAccordion": {
+        "name": "Billedharmonika",
+        "description": "Harmonika med billeder"
+      },
+      "faq1": {
+        "name": "Ofte stillede spørgsmål 1",
+        "description": "Bruger Motion til animation"
+      },
+      "faq2": {
+        "name": "Ofte stillede spørgsmål 2",
+        "description": "Ofte stillede spørgsmål med faner."
+      },
+      "faq3": {
+        "name": "Ofte stillede spørgsmål 3",
+        "description": "Ofte stillede spørgsmål med billeder"
+      },
+      "faq4": {
+        "name": "Ofte stillede spørgsmål 4",
+        "description": "Harmonika-FAQ"
+      },
+      "episodeGrid": {
+        "name": "Episode-gitter - Layoutanimation",
+        "description": "Layoutanimation ved hjælp af CSS"
+      },
+      "modal": {
+        "name": "Modal",
+        "description": "Modal dialogkomponent"
+      },
+      "dataTable": {
+        "name": "Datatabel",
+        "description": "Datatabel med søgning, sortering og sideinddeling"
+      },
+      "salaryTable": {
+        "name": "Datatabel - Numeriske filtre",
+        "description": "Datatabel, der viser numerisk og dato-filtrering"
+      },
+      "marketTable": {
+        "name": "Markedstabel",
+        "description": "Markedstabel med tidslinje"
+      },
+      "toast1": {
+        "name": "Toast-meddelelse 1",
+        "description": "Toast-meddelelse ved hjælp af Motion-animation"
+      }
+    }
+  }
+}

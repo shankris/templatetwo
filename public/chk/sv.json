@@ -1,0 +1,129 @@
+{
+  "Header": {
+    "home": "Hem",
+    "components": "Komponenter",
+    "about": "Om",
+    "contact": "Kontakt",
+    "dashboard": "Översikt",
+    "overview": "Översikt",
+    "activity": "Aktivitet",
+    "analytics": "Analys",
+    "settings": "Inställningar",
+    "application": "Applikation"
+  },
+  "UserMenu": {
+    "profile": "Profil",
+    "settings": "Inställningar",
+    "logout": "Logga ut",
+    "openUserMenu": "Öppna användarmeny",
+    "openAccountMenu": "Öppna kontomeny",
+    "welcome": "Välkommen",
+    "login": "Logga in",
+    "register": "Registrera"
+  },
+  "Footer": {
+    "projectTemplate": "Projektmall",
+    "copyright": "© 2026"
+  },
+  "Sidebar": {
+    "dashboard": "Översikt",
+    "components": "Komponenter",
+    "ui": "Gränssnitt",
+    "buttons": "Knappar",
+    "forms": "Formulär",
+    "inputs": "Inmatningsfält",
+    "selects": "Väljare",
+    "dataDisplay": "Datavisning",
+    "tables": "Tabeller",
+    "cards": "Kort",
+    "feedback": "Feedback",
+    "alerts": "Varningar",
+    "modals": "Modaler",
+    "navigation": "Navigering",
+    "header": "Sidhuvud",
+    "sidebar": "Sidopanel",
+    "tabs": "Flikar",
+    "layout": "Layout",
+    "container": "Behållare",
+    "grid": "Rutnät",
+    "devicePreview": "Enhetsvisning",
+    "settings": "Inställningar",
+    "collapse": "Dölj sidopanel",
+    "expand": "Expandera sidopanel"
+  },
+  "Home": {
+    "title": "Välkommen till TemplateTwo",
+    "intro": "En återanvändbar Next.js-mall för moderna webbapplikationer.",
+    "description": "TemplateTwo ger en flexibel grund med responsiva layouter, navigering, internationalisering, teman och återanvändbara komponenter."
+  },
+  "About": {
+    "title": "Om",
+    "intro": "Välkommen till TemplateTwo.",
+    "description": "TemplateTwo är en återanvändbar Next.js-mall utformad för att ge en solid grund för moderna webbapplikationer.",
+    "details": "Den innehåller responsiva layouter, navigering, internationalisering, temastöd och återanvändbara gränssnittskomponenter."
+  },
+  "Contact": {
+    "title": "Kontakt",
+    "intro": "Ta kontakt.",
+    "description": "Om du har en fråga, ett förslag eller vill diskutera ett projekt hör vi gärna från dig.",
+    "email": "Mejla oss"
+  },
+  "Components": {
+    "title": "Komponenter",
+    "description": "En samling återanvändbara gränssnittskomponenter.",
+    "categories": {
+      "accordion": "Dragspel",
+      "faq": "Vanliga frågor",
+      "layoutAnimation": "Layoutanimering",
+      "modal": "Modal",
+      "tables": "Tabeller",
+      "toast": "Toast-meddelande"
+    },
+    "items": {
+      "imageAccordion": {
+        "name": "Bilddragspel",
+        "description": "Dragspel med bilder"
+      },
+      "faq1": {
+        "name": "Vanliga frågor 1",
+        "description": "Använder Motion för animering"
+      },
+      "faq2": {
+        "name": "Vanliga frågor 2",
+        "description": "Vanliga frågor med flikar."
+      },
+      "faq3": {
+        "name": "Vanliga frågor 3",
+        "description": "Vanliga frågor med bilder"
+      },
+      "faq4": {
+        "name": "Vanliga frågor 4",
+        "description": "Dragspel med vanliga frågor"
+      },
+      "episodeGrid": {
+        "name": "Avsnitts-rutnät - Layoutanimering",
+        "description": "Layoutanimering med hjälp av CSS"
+      },
+      "modal": {
+        "name": "Modal",
+        "description": "Modaldialogkomponent"
+      },
+      "dataTable": {
+        "name": "Datatabell",
+        "description": "Datatabell med sökning, sortering och paginering"
+      },
+      "salaryTable": {
+        "name": "Datatabell - Numeriska filter",
+        "description": "Datatabell som visar numerisk och datumfiltrering"
+      },
+      "marketTable": {
+        "name": "Marknadstabell",
+        "description": "Marknadstabell med tidslinje"
+      },
+      "toast1": {
+        "name": "Toast-meddelande 1",
+        "description": "Toast-meddelande med Motion-animering"
+      }
+    }
+  }
+}

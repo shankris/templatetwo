@@ -1,0 +1,129 @@
+{
+  "Header": {
+    "home": "Home",
+    "components": "Componenti",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "dashboard": "Dashboard",
+    "overview": "Panoramica",
+    "activity": "Attività",
+    "analytics": "Analisi",
+    "settings": "Impostazioni",
+    "application": "Applicazione"
+  },
+  "UserMenu": {
+    "profile": "Profilo",
+    "settings": "Impostazioni",
+    "logout": "Disconnetti",
+    "openUserMenu": "Apri menu utente",
+    "openAccountMenu": "Apri menu account",
+    "welcome": "Benvenuto",
+    "login": "Accedi",
+    "register": "Registrati"
+  },
+  "Footer": {
+    "projectTemplate": "Template di progetto",
+    "copyright": "© 2026"
+  },
+  "Sidebar": {
+    "dashboard": "Dashboard",
+    "components": "Componenti",
+    "ui": "Interfaccia utente",
+    "buttons": "Pulsanti",
+    "forms": "Moduli",
+    "inputs": "Campi di input",
+    "selects": "Menu di selezione",
+    "dataDisplay": "Visualizzazione dati",
+    "tables": "Tabelle",
+    "cards": "Schede",
+    "feedback": "Feedback",
+    "alerts": "Avvisi",
+    "modals": "Finestre modali",
+    "navigation": "Navigazione",
+    "header": "Intestazione",
+    "sidebar": "Barra laterale",
+    "tabs": "Schede",
+    "layout": "Layout",
+    "container": "Contenitore",
+    "grid": "Griglia",
+    "devicePreview": "Anteprima dispositivo",
+    "settings": "Impostazioni",
+    "collapse": "Riduci barra laterale",
+    "expand": "Espandi barra laterale"
+  },
+  "Home": {
+    "title": "Benvenuto in TemplateTwo",
+    "intro": "Un template Next.js riutilizzabile per applicazioni web moderne.",
+    "description": "TemplateTwo fornisce una struttura flessibile con layout reattivi, navigazione, internazionalizzazione, temi e componenti riutilizzabili."
+  },
+  "About": {
+    "title": "Chi siamo",
+    "intro": "Benvenuto in TemplateTwo.",
+    "description": "TemplateTwo è un template Next.js riutilizzabile progettato per offrire una solida base per applicazioni web moderne.",
+    "details": "Include layout reattivi, navigazione, internazionalizzazione, supporto per i temi e componenti d'interfaccia riutilizzabili."
+  },
+  "Contact": {
+    "title": "Contatti",
+    "intro": "Mettiti in contatto.",
+    "description": "Se hai domande, suggerimenti o desideri discutere di un progetto, saremo felici di risponderti.",
+    "email": "Inviaci un'e-mail"
+  },
+  "Components": {
+    "title": "Componenti",
+    "description": "Una raccolta di componenti d'interfaccia riutilizzabili.",
+    "categories": {
+      "accordion": "Fisarmonica",
+      "faq": "FAQ",
+      "layoutAnimation": "Animazione layout",
+      "modal": "Finestra modale",
+      "tables": "Tabelle",
+      "toast": "Notifica toast"
+    },
+    "items": {
+      "imageAccordion": {
+        "name": "Fisarmonica con immagini",
+        "description": "Fisarmonica con immagini"
+      },
+      "faq1": {
+        "name": "FAQ 1",
+        "description": "Utilizza Motion per l'animazione"
+      },
+      "faq2": {
+        "name": "FAQ 2",
+        "description": "FAQ con schede."
+      },
+      "faq3": {
+        "name": "FAQ 3",
+        "description": "FAQ con immagini"
+      },
+      "faq4": {
+        "name": "FAQ 4",
+        "description": "FAQ a fisarmonica"
+      },
+      "episodeGrid": {
+        "name": "Griglia episodi - Animazione layout",
+        "description": "Animazione layout tramite CSS"
+      },
+      "modal": {
+        "name": "Finestra modale",
+        "description": "Componente finestra dialogante modale"
+      },
+      "dataTable": {
+        "name": "Tabella dati",
+        "description": "Tabella dati con ricerca, ordinamento e paginazione"
+      },
+      "salaryTable": {
+        "name": "Tabella dati - Filtri numerici",
+        "description": "Tabella dati che dimostra il filtraggio numerico e per data"
+      },
+      "marketTable": {
+        "name": "Tabella di mercato",
+        "description": "Tabella di mercato con sequenza temporale"
+      },
+      "toast1": {
+        "name": "Notifica toast 1",
+        "description": "Notifica toast tramite animazione Motion"
+      }
+    }
+  }
+}
