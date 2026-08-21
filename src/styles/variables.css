@@ -112,6 +112,14 @@
   --font-language: var(--font-devanagari);
 }
 
+.locale-kn {
+  --font-language: var(--font-kannada);
+}
+
+.locale-ta {
+  --font-language: var(--font-tamil);
+}
+
 .locale-ja {
   --font-language: var(--font-japanese);
 }

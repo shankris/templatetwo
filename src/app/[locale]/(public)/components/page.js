@@ -1,13 +1,32 @@
-import { getTranslations } from "next-intl/server";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
-export default async function ComponentsPage() {
-  const t = await getTranslations("Components");
+import componentNavigation from "@/data/componentNavigation.json";
+
+export default async function ComponentsPage({ params }) {
+  const { locale } = await params;
+
+  const componentsItem = componentNavigation.find((item) => item.id === "components");
+
+  if (!componentsItem) {
+    notFound();
+  }
 
   return (
-    <>
-      <h1>{t("title")}</h1>
+    <div>
+      <h1>{componentsItem.label}</h1>
 
-      <p>{t("description")}</p>
-    </>
+      <p>Browse all components.</p>
+
+      <div>
+        {componentsItem.children?.map((item) => (
+          <div key={item.id}>
+            <h2>{item.label}</h2>
+
+            <Link href={`/${locale}${item.href}`}>View {item.label} →</Link>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

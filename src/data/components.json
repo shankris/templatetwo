@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "device-preview",
+    "name": "Device Preview",
+    "displayName": "Device Preview",
+    "description": "A reusable component for previewing content at different device sizes.",
+    "component": "DevicePreview",
+    "category": "layout"
+  }
+]

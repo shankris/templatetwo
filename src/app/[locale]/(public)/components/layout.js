@@ -1,3 +1,5 @@
+// src/app/[local]/(public)/components/layout.js
+
 import Sidebar from "@/components/Layout/Sidebar/Sidebar";
 import componentNavigation from "@/data/componentNavigation.json";
 

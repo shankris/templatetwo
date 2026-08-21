@@ -1,0 +1,95 @@
+
+Final architecture
+
+proxy.js
+   │
+   └── Determines initial locale
+       ├── explicit URL locale
+       ├── saved localStorage preference
+       ├── browser locale
+       └── fallback → en
+
+AppBootstrap
+   │
+   ├── Initializes theme
+   ├── Shows loading screen
+   └── Reveals app when ready
+
+LanguageSwitcher
+   │
+   ├── Saves selected locale
+   └── Navigates to /fr, /de, etc.
+
+ThemeToggle
+   │
+   ├── Changes theme
+   └── Saves theme
+
+
+
+---
+
+
+User visits site
+      ↓
+AppBootstrap
+      ↓
+Check localStorage
+ ┌────┴─────┐
+ │          │
+Theme     Locale
+ │          │
+ ↓          ↓
+Apply     URL / Browser
+      ↓
+Loading screen
+      ↓
+/[locale]
+      ↓
+Locale Layout
+      ↓
+Load translations
+      ↓
+Select language font
+      ↓
+Application
+
+
+
+Internationalization / Language Files
+
+| File                       | Purpose                                                                                                                                                                 |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/i18n/languages.js`    | **Master language configuration.** Defines each language's code, name, native name, flag, region, availability, and font. Also generates `localeCodes` for `next-intl`. |
+| `src/i18n/routing.js`      | **Locale routing configuration.** Tells `next-intl` which locales are supported and which is the default (`en`).                                                        |
+| `src/i18n/request.js`      | **Loads translations for each request.** Determines the requested locale, validates it, and loads the corresponding JSON message file.                                  |
+| `src/i18n/messages/*.json` | **Translation files.** One JSON file per language, e.g. `en.json`, `fr.json`, `de.json`, `es.json`, `hi.json`.                                                          |
+
+
+
+Next.js Locale Handling
+
+| File                         | Purpose                                                                                                                                                                                  |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/app/[locale]/layout.js` | **Locale layout.** Reads the locale from the URL, validates it, loads its translations, provides them through `NextIntlClientProvider`, and applies the appropriate language/font class. |
+| `src/app/layout.js`          | **Root application layout.** Loads the global fonts and CSS and makes the font variables available throughout the application.                                                           |
+
+
+Application Startup
+
+| File                                                         | Purpose                                                                                                                                                                                                                                                |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `src/components/Layout/AppBootstrap/AppBootstrap.jsx`        | **Application initialization.** Runs before the application becomes visible, checks saved theme and locale in `localStorage`, falls back to browser preferences when necessary, applies the theme, and displays the loading screen while this happens. |
+| `src/components/Layout/AppBootstrap/AppBootstrap.module.css` | Styling for the **initial loading screen/spinner**.                                                                                                                                                                                                    |
+
+
+Language UI
+
+| File                                                          | Purpose                                                                                                                                   |
+| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/components/Layout/LanguageSwitcher/LanguageSwitcher.jsx` | **Language selector logic.** Displays the current language, handles switching, updates the locale URL, and opens the full language modal. |
+| `src/components/Layout/LanguageSwitcher/LanguageModal.jsx`    | **Full language selection modal.** Organizes languages into Europe, Asia and India and displays available/unavailable languages.          |
+| `LanguageSwitcher.module.css`                                 | Styling for the language dropdown.                                                                                                        |
+| `LanguageModal.module.css`                                    | Styling for the language modal and its three-column layout.                                                                               |
+
+

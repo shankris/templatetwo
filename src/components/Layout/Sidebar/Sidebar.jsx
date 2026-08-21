@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Home, Activity, BarChart3, FileText, Settings } from "lucide-react";
+import { Home, Activity, BarChart3, Grid3X3, Info, FileText, Settings } from "lucide-react";
 
 import SidebarItem from "./SidebarItem";
 import styles from "./Sidebar.module.css";
@@ -14,6 +14,8 @@ const iconMap = {
   chart: BarChart3,
   file: FileText,
   settings: Settings,
+  grid: Grid3X3,
+  info: Info,
 };
 
 export default function Sidebar({ items = [], enabled = true, collapsible = true, defaultExpanded = true, defaultExpandedLevel = 0 }) {
@@ -85,6 +87,7 @@ export default function Sidebar({ items = [], enabled = true, collapsible = true
             level={0}
             Icon={Icon}
             sidebarState={isExpanded ? "expanded" : "collapsed"}
+            defaultExpandedLevel={defaultExpandedLevel}
           />
         ))}
       </nav>
