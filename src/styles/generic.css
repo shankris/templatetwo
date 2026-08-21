@@ -11,7 +11,8 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: var(--font-stack, 'Inter', system-ui, -apple-system, sans-serif);
+  /* font-family: var(--font-stack, 'Inter', system-ui, -apple-system, sans-serif); */
+  font-family: var(--font-language);
   font-size: var(--font-size, 14px);
   line-height: var(--line-height, 1.5);
   background-color: var(--bg-app);

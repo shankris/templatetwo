@@ -87,6 +87,9 @@ export default function LanguageSwitcher() {
       return;
     }
 
+    // Remember the user's explicit language choice
+    localStorage.setItem("locale", newLocale);
+
     const pathWithoutLocale = pathname.replace(new RegExp(`^/(${routing.locales.join("|")})(?=/|$)`), "");
 
     router.push(`/${newLocale}${pathWithoutLocale || ""}`);

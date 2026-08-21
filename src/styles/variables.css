@@ -102,3 +102,24 @@
   --muted-terracotta-bg: rgba(219, 155, 140, 0.15);
   --muted-terracotta-text: #f2ceb8;
 }
+
+
+:root {
+  --font-language: var(--font-inter);
+}
+
+.locale-hi {
+  --font-language: var(--font-devanagari);
+}
+
+.locale-ja {
+  --font-language: var(--font-japanese);
+}
+
+.locale-zh {
+  --font-language: var(--font-chinese);
+}
+
+.locale-ko {
+  --font-language: var(--font-korean);
+}

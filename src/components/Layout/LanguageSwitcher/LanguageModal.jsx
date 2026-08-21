@@ -57,7 +57,7 @@ const sections = [
   {
     id: "europe",
     name: "Europe",
-    flag: "globe",
+    icon: "globe",
   },
   {
     id: "asia",

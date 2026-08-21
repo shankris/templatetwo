@@ -6,7 +6,9 @@ export const languages = [
     flag: "/flags/en.svg",
     region: "europe",
     available: true,
+    font: "inter",
   },
+
   {
     code: "fr",
     name: "French",
@@ -14,7 +16,9 @@ export const languages = [
     flag: "/flags/fr.svg",
     region: "europe",
     available: true,
+    font: "inter",
   },
+
   {
     code: "de",
     name: "German",
@@ -22,28 +26,19 @@ export const languages = [
     flag: "/flags/de.svg",
     region: "europe",
     available: true,
+    font: "inter",
   },
+
   {
-    code: "hi",
-    name: "Hindi",
-    nativeName: "हिन्दी",
-    region: "india",
-    available: false,
+    code: "es",
+    name: "Spanish",
+    nativeName: "Español",
+    flag: "/flags/es.svg",
+    region: "europe",
+    available: true,
+    font: "inter",
   },
-  {
-    code: "kn",
-    name: "Kannada",
-    nativeName: "ಕನ್ನಡ",
-    region: "india",
-    available: false,
-  },
-  {
-    code: "ta",
-    name: "Tamil",
-    nativeName: "தமிழ்",
-    region: "india",
-    available: false,
-  },
+
   {
     code: "it",
     name: "Italian",
@@ -51,15 +46,37 @@ export const languages = [
     flag: "/flags/it.svg",
     region: "europe",
     available: false,
+    font: "inter",
   },
+
   {
-    code: "es",
-    name: "Spanish",
-    nativeName: "Español",
-    flag: "/flags/es.svg",
-    region: "europe",
-    available: false,
+    code: "hi",
+    name: "Hindi",
+    nativeName: "हिन्दी",
+    flag: "/flags/in.svg",
+    region: "india",
+    available: true,
+    font: "devanagari",
   },
+
+  {
+    code: "kn",
+    name: "Kannada",
+    nativeName: "ಕನ್ನಡ",
+    region: "india",
+    available: false,
+    font: "kannada",
+  },
+
+  {
+    code: "ta",
+    name: "Tamil",
+    nativeName: "தமிழ்",
+    region: "india",
+    available: false,
+    font: "tamil",
+  },
+
   {
     code: "da",
     name: "Danish",
@@ -67,7 +84,9 @@ export const languages = [
     flag: "/flags/da.svg",
     region: "europe",
     available: false,
+    font: "inter",
   },
+
   {
     code: "ja",
     name: "Japanese",
@@ -75,7 +94,9 @@ export const languages = [
     flag: "/flags/jp.svg",
     region: "asia",
     available: false,
+    font: "japanese",
   },
+
   {
     code: "zh",
     name: "Chinese",
@@ -83,7 +104,9 @@ export const languages = [
     flag: "/flags/zh.svg",
     region: "asia",
     available: false,
+    font: "chinese",
   },
+
   {
     code: "ko",
     name: "Korean",
@@ -91,7 +114,9 @@ export const languages = [
     flag: "/flags/kr.svg",
     region: "asia",
     available: false,
+    font: "korean",
   },
+
   {
     code: "nl",
     name: "Dutch",
@@ -99,7 +124,9 @@ export const languages = [
     flag: "/flags/nl.svg",
     region: "europe",
     available: false,
+    font: "inter",
   },
+
   {
     code: "ru",
     name: "Russian",
@@ -107,7 +134,9 @@ export const languages = [
     flag: "/flags/ru.svg",
     region: "europe",
     available: false,
+    font: "inter",
   },
+
   {
     code: "no",
     name: "Norwegian",
@@ -115,7 +144,9 @@ export const languages = [
     flag: "/flags/no.svg",
     region: "europe",
     available: false,
+    font: "inter",
   },
+
   {
     code: "pt",
     name: "Portuguese",
@@ -123,7 +154,9 @@ export const languages = [
     flag: "/flags/pt.svg",
     region: "europe",
     available: false,
+    font: "inter",
   },
+
   {
     code: "sv",
     name: "Swedish",
@@ -131,6 +164,7 @@ export const languages = [
     flag: "/flags/sv.svg",
     region: "europe",
     available: false,
+    font: "inter",
   },
 ];
 
