@@ -48,7 +48,7 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
    * Local state is only used for manual expansion
    * while the user remains in the same route area.
    */
-  const [manuallyOpen, setManuallyOpen] = useState(level <= defaultExpandedLevel);
+  const [manuallyOpen, setManuallyOpen] = useState(level === 0);
 
   /*
    * When the route changes:
@@ -56,27 +56,12 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
    * - open if the current route is inside this branch
    * - close if the current route has moved elsewhere
    */
-  useEffect(() => {
-    if (routeRequiresOpen) {
-      setManuallyOpen(true);
-    } else {
-      setManuallyOpen(level <= defaultExpandedLevel);
-    }
-  }, [pathname, routeRequiresOpen, level, defaultExpandedLevel]);
 
   const isOpen = routeRequiresOpen || manuallyOpen;
 
   function toggleChildren(event) {
     event.preventDefault();
     event.stopPropagation();
-
-    /*
-     * Don't allow the user to close a branch
-     * that contains the current page.
-     */
-    if (routeRequiresOpen) {
-      return;
-    }
 
     setManuallyOpen((current) => !current);
   }
@@ -87,7 +72,7 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
       data-level={level}
       data-state={sidebarState}
     >
-      <div className={`${styles.itemRow} ${isActive ? styles.activeRow : ""}`}>
+      <div className={`${styles.itemRow} ${level === 0 ? styles.topLevelRow : ""} ${isActive ? styles.activeRow : ""}`}>
         {hasChildren && !isCollapsed && (
           <button
             type='button'
@@ -112,18 +97,13 @@ export default function SidebarItem({ item, level = 0, Icon, sidebarState = "exp
           className={`${styles.link} ${isActive ? styles.activeLink : ""}`}
           aria-current={isActive ? "page" : undefined}
           title={isCollapsed ? t(item.id) : undefined}
+          onClick={() => {
+            if (hasChildren) {
+              setManuallyOpen((current) => !current);
+            }
+          }}
         >
-          <span className={styles.icon}>
-            {item.icon && (
-              <Icon
-                name={item.icon}
-                size={18}
-                strokeWidth={1.8}
-              />
-            )}
-          </span>
-
-          {!isCollapsed && <span className={styles.label}>{t(item.id)}</span>}
+          <span className={styles.label}>{t(item.id)}</span>
         </Link>
       </div>
 

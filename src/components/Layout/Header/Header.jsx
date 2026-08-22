@@ -39,7 +39,9 @@ export default function Header() {
     <>
       <header className={styles.header}>
         <div className={styles.content}>
-          <div className={styles.brand}>Project Template</div>
+          <div className={styles.brand}>
+            Rapid<span>Prototypes</span>
+          </div>
 
           <PrimaryNavigation />
 

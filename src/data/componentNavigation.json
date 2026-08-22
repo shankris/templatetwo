@@ -1,129 +1,109 @@
 [
   {
-    "id": "dashboard",
-    "label": "Dashboard",
-    "href": "/dashboard",
-    "icon": "home"
-  },
-  {
-    "id": "components",
-    "label": "Components",
-    "href": "/components",
-    "icon": "grid",
+    "id": "ui",
+    "label": "UI",
+    "href": "/components/ui",
     "children": [
       {
-        "id": "ui",
-        "label": "UI",
-        "href": "/components/ui",
+        "id": "buttons",
+        "label": "Buttons",
+        "href": "/components/ui/buttons"
+      },
+      {
+        "id": "forms",
+        "label": "Forms",
+        "href": "/components/ui/forms",
         "children": [
           {
-            "id": "buttons",
-            "label": "Buttons",
-            "href": "/components/ui/buttons"
+            "id": "inputs",
+            "label": "Inputs",
+            "href": "/components/ui/forms/inputs"
           },
           {
-            "id": "forms",
-            "label": "Forms",
-            "href": "/components/ui/forms",
-            "children": [
-              {
-                "id": "inputs",
-                "label": "Inputs",
-                "href": "/components/ui/forms/inputs"
-              },
-              {
-                "id": "selects",
-                "label": "Selects",
-                "href": "/components/ui/forms/selects"
-              }
-            ]
-          },
-          {
-            "id": "dataDisplay",
-            "label": "Data Display",
-            "href": "/components/ui/data-display",
-            "children": [
-              {
-                "id": "tables",
-                "label": "Tables",
-                "href": "/components/ui/data-display/tables"
-              },
-              {
-                "id": "cards",
-                "label": "Cards",
-                "href": "/components/ui/data-display/cards"
-              }
-            ]
-          },
-          {
-            "id": "feedback",
-            "label": "Feedback",
-            "href": "/components/ui/feedback",
-            "children": [
-              {
-                "id": "alerts",
-                "label": "Alerts",
-                "href": "/components/ui/feedback/alerts"
-              },
-              {
-                "id": "modals",
-                "label": "Modals",
-                "href": "/components/ui/feedback/modals"
-              }
-            ]
+            "id": "selects",
+            "label": "Selects",
+            "href": "/components/ui/forms/selects"
           }
         ]
       },
       {
-        "id": "navigation",
-        "label": "Navigation",
-        "href": "/components/navigation",
+        "id": "dataDisplay",
+        "label": "Data Display",
+        "href": "/components/ui/data-display",
         "children": [
           {
-            "id": "header",
-            "label": "Header",
-            "href": "/components/navigation/header"
+            "id": "tables",
+            "label": "Tables",
+            "href": "/components/ui/data-display/tables"
           },
           {
-            "id": "sidebar",
-            "label": "Sidebar",
-            "href": "/components/navigation/sidebar"
-          },
-          {
-            "id": "tabs",
-            "label": "Tabs",
-            "href": "/components/navigation/tabs"
+            "id": "cards",
+            "label": "Cards",
+            "href": "/components/ui/data-display/cards"
           }
         ]
       },
       {
-        "id": "layout",
-        "label": "Layout",
-        "href": "/components/layout",
+        "id": "feedback",
+        "label": "Feedback",
+        "href": "/components/ui/feedback",
         "children": [
           {
-            "id": "container",
-            "label": "Container",
-            "href": "/components/layout/container"
+            "id": "alerts",
+            "label": "Alerts",
+            "href": "/components/ui/feedback/alerts"
           },
           {
-            "id": "grid",
-            "label": "Grid",
-            "href": "/components/layout/grid"
-          },
-          {
-            "id": "devicePreview",
-            "label": "Device Preview",
-            "href": "/components/layout/device-preview"
+            "id": "modals",
+            "label": "Modals",
+            "href": "/components/ui/feedback/modals"
           }
         ]
       }
     ]
   },
   {
-    "id": "settings",
-    "label": "Settings",
-    "href": "/settings",
-    "icon": "settings"
+    "id": "navigation",
+    "label": "Navigation",
+    "href": "/components/navigation",
+    "children": [
+      {
+        "id": "header",
+        "label": "Header",
+        "href": "/components/navigation/header"
+      },
+      {
+        "id": "sidebar",
+        "label": "Sidebar",
+        "href": "/components/navigation/sidebar"
+      },
+      {
+        "id": "tabs",
+        "label": "Tabs",
+        "href": "/components/navigation/tabs"
+      }
+    ]
+  },
+  {
+    "id": "layout",
+    "label": "Layout",
+    "href": "/components/layout",
+    "children": [
+      {
+        "id": "container",
+        "label": "Container",
+        "href": "/components/layout/container"
+      },
+      {
+        "id": "grid",
+        "label": "Grid",
+        "href": "/components/layout/grid"
+      },
+      {
+        "id": "devicePreview",
+        "label": "Device Preview",
+        "href": "/components/layout/device-preview"
+      }
+    ]
   }
 ]

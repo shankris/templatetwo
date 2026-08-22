@@ -1,5 +1,6 @@
 .wrapper {
   width: 100%;
+  margin: 2px 0 0 0;
 }
 
 /* ---------------------------------------------------------
@@ -71,10 +72,15 @@
    Expand / collapse button
    --------------------------------------------------------- */
 
+.topLevelRow {
+  background-color: var(--bg-surface-elevated);
+  border-radius: 6px;
+}
+
 .expandButton {
-  width: 38px;
-  min-width: 38px;
-  height: 42px;
+  /* width: 38px; */
+  /* min-width: 38px; */
+  height: 30px;
 
   display: flex;
   align-items: center;
@@ -105,8 +111,8 @@
    --------------------------------------------------------- */
 
 .expandPlaceholder {
-  width: 38px;
-  min-width: 38px;
+  width: 20px;
+  min-width: 20px;
 }
 
 /* ---------------------------------------------------------
@@ -128,14 +134,12 @@
 .link {
   flex: 1;
   min-width: 0;
-
-  height: 42px;
-
+  height: 30px;
   display: flex;
   align-items: center;
 
-  gap: 0.75rem;
-  padding: 0 0.75rem 0 0;
+  /* gap: 0.75rem; */
+  padding: 0 0.75rem 0 6px;
 
   color: var(--text-secondary);
 
@@ -253,4 +257,20 @@
 .wrapper[data-level="2"]>.itemRow .link {
   height: 26px;
   font-size: 0.875rem;
+}
+
+
+/* First level */
+.wrapper[data-level="0"] .label {
+  font-size: 0.9rem;
+}
+
+/* Second level */
+.wrapper[data-level="1"] .label {
+  font-size: 0.85rem;
+}
+
+/* Third level */
+.wrapper[data-level="2"] .label {
+  font-size: 0.8rem;
 }

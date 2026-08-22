@@ -8,7 +8,7 @@ export default function ComponentsLayout({ children }) {
     <div
       style={{
         display: "flex",
-        minHeight: "calc(100vh - var(--header-height))",
+        minHeight: "calc(100vh - var(--header-height) - var(--footer-height))",
       }}
     >
       <Sidebar

@@ -45,6 +45,8 @@
   --border-subtle: #e2e8f0;
   --border-bold: #cbd5e1;
 
+  --accentColor: #203060;
+
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
 
@@ -81,6 +83,8 @@
   /* Borders */
   --border-subtle: #334155;
   --border-bold: #475569;
+
+  --accentColor: rgb(199, 223, 255);
 
   /* Primary */
   --primary: #60a5fa;

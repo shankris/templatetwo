@@ -1,0 +1,62 @@
+[
+  {
+    "id": "html",
+    "name": "HTML",
+    "icon": "/TechStack/html.svg",
+    "description": "html"
+  },
+  {
+    "id": "css",
+    "name": "CSS",
+    "icon": "/TechStack/css.svg",
+    "description": "css"
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "icon": "/TechStack/javascript.svg",
+    "description": "javascript"
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js",
+    "icon": "/TechStack/nextjs.svg",
+    "description": "nextjs"
+  },
+  {
+    "id": "react",
+    "name": "React",
+    "icon": "/TechStack/react.svg",
+    "description": "react"
+  },
+  {
+    "id": "gsap",
+    "name": "GSAP",
+    "icon": "/TechStack/gsap.svg",
+    "description": "gsap"
+  },
+  {
+    "id": "motion",
+    "name": "Motion",
+    "icon": "/TechStack/motion.svg",
+    "description": "motion"
+  },
+  {
+    "id": "figma",
+    "name": "Figma",
+    "icon": "/TechStack/figma.svg",
+    "description": "figma"
+  },
+  {
+    "id": "adobexd",
+    "name": "Adobe XD",
+    "icon": "/TechStack/xd.svg",
+    "description": "adobexd"
+  },
+  {
+    "id": "photoshop",
+    "name": "Photoshop",
+    "icon": "/TechStack/photoshop.svg",
+    "description": "photoshop"
+  }
+]

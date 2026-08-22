@@ -1,4 +1,25 @@
 
+RapidPrototypes
+Ideas to beautiful clickable prototypes
+Transform your applications into intuitive, engaging experiences with Modular, Responsive, and Accessible Components
+Test - Refine - Validate
+With clickable App Prototypes
+Rapid App Prototyping helps you bring concepts to life faster — with interactive, beautiful prototypes that validate your vision, impress stakeholders, and save development time.
+
+So ideas can be tested, refined, and validated early
+
+Start Your Prototype Today — move from idea to interaction in days, not months.
+Win stakeholder buy-in with prototypes that showcase your vision
+Speed up development with reusable code.
+
+
+Speed: Quickly turning concepts into working clickable models.
+Validation: Testing usability and flows early, saving time and cost.
+Communication: Helping teams, investors, and clients visualize the product.
+Iteration: Refining ideas through feedback before committing to full builds.
+
+
+
 Final architecture
 
 proxy.js
