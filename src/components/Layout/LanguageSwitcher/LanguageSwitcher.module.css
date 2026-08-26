@@ -3,10 +3,20 @@
 }
 
 .trigger {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+    "flag flag"
+    "name chevron";
+
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 0.6rem;
+  justify-items: center;
+
+  column-gap: 0.2rem;
+  row-gap: 0.1rem;
+
+  min-width: 52px;
+  padding: 0.3rem 0.4rem;
 
   border: 1px solid transparent;
   border-radius: 0.4rem;
@@ -40,9 +50,15 @@
 }
 
 .chevron {
+  grid-area: chevron;
   display: flex;
   align-items: center;
   color: var(--text-secondary);
+}
+
+.chevron svg {
+  width: 13px;
+  height: 13px;
 }
 
 .dropdown {
@@ -160,8 +176,11 @@
 }
 
 .flag {
-  width: 18px;
-  height: 13px;
+  grid-area: flag;
+
+  width: 24px;
+  height: auto;
+
   object-fit: cover;
   border-radius: 2px;
   flex-shrink: 0;
@@ -177,7 +196,14 @@
 
 /* ----- */
 .languageName {
+  grid-area: name;
+
   display: inline;
+
+  font-size: 10px;
+  line-height: 1.1;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .languageCode {
@@ -202,23 +228,4 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .languageName {
-    display: none;
-  }
-
-  .languageCode {
-    display: inline;
-  }
-}
-
-
-/* Phone */
-@media (max-width: 425px) {
-  .languageCode {
-    display: none;
-  }
 }

@@ -23,9 +23,15 @@
             "id": "selects",
             "label": "Selects",
             "href": "/components/ui/forms/selects"
+          },
+          {
+            "id": "multiStepForm1",
+            "label": "Multi Step Form 1",
+            "href": "/components/ui/forms/multi-step-form-1"
           }
         ]
       },
+
       {
         "id": "dataDisplay",
         "label": "Data Display",
@@ -40,9 +46,15 @@
             "id": "cards",
             "label": "Cards",
             "href": "/components/ui/data-display/cards"
+          },
+          {
+            "id": "timeline",
+            "label": "Timeline",
+            "href": "/components/ui/data-display/timeline"
           }
         ]
       },
+
       {
         "id": "feedback",
         "label": "Feedback",

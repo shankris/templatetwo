@@ -6,5 +6,21 @@
     "description": "A reusable component for previewing content at different device sizes.",
     "component": "DevicePreview",
     "category": "layout"
+  },
+  {
+    "slug": "timeline",
+    "name": "Timeline",
+    "displayName": "Timeline",
+    "description": "A reusable timeline component for displaying dated events and their current status.",
+    "component": "Timeline",
+    "category": "data-display"
+  },
+  {
+    "slug": "multi-step-form-1",
+    "name": "Multi Step Form 1",
+    "displayName": "Multi Step Form 1",
+    "description": "A reusable multi-section form with progress, validation and review.",
+    "component": "MultiStepForm1",
+    "category": "forms"
   }
 ]

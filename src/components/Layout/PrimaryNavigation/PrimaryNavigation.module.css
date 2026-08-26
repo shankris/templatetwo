@@ -17,7 +17,7 @@
   text-decoration: none;
   border-bottom: none;
 
-  font-size: 0.95rem;
+  font-size: 14px;
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -77,4 +77,71 @@
 
 .icon {
   display: none;
+}
+
+@media (max-width: 767px) {
+  .navigation {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 100;
+    gap: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+
+    width: 100%;
+    min-height: 64px;
+
+    padding: 0 0 env(safe-area-inset-bottom);
+
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .link {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.25rem;
+
+    padding: 10px 0 0;
+
+    color: var(--text-secondary);
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-align: center;
+
+    border-right: 1px solid var(--border-bold);
+  }
+
+  .link:last-child {
+    border-right: none;
+  }
+
+  .icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .link span {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .link::after {
+    display: none;
+  }
 }

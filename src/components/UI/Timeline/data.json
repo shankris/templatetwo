@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "dateTime": "2026-08-23T07:30:00Z",
+    "status": "Complete",
+    "name": "Shipping label created",
+    "description": "Package was handed over to FedEx."
+  },
+  {
+    "id": 2,
+    "dateTime": "2026-08-24T10:15:00Z",
+    "status": "Complete",
+    "name": "Package delivered to FedEx",
+    "description": "FedEx collected the package from the sender."
+  },
+  {
+    "id": 3,
+    "dateTime": "2026-08-25T06:45:00Z",
+    "status": "Complete",
+    "name": "Package picked up",
+    "description": "Shipping label was generated and attached."
+  },
+  {
+    "id": 4,
+    "dateTime": "2026-08-22T09:20:00Z",
+    "status": "Pending",
+    "name": "Local FedEx Pickup",
+    "description": "Your order was confirmed and prepared for shipping."
+  },
+  {
+    "id": 5,
+    "dateTime": "2026-08-26T12:00:00Z",
+    "status": "Pending",
+    "name": "Package Delivered",
+    "description": "Package is scheduled to begin its journey."
+  }
+]

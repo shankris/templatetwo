@@ -1,0 +1,308 @@
+.wrapper {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 48px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  box-shadow:
+    0 1px 3px rgb(0 0 0 / 6%),
+    0 1px 2px rgb(0 0 0 / 4%);
+}
+
+.loginHeader {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.brandTitle {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.brandSubtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.loginForm {
+  margin-bottom: 24px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.labelRow .formLabel {
+  margin-bottom: 0;
+}
+
+.forgotLink {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forgotLink:hover {
+  color: var(--primary-hover);
+}
+
+.formInput {
+  width: 100%;
+  padding: 11px 14px;
+
+  border: 1px solid var(--border-bold);
+  border-radius: 8px;
+
+  outline: none;
+
+  background: var(--bg-surface);
+  color: var(--text-primary);
+
+  font-size: 15px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.formInput::placeholder {
+  color: var(--text-muted);
+}
+
+.formInput:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 10%);
+}
+
+.checkboxGroup {
+  margin-bottom: 24px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkboxInput {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+.checkboxText {
+  color: var(--text-secondary);
+  font-size: 14px;
+  user-select: none;
+}
+
+.submitButton {
+  position: relative;
+
+  width: 100%;
+  padding: 12px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: var(--primary);
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgb(37 99 235 / 25%);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.loader {
+  display: inline-block;
+
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid rgb(255 255 255 / 30%);
+  border-top-color: white;
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Divider ---------- */
+
+.divider {
+  position: relative;
+
+  margin: 32px 0;
+
+  text-align: center;
+}
+
+.divider::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+
+  height: 1px;
+
+  background: var(--border-subtle);
+}
+
+.dividerText {
+  position: relative;
+
+  display: inline-block;
+
+  padding: 0 16px;
+
+  background: var(--bg-surface);
+
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ---------- Social ---------- */
+
+.socialButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  margin-bottom: 24px;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  border: 1px solid var(--border-bold);
+  border-radius: 8px;
+
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.socialButton:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--text-muted);
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ---------- Signup ---------- */
+
+.signupText {
+  margin: 0;
+
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.signupLink {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.signupLink:hover {
+  color: var(--primary-hover);
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 32px 24px;
+  }
+
+  .brandTitle {
+    font-size: 24px;
+  }
+
+  .socialButtons {
+    grid-template-columns: 1fr;
+  }
+}

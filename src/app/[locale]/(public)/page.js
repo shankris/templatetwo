@@ -1,3 +1,4 @@
+import BentoGrid from "@/components/UI/BentoGrid/BentoGrid";
 import TechStack from "@/components/UI/TechStack/TechStack";
 
 import { getTranslations } from "next-intl/server";
@@ -11,7 +12,7 @@ export default async function HomePage() {
       <section className={styles.heroSection}>
         <h1 className={styles.hero}>{t("title")}</h1>
         <div className={styles.subHead}>{t("description")}</div>
-
+        <BentoGrid />
         <TechStack />
       </section>
 

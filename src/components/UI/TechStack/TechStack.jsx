@@ -33,6 +33,10 @@ export default function TechStack() {
     <>
       {/* Desktop Tech Stack */}
 
+      <div className={styles.sectionTitle}>
+        <span>Tech Stack</span>
+      </div>
+
       <motion.div
         onMouseMove={(event) => {
           const { left, right } = event.currentTarget.getBoundingClientRect();
