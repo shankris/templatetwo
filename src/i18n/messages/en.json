@@ -31,8 +31,10 @@
   "Sidebar": {
     "dashboard": "Dashboard",
     "components": "Components",
+    "date-picker": "Date Picker",
     "ui": "UI",
     "buttons": "Buttons",
+    "datePickerNative": "Date Picker Native",
     "forms": "Forms",
     "multiStepForm1": "Multi Step Form 1",
     "inputs": "Inputs",

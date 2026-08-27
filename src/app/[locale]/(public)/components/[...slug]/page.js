@@ -93,10 +93,8 @@ export default async function ComponentRoute({ params }) {
   return (
     <div>
       <h1>{componentMetadata.displayName}</h1>
-
       <p>{componentMetadata.description}</p>
-
-      <Component />
+      <Component {...(componentMetadata.props || {})} />{" "}
     </div>
   );
 }

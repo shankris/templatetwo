@@ -1,0 +1,269 @@
+.wrapper {
+  position: relative;
+}
+
+/* --------------------------------------------------
+   Trigger
+-------------------------------------------------- */
+
+.trigger {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+
+  border: 1px solid var(--border-bold);
+  border-radius: 6px;
+
+  background: var(--bg-surface);
+  color: var(--text-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.trigger:hover {
+  border-color: var(--primary);
+}
+
+.trigger:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb,
+      var(--primary) 20%,
+      transparent);
+}
+
+.placeholder {
+  color: var(--text-muted);
+}
+
+.calendarIcon {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------
+   Popover
+-------------------------------------------------- */
+
+.popover {
+  position: absolute;
+  z-index: 1000;
+
+  top: calc(100% + 8px);
+  left: 0;
+
+  padding: 16px;
+
+  background: var(--bg-surface);
+  color: var(--text-primary);
+
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+
+  box-shadow: 0 10px 30px rgb(0 0 0 / 15%);
+}
+
+/* --------------------------------------------------
+   Selected Date Header
+-------------------------------------------------- */
+
+.selectedHeader {
+  padding: 4px 4px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.selectedDay {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.selectedDate {
+  margin-top: 2px;
+
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.25;
+
+  color: var(--text-primary);
+}
+
+.selectedPlaceholder {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------
+   DayPicker
+-------------------------------------------------- */
+
+.calendar {
+  margin: 0;
+
+  color: var(--text-primary);
+  font-family: inherit;
+
+  --rdp-accent-color: var(--primary);
+  --rdp-accent-background-color: var(--primary);
+  --rdp-background-color: var(--bg-surface-elevated);
+}
+
+/* --------------------------------------------------
+   Selected Date
+-------------------------------------------------- */
+
+.calendar :global(.rdp-day_button) {
+  border-radius: 50%;
+}
+
+.selected .dayButton {
+  background: var(--primary);
+  color: var(--bg-surface);
+}
+
+/* --------------------------------------------------
+   Today
+-------------------------------------------------- */
+
+.today .dayButton {
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.today.selected .dayButton {
+  background: var(--primary);
+  color: var(--bg-surface);
+}
+
+/* --------------------------------------------------
+   Weekend
+-------------------------------------------------- */
+
+.calendar :global(.rdp-weekday) {
+  color: var(--text-muted);
+}
+
+.calendar :global(.rdp-day) {
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------
+   Actions
+-------------------------------------------------- */
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 8px;
+  padding-top: 12px;
+
+  border-top: 1px solid var(--border-subtle);
+}
+
+.todayButton,
+.cancelButton,
+.okButton {
+  min-height: 36px;
+  padding: 0 12px;
+
+  border: 0;
+  border-radius: 6px;
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.todayButton {
+  color: var(--primary);
+}
+
+.todayButton:hover {
+  background: var(--bg-surface-elevated);
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cancelButton {
+  color: var(--text-secondary);
+}
+
+.cancelButton:hover {
+  background: var(--bg-surface-elevated);
+}
+
+.okButton {
+  color: var(--primary);
+}
+
+.okButton:hover:not(:disabled) {
+  background: var(--bg-surface-elevated);
+}
+
+.okButton:disabled {
+  color: var(--text-muted);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------
+   Responsive
+-------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .popover {
+    max-width: calc(100vw - 24px);
+    overflow-x: auto;
+  }
+}
+
+.selectedDateArea {
+  min-height: 72px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selectedDay {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.selectedDate {
+  margin-top: 2px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.relativeDate {
+  margin-top: 3px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.noDate {
+  font-size: 14px;
+  color: var(--text-muted);
+}

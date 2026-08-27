@@ -22,5 +22,29 @@
     "description": "A reusable multi-section form with progress, validation and review.",
     "component": "MultiStepForm1",
     "category": "forms"
+  },
+  {
+    "slug": "date-picker-native",
+    "name": "Date Picker Native",
+    "displayName": "Date Picker Native",
+    "description": "A dependency-free date picker supporting single dates, date ranges, multiple months and localized calendars.",
+    "component": "DatePickerNative",
+    "category": "forms"
+  },
+  {
+    "slug": "date-picker",
+    "name": "Date Picker",
+    "displayName": "Date Picker",
+    "description": "A reusable date picker supporting single dates, ranges, multiple months and optional month/year dropdowns.",
+    "component": "DatePicker",
+    "category": "forms",
+    "props": {
+      "datePicker": {
+        "range": false,
+        "months": 1,
+        "monthYearDropdown": true
+      },
+      "width": 380
+    }
   }
 ]

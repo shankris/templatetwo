@@ -1,0 +1,265 @@
+DatePickerNative
+================
+
+A dependency-free date picker for use in forms.
+
+Location
+--------
+components/UI/DatePickers/DatePickerNative/
+
+
+Basic Usage
+-----------
+
+Import:
+
+import DatePickerNative from "@/components/UI/DatePickers/DatePickerNative/DatePickerNative";
+
+
+Single Date
+-----------
+
+<DatePickerNative
+  value={value}
+  onChange={setValue}
+  datePicker={{
+    range: false,
+    months: 1,
+    monthYearDropdown: false
+  }}
+/>
+
+
+Date Picker Configuration
+-------------------------
+
+range
+  false = single date
+  true  = date range
+
+months
+  1 = display one month
+  2 = display two months
+  3 = display three months
+
+monthYearDropdown
+  false = use previous/next month arrows
+  true  = allow month and year selection from dropdowns
+
+
+Examples
+--------
+
+Date of Birth:
+
+datePicker={{
+  range: false,
+  months: 1,
+  monthYearDropdown: true
+}}
+
+
+Appointment:
+
+datePicker={{
+  range: false,
+  months: 1,
+  monthYearDropdown: false
+}}
+
+
+Booking / Date Range:
+
+datePicker={{
+  range: true,
+  months: 2,
+  monthYearDropdown: false
+}}
+
+
+Three-Month Date Range:
+
+datePicker={{
+  range: true,
+  months: 3,
+  monthYearDropdown: false
+}}
+
+
+Validation
+----------
+
+The picker accepts the same validation configuration used by
+MultiStepForm1.
+
+Examples:
+
+"validation": {
+  "minAge": 18,
+  "maxAge": 100
+}
+
+or:
+
+"validation": {
+  "minDaysFromToday": 0,
+  "maxDaysFromToday": 90
+}
+
+or:
+
+"validation": {
+  "minDate": "2026-01-01",
+  "maxDate": "2026-12-31"
+}
+
+
+Locale
+------
+
+Pass a locale to display localized month, weekday and date names.
+
+Example:
+
+locale="fr-FR"
+
+If no locale is supplied, the browser's locale is used.
+
+
+Range Value
+-----------
+
+For range mode, onChange returns:
+
+{
+  start: "2026-08-26",
+  end: "2026-09-04"
+}
+
+
+Single Date Value
+-----------------
+
+For single mode, onChange returns:
+
+"2026-08-26"
+
+
+Notes
+-----
+
+- No external calendar/date-picker dependency is required.
+- Maximum of 3 months can be displayed at once.
+- Weekend days are visually differentiated.
+- Disabled dates are controlled through validation.
+- Dark mode uses the application's CSS variables.
+- This is the native Version 1 implementation.
+- A calendar framework-based Version 2 may be added later.
+
+
+We have a good, deliberately simple feature set:
+
+✅ Single-date selection
+✅ Date-range selection
+✅ 1, 2 or 3-month display
+✅ Previous/next month navigation
+✅ Optional month/year dropdown
+✅ Dynamic date restrictions
+✅ minAge / maxAge
+✅ minDaysFromToday / maxDaysFromToday
+✅ Explicit minDate / maxDate
+✅ Localized month and weekday names
+✅ Browser locale fallback
+✅ Weekend differentiation
+✅ Today indicator
+✅ Selected-date styling
+✅ Range highlighting
+✅ Disabled-date styling
+✅ Dark-mode support using your global CSS variables
+✅ Click-outside closing
+✅ Form onChange / onBlur integration
+✅ No external dependency
+✅ JSON-driven configuration through datePicker
+✅ Maximum of 3 months enforced
+✅ Documentation note alongside the component
+
+And importantly, we've kept the complexity out of Version 1.
+
+
+{
+  "id": "dateOfBirth",
+  "label": "Date of Birth",
+  "type": "date",
+  "required": true,
+  "datePicker": {
+    "mode": "single",
+    "months": 1,
+    "monthYearDropdown": true
+  },
+  "validation": {
+    "minAge": 18,
+    "maxAge": 100
+  }
+}
+
+
+Then your generic FormField reads that configuration and passes it to the picker.
+
+For an appointment:
+
+{
+  "id": "appointmentDate",
+  "label": "Appointment Date",
+  "type": "date",
+  "required": true,
+  "datePicker": {
+    "mode": "single",
+    "months": 1,
+    "monthYearDropdown": false
+  },
+  "validation": {
+    "minDaysFromToday": 0,
+    "maxDaysFromToday": 90
+  }
+}
+
+
+And for a booking:
+
+{
+  "id": "bookingDates",
+  "label": "Booking Dates",
+  "type": "date",
+  "required": true,
+  "datePicker": {
+    "mode": "range",
+    "months": 2,
+    "monthYearDropdown": false
+  }
+}
+
+
+This is the architecture I'd recommend
+student-admission.json
+        ↓
+     FormField
+        ↓
+   DatePickerNative
+
+So the person using your form only changes JSON, rather than having to edit React code.
+
+That's particularly important given your goal of making MultiStepForm1 portable and reusable.
+
+And this also means we should make one small update to FormField.jsx so it does something like:
+
+<DatePickerNative
+  value={value}
+  onChange={(newValue) => onChange(field.id, newValue)}
+  onBlur={() => onBlur(field.id)}
+  locale={locale}
+  {...field.datePicker}
+/>
+
+Then datePicker becomes the configuration point.
+
+That is the part we haven't wired up yet. We should do that before considering the date-picker integration finished.

@@ -25,6 +25,16 @@
             "href": "/components/ui/forms/selects"
           },
           {
+            "id": "datePickerNative",
+            "label": "Date Picker Native",
+            "href": "/components/ui/forms/date-picker-native"
+          },
+          {
+            "id": "date-picker",
+            "label": "Date Picker",
+            "href": "/components/ui/forms/date-picker"
+          },
+          {
             "id": "multiStepForm1",
             "label": "Multi Step Form 1",
             "href": "/components/ui/forms/multi-step-form-1"

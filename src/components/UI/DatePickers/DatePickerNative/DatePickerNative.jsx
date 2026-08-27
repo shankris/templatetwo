@@ -224,7 +224,9 @@ function getYearRange(minDate, maxDate, visibleMonth) {
   return years;
 }
 
-export default function DatePickerNative({ value, onChange, onBlur, locale, validation = {}, placeholder = "Select a date", datePicker = {} }) {
+export default function DatePickerNative({ value, onChange, onBlur, locale, validation = {}, placeholder = "Select a date", datePicker = {}, width = 380 }) {
+  //export default function DatePickerNative({ mode = "single", value, onChange, onBlur, locale, validation = {}, placeholder = "Select a date", months = 1, width = 280 }) {
+  // export default function DatePickerNative({ value, onChange, onBlur, locale, validation = {}, placeholder = "Select a date", datePicker = {} }) {
   const wrapperRef = useRef(null);
 
   /*
@@ -489,6 +491,9 @@ export default function DatePickerNative({ value, onChange, onBlur, locale, vali
     <div
       ref={wrapperRef}
       className={styles.wrapper}
+      style={{
+        width: typeof width === "number" ? `${width}px` : width,
+      }}
     >
       <button
         type='button'
