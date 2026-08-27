@@ -169,8 +169,7 @@ function getRelativeDate(date) {
 export default function DatePicker({ value, onChange, onBlur, locale, validation = {}, placeholder = "Please select a date", datePicker = {}, width = 380 }) {
   const [open, setOpen] = useState(false);
 
-  const { monthYearDropdown = true } = datePicker;
-
+  const { monthYearDropdown = true, minAge, maxAge } = datePicker;
   /*
    * --------------------------------------------------
    * COMMITTED VALUE
@@ -207,9 +206,20 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
    * --------------------------------------------------
    */
 
-  const minDate = useMemo(() => parseISODate(validation.minDate), [validation.minDate]);
+  const explicitMinDate = useMemo(() => parseISODate(validation.minDate), [validation.minDate]);
 
-  const maxDate = useMemo(() => parseISODate(validation.maxDate), [validation.maxDate]);
+  const explicitMaxDate = useMemo(() => parseISODate(validation.maxDate), [validation.maxDate]);
+
+  const { minDate, maxDate } = useMemo(
+    () =>
+      calculateDateBounds({
+        explicitMinDate,
+        explicitMaxDate,
+        minAge,
+        maxAge,
+      }),
+    [explicitMinDate, explicitMaxDate, minAge, maxAge],
+  );
 
   /*
    * Keep pending selection in sync when the external
@@ -229,6 +239,174 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
     return new Intl.DateTimeFormat(locale || "en-US", {
       weekday: "long",
     }).format(date);
+  }
+
+  /*
+   * --------------------------------------------------
+   * EFFECTIVE DATE BOUNDS
+   *
+   * Combines explicit date limits with age-based
+   * restrictions to determine the final selectable
+   * date range.
+   *
+   * When multiple restrictions are provided, the most
+   * restrictive boundary is used.
+   * --------------------------------------------------
+   */
+
+  function calculateDateBounds({ explicitMinDate, explicitMaxDate, minAge, maxAge }) {
+    const today = startOfDay(new Date());
+
+    let effectiveMinDate = explicitMinDate;
+    let effectiveMaxDate = explicitMaxDate;
+
+    /*
+     * Maximum age
+     *
+     * Example:
+     * maxAge: 120
+     *
+     * DOB cannot be earlier than today - 120 years.
+     */
+    if (maxAge !== undefined && maxAge !== null) {
+      const ageMinDate = subtractYears(today, Number(maxAge));
+
+      if (!effectiveMinDate || ageMinDate > effectiveMinDate) {
+        effectiveMinDate = ageMinDate;
+      }
+    }
+
+    /*
+     * Minimum age
+     *
+     * Example:
+     * minAge: 18
+     *
+     * DOB cannot be later than today - 18 years.
+     */
+    if (minAge !== undefined && minAge !== null) {
+      const ageMaxDate = subtractYears(today, Number(minAge));
+
+      if (!effectiveMaxDate || ageMaxDate < effectiveMaxDate) {
+        effectiveMaxDate = ageMaxDate;
+      }
+    }
+
+    return {
+      minDate: effectiveMinDate,
+      maxDate: effectiveMaxDate,
+    };
+  }
+
+  function subtractYears(date, years) {
+    const result = new Date(date);
+
+    result.setFullYear(result.getFullYear() - years);
+
+    return startOfDay(result);
+  }
+
+  /*
+   * --------------------------------------------------
+   * EFFECTIVE DATE BOUNDS
+   *
+   * Combines explicit date limits with age-based
+   * restrictions to determine the final selectable
+   * date range.
+   *
+   * When multiple restrictions are provided, the most
+   * restrictive boundary is used.
+   * --------------------------------------------------
+   */
+
+  function calculateDateBounds({ explicitMinDate, explicitMaxDate, minAge, maxAge }) {
+    const today = startOfDay(new Date());
+
+    let effectiveMinDate = explicitMinDate;
+    let effectiveMaxDate = explicitMaxDate;
+
+    /*
+     * Maximum age
+     *
+     * Example:
+     * maxAge: 120
+     *
+     * The user cannot select a date of birth
+     * earlier than today minus 120 years.
+     */
+    if (maxAge !== undefined && maxAge !== null) {
+      const ageMinDate = subtractYears(today, Number(maxAge));
+
+      if (!effectiveMinDate || ageMinDate > effectiveMinDate) {
+        effectiveMinDate = ageMinDate;
+      }
+    }
+
+    /*
+     * Minimum age
+     *
+     * Example:
+     * minAge: 18
+     *
+     * The user cannot select a date of birth
+     * later than today minus 18 years.
+     */
+    if (minAge !== undefined && minAge !== null) {
+      const ageMaxDate = subtractYears(today, Number(minAge));
+
+      if (!effectiveMaxDate || ageMaxDate < effectiveMaxDate) {
+        effectiveMaxDate = ageMaxDate;
+      }
+    }
+
+    return {
+      minDate: effectiveMinDate,
+      maxDate: effectiveMaxDate,
+    };
+  }
+
+  function getEffectiveMinDate({ explicitMinDate, explicitMaxDate, minAge, maxAge }) {
+    const today = startOfDay(new Date());
+
+    let result = explicitMinDate;
+
+    // Minimum age means the person must be at least X years old.
+    // Therefore their DOB cannot be after today minus X years.
+    if (minAge !== undefined && minAge !== null) {
+      const ageBasedMaxDate = subtractYears(today, Number(minAge));
+
+      if (!result || ageBasedMaxDate > result) {
+        result = ageBasedMaxDate;
+      }
+    }
+
+    return result;
+  }
+
+  function getEffectiveMaxDate({ explicitMaxDate, minAge, maxAge }) {
+    const today = startOfDay(new Date());
+
+    let result = explicitMaxDate;
+
+    // Maximum age means the DOB cannot be before today minus X years.
+    if (maxAge !== undefined && maxAge !== null) {
+      const ageBasedMinDate = subtractYears(today, Number(maxAge));
+
+      if (!result || ageBasedMinDate < result) {
+        result = ageBasedMinDate;
+      }
+    }
+
+    // minAge affects the maximum allowed DOB.
+    if (minAge !== undefined && minAge !== null) {
+      const ageBasedMaxDate = subtractYears(today, Number(minAge));
+
+      if (!result || ageBasedMaxDate < result) {
+        result = ageBasedMaxDate;
+      }
+    }
+
+    return result;
   }
 
   /*
