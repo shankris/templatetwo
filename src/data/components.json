@@ -7,6 +7,7 @@
     "component": "DevicePreview",
     "category": "layout"
   },
+
   {
     "slug": "timeline",
     "name": "Timeline",
@@ -15,6 +16,7 @@
     "component": "Timeline",
     "category": "data-display"
   },
+
   {
     "slug": "multi-step-form-1",
     "name": "Multi Step Form 1",
@@ -32,10 +34,10 @@
     "category": "forms"
   },
   {
-    "slug": "date-picker",
-    "name": "Date Picker",
-    "displayName": "Date Picker",
-    "description": "A reusable date picker supporting single dates, ranges, multiple months and optional month/year dropdowns.",
+    "slug": "basic",
+    "name": "Date Picker Basic",
+    "displayName": "Date Picker — Basic",
+    "description": "A basic date picker for selecting a single date.",
     "component": "DatePicker",
     "category": "forms",
     "props": {
@@ -43,6 +45,46 @@
         "range": false,
         "months": 1,
         "monthYearDropdown": true
+      },
+      "width": 380
+    }
+  },
+  {
+    "slug": "year-selection",
+    "name": "Date Picker Year Selection",
+    "displayName": "Date Picker — Year Selection",
+    "description": "A date picker with month and year selection for quickly navigating dates.",
+    "component": "DatePicker",
+    "category": "forms",
+    "props": {
+      "datePicker": {
+        "range": false,
+        "months": 1,
+        "monthYearDropdown": true,
+        "minAge": 18,
+        "maxAge": 100
+      },
+      "width": 380
+    }
+  },
+  {
+    "slug": "appointment-date",
+    "name": "Date Picker Appointment Date",
+    "displayName": "Date Picker — Appointment Date",
+    "description": "A date picker configured for selecting an appointment date.",
+    "component": "DatePicker",
+    "category": "forms",
+    "props": {
+      "validation": {
+        "minDate": "today+1",
+        "maxDate": "today+100"
+      },
+      "datePicker": {
+        "range": false,
+        "months": 1,
+        "monthYearDropdown": false,
+        "minAge": null,
+        "maxAge": null
       },
       "width": 380
     }

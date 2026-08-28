@@ -32,7 +32,24 @@
           {
             "id": "date-picker",
             "label": "Date Picker",
-            "href": "/components/ui/forms/date-picker"
+            "href": "/components/ui/forms/date-picker",
+            "children": [
+              {
+                "id": "datePickerBasic",
+                "label": "Basic",
+                "href": "/components/ui/forms/date-picker/basic"
+              },
+              {
+                "id": "datePickerYear",
+                "label": "Year Selection",
+                "href": "/components/ui/forms/date-picker/year-selection"
+              },
+              {
+                "id": "datePickerAppointment",
+                "label": "Appointment Date",
+                "href": "/components/ui/forms/date-picker/appointment-date"
+              }
+            ]
           },
           {
             "id": "multiStepForm1",

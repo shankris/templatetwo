@@ -10,6 +10,18 @@ import styles from "./DatePicker.module.css";
 function parseISODate(value) {
   if (!value) return undefined;
 
+  if (typeof value === "string" && value.startsWith("today")) {
+    const offset = value === "today" ? 0 : Number(value.replace("today", ""));
+
+    if (Number.isNaN(offset)) return undefined;
+
+    const today = startOfDay(new Date());
+
+    today.setDate(today.getDate() + offset);
+
+    return startOfDay(today);
+  }
+
   const [year, month, day] = value.split("-").map(Number);
 
   if (!year || !month || !day) return undefined;
@@ -43,17 +55,6 @@ function startOfDay(date) {
   result.setHours(0, 0, 0, 0);
 
   return result;
-}
-
-function formatDisplayDateWithDay(date, locale) {
-  if (!date) return "";
-
-  return new Intl.DateTimeFormat(locale || "en-US", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(date);
 }
 
 function getRelativeDate(date) {
@@ -166,6 +167,71 @@ function getRelativeDate(date) {
   return "";
 }
 
+/*
+ * --------------------------------------------------
+ * EFFECTIVE DATE BOUNDS
+ *
+ * Combines explicit date limits with age-based
+ * restrictions to determine the final selectable
+ * date range.
+ *
+ * When multiple restrictions are provided, the most
+ * restrictive boundary is used.
+ * --------------------------------------------------
+ */
+
+function calculateDateBounds({ explicitMinDate, explicitMaxDate, minAge, maxAge }) {
+  const today = startOfDay(new Date());
+
+  let effectiveMinDate = explicitMinDate;
+  let effectiveMaxDate = explicitMaxDate;
+
+  /*
+   * Maximum age
+   *
+   * Example:
+   * maxAge: 120
+   *
+   * DOB cannot be earlier than today - 120 years.
+   */
+  if (maxAge !== undefined && maxAge !== null) {
+    const ageMinDate = subtractYears(today, Number(maxAge));
+
+    if (!effectiveMinDate || ageMinDate > effectiveMinDate) {
+      effectiveMinDate = ageMinDate;
+    }
+  }
+
+  /*
+   * Minimum age
+   *
+   * Example:
+   * minAge: 18
+   *
+   * DOB cannot be later than today - 18 years.
+   */
+  if (minAge !== undefined && minAge !== null) {
+    const ageMaxDate = subtractYears(today, Number(minAge));
+
+    if (!effectiveMaxDate || ageMaxDate < effectiveMaxDate) {
+      effectiveMaxDate = ageMaxDate;
+    }
+  }
+
+  return {
+    minDate: effectiveMinDate,
+    maxDate: effectiveMaxDate,
+  };
+}
+
+function subtractYears(date, years) {
+  const result = new Date(date);
+
+  result.setFullYear(result.getFullYear() - years);
+
+  return startOfDay(result);
+}
+
 export default function DatePicker({ value, onChange, onBlur, locale, validation = {}, placeholder = "Please select a date", datePicker = {}, width = 380 }) {
   const [open, setOpen] = useState(false);
 
@@ -221,6 +287,9 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
     [explicitMinDate, explicitMaxDate, minAge, maxAge],
   );
 
+  const today = startOfDay(new Date());
+  const todayInRange = (!minDate || today >= minDate) && (!maxDate || today <= maxDate);
+
   /*
    * Keep pending selection in sync when the external
    * value changes.
@@ -243,180 +312,31 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
 
   /*
    * --------------------------------------------------
-   * EFFECTIVE DATE BOUNDS
-   *
-   * Combines explicit date limits with age-based
-   * restrictions to determine the final selectable
-   * date range.
-   *
-   * When multiple restrictions are provided, the most
-   * restrictive boundary is used.
-   * --------------------------------------------------
-   */
-
-  function calculateDateBounds({ explicitMinDate, explicitMaxDate, minAge, maxAge }) {
-    const today = startOfDay(new Date());
-
-    let effectiveMinDate = explicitMinDate;
-    let effectiveMaxDate = explicitMaxDate;
-
-    /*
-     * Maximum age
-     *
-     * Example:
-     * maxAge: 120
-     *
-     * DOB cannot be earlier than today - 120 years.
-     */
-    if (maxAge !== undefined && maxAge !== null) {
-      const ageMinDate = subtractYears(today, Number(maxAge));
-
-      if (!effectiveMinDate || ageMinDate > effectiveMinDate) {
-        effectiveMinDate = ageMinDate;
-      }
-    }
-
-    /*
-     * Minimum age
-     *
-     * Example:
-     * minAge: 18
-     *
-     * DOB cannot be later than today - 18 years.
-     */
-    if (minAge !== undefined && minAge !== null) {
-      const ageMaxDate = subtractYears(today, Number(minAge));
-
-      if (!effectiveMaxDate || ageMaxDate < effectiveMaxDate) {
-        effectiveMaxDate = ageMaxDate;
-      }
-    }
-
-    return {
-      minDate: effectiveMinDate,
-      maxDate: effectiveMaxDate,
-    };
-  }
-
-  function subtractYears(date, years) {
-    const result = new Date(date);
-
-    result.setFullYear(result.getFullYear() - years);
-
-    return startOfDay(result);
-  }
-
-  /*
-   * --------------------------------------------------
-   * EFFECTIVE DATE BOUNDS
-   *
-   * Combines explicit date limits with age-based
-   * restrictions to determine the final selectable
-   * date range.
-   *
-   * When multiple restrictions are provided, the most
-   * restrictive boundary is used.
-   * --------------------------------------------------
-   */
-
-  function calculateDateBounds({ explicitMinDate, explicitMaxDate, minAge, maxAge }) {
-    const today = startOfDay(new Date());
-
-    let effectiveMinDate = explicitMinDate;
-    let effectiveMaxDate = explicitMaxDate;
-
-    /*
-     * Maximum age
-     *
-     * Example:
-     * maxAge: 120
-     *
-     * The user cannot select a date of birth
-     * earlier than today minus 120 years.
-     */
-    if (maxAge !== undefined && maxAge !== null) {
-      const ageMinDate = subtractYears(today, Number(maxAge));
-
-      if (!effectiveMinDate || ageMinDate > effectiveMinDate) {
-        effectiveMinDate = ageMinDate;
-      }
-    }
-
-    /*
-     * Minimum age
-     *
-     * Example:
-     * minAge: 18
-     *
-     * The user cannot select a date of birth
-     * later than today minus 18 years.
-     */
-    if (minAge !== undefined && minAge !== null) {
-      const ageMaxDate = subtractYears(today, Number(minAge));
-
-      if (!effectiveMaxDate || ageMaxDate < effectiveMaxDate) {
-        effectiveMaxDate = ageMaxDate;
-      }
-    }
-
-    return {
-      minDate: effectiveMinDate,
-      maxDate: effectiveMaxDate,
-    };
-  }
-
-  function getEffectiveMinDate({ explicitMinDate, explicitMaxDate, minAge, maxAge }) {
-    const today = startOfDay(new Date());
-
-    let result = explicitMinDate;
-
-    // Minimum age means the person must be at least X years old.
-    // Therefore their DOB cannot be after today minus X years.
-    if (minAge !== undefined && minAge !== null) {
-      const ageBasedMaxDate = subtractYears(today, Number(minAge));
-
-      if (!result || ageBasedMaxDate > result) {
-        result = ageBasedMaxDate;
-      }
-    }
-
-    return result;
-  }
-
-  function getEffectiveMaxDate({ explicitMaxDate, minAge, maxAge }) {
-    const today = startOfDay(new Date());
-
-    let result = explicitMaxDate;
-
-    // Maximum age means the DOB cannot be before today minus X years.
-    if (maxAge !== undefined && maxAge !== null) {
-      const ageBasedMinDate = subtractYears(today, Number(maxAge));
-
-      if (!result || ageBasedMinDate < result) {
-        result = ageBasedMinDate;
-      }
-    }
-
-    // minAge affects the maximum allowed DOB.
-    if (minAge !== undefined && minAge !== null) {
-      const ageBasedMaxDate = subtractYears(today, Number(minAge));
-
-      if (!result || ageBasedMaxDate < result) {
-        result = ageBasedMaxDate;
-      }
-    }
-
-    return result;
-  }
-
-  /*
-   * --------------------------------------------------
    * DISPLAY VALUE
    * --------------------------------------------------
    */
 
   const displayValue = formatDisplayDate(committedDate, locale);
-  const selectedDateDisplay = formatDisplayDate(pendingDate, locale);
+
+  function handleClear() {
+    // Clear the pending selection immediately.
+    setPendingDate(undefined);
+
+    // Clear the committed value when the component
+    // is being used as a controlled form field.
+    onChange?.("");
+
+    // Clear the internal value when the component
+    // is being displayed independently.
+    if (value === undefined) {
+      setInternalDate(undefined);
+    }
+
+    // Close the calendar after clearing the date.
+    setOpen(false);
+
+    onBlur?.();
+  }
 
   /*
    * --------------------------------------------------
@@ -425,11 +345,27 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
    */
 
   function handleOpen() {
+    // Restore the currently committed date whenever
+    // the calendar is reopened.
     setPendingDate(committedDate);
 
     if (committedDate) {
+      /*
+       * Open on the month containing the currently
+       * selected date.
+       */
       setVisibleMonth(new Date(committedDate.getFullYear(), committedDate.getMonth(), 1));
+    } else if (minDate) {
+      /*
+       * When no date has been selected, open on the
+       * first month containing a valid selectable date.
+       */
+      setVisibleMonth(new Date(minDate.getFullYear(), minDate.getMonth(), 1));
     } else {
+      /*
+       * If there is no selected date or minimum date,
+       * open on the current month.
+       */
       const today = new Date();
 
       setVisibleMonth(new Date(today.getFullYear(), today.getMonth(), 1));
@@ -486,10 +422,8 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
 
     const formattedDate = formatISODate(pendingDate);
 
-    // Works when used inside a form
     onChange?.(formattedDate);
 
-    // Works when displayed independently in the component library
     if (value === undefined) {
       setInternalDate(pendingDate);
     }
@@ -580,14 +514,22 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
           ---------------------------------------- */}
 
           <div className={styles.actions}>
+            {todayInRange && (
+              <button
+                type='button'
+                className={styles.todayButton}
+                onClick={handleToday}
+              >
+                Today
+              </button>
+            )}
             <button
               type='button'
-              className={styles.todayButton}
-              onClick={handleToday}
+              className={styles.clearButton}
+              onClick={handleClear}
             >
-              Today
+              Clear
             </button>
-
             <div className={styles.actionButtons}>
               <button
                 type='button'
