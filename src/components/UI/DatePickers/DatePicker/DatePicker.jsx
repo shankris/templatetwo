@@ -22,11 +22,19 @@ function parseISODate(value) {
     return startOfDay(today);
   }
 
-  const [year, month, day] = value.split("-").map(Number);
+  // Support both:
+  // 2026-09-01
+  // 2026-09-01T10:30
+  if (typeof value === "string") {
+    const datePart = value.slice(0, 10);
+    const [year, month, day] = datePart.split("-").map(Number);
 
-  if (!year || !month || !day) return undefined;
+    if (!year || !month || !day) return undefined;
 
-  return new Date(year, month - 1, day);
+    return new Date(year, month - 1, day);
+  }
+
+  return undefined;
 }
 
 function formatISODate(date) {
@@ -37,6 +45,68 @@ function formatISODate(date) {
   const day = String(date.getDate()).padStart(2, "0");
 
   return `${year}-${month}-${day}`;
+}
+
+function parseTime(value) {
+  if (!value || typeof value !== "string") {
+    return null;
+  }
+
+  const [hours, minutes] = value.split(":").map(Number);
+
+  if (Number.isNaN(hours) || Number.isNaN(minutes) || hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
+    return null;
+  }
+
+  return {
+    hours,
+    minutes,
+  };
+}
+
+function formatTime(hours, minutes) {
+  return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+}
+
+function getTimeFromValue(value) {
+  if (!value || typeof value !== "string") {
+    return "";
+  }
+
+  const match = value.match(/T(\d{2}):(\d{2})/);
+
+  if (!match) {
+    return "";
+  }
+
+  return `${match[1]}:${match[2]}`;
+}
+
+function generateTimeSlots(startTime, endTime, interval) {
+  const start = parseTime(startTime);
+  const end = parseTime(endTime);
+
+  if (!start || !end || !interval) {
+    return [];
+  }
+
+  const startMinutes = start.hours * 60 + start.minutes;
+  const endMinutes = end.hours * 60 + end.minutes;
+
+  if (endMinutes < startMinutes) {
+    return [];
+  }
+
+  const slots = [];
+
+  for (let minutes = startMinutes; minutes <= endMinutes; minutes += Number(interval)) {
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+
+    slots.push(formatTime(hours, mins));
+  }
+
+  return slots;
 }
 
 function formatDisplayDate(date, locale) {
@@ -235,7 +305,14 @@ function subtractYears(date, years) {
 export default function DatePicker({ value, onChange, onBlur, locale, validation = {}, placeholder = "Please select a date", datePicker = {}, width = 380 }) {
   const [open, setOpen] = useState(false);
 
-  const { monthYearDropdown = true, minAge, maxAge } = datePicker;
+  const { monthYearDropdown = true, minAge, maxAge, validation: datePickerValidation = {}, showTime = false, startTime = "09:00", endTime = "17:00", timeInterval = 30, blockedTimes = [] } = datePicker;
+  const timeSlots = useMemo(() => generateTimeSlots(startTime, endTime, timeInterval), [startTime, endTime, timeInterval]);
+
+  const effectiveValidation = {
+    ...validation,
+    ...datePickerValidation,
+  };
+
   /*
    * --------------------------------------------------
    * COMMITTED VALUE
@@ -257,6 +334,7 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
    */
 
   const [pendingDate, setPendingDate] = useState(committedDate);
+  const [pendingTime, setPendingTime] = useState(getTimeFromValue(value) || timeSlots[0] || "");
 
   /*
    * --------------------------------------------------
@@ -272,9 +350,8 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
    * --------------------------------------------------
    */
 
-  const explicitMinDate = useMemo(() => parseISODate(validation.minDate), [validation.minDate]);
-
-  const explicitMaxDate = useMemo(() => parseISODate(validation.maxDate), [validation.maxDate]);
+  const explicitMinDate = useMemo(() => parseISODate(effectiveValidation.minDate), [effectiveValidation.minDate]);
+  const explicitMaxDate = useMemo(() => parseISODate(effectiveValidation.maxDate), [effectiveValidation.maxDate]);
 
   const { minDate, maxDate } = useMemo(
     () =>
@@ -299,8 +376,9 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
     if (value !== undefined) {
       setInternalDate(selectedDate);
       setPendingDate(selectedDate);
+      setPendingTime(getTimeFromValue(value) || timeSlots[0] || "");
     }
-  }, [value, selectedDate]);
+  }, [value, selectedDate, timeSlots]);
 
   function formatSelectedDay(date, locale) {
     if (!date) return "";
@@ -321,6 +399,7 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
   function handleClear() {
     // Clear the pending selection immediately.
     setPendingDate(undefined);
+    setPendingTime("");
 
     // Clear the committed value when the component
     // is being used as a controlled form field.
@@ -383,6 +462,9 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
   function handleSelect(date) {
     if (!date) return;
 
+    if (minDate && date < minDate) return;
+    if (maxDate && date > maxDate) return;
+
     setPendingDate(date);
   }
 
@@ -408,6 +490,7 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
 
   function handleCancel() {
     setPendingDate(committedDate);
+    setPendingTime(getTimeFromValue(value) || timeSlots[0] || "");
     setOpen(false);
   }
 
@@ -422,7 +505,9 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
 
     const formattedDate = formatISODate(pendingDate);
 
-    onChange?.(formattedDate);
+    const formattedValue = showTime && pendingTime ? `${formattedDate}T${pendingTime}` : formattedDate;
+
+    onChange?.(formattedValue);
 
     if (value === undefined) {
       setInternalDate(pendingDate);
@@ -508,6 +593,42 @@ export default function DatePicker({ value, onChange, onBlur, locale, validation
             }}
             disabled={[minDate ? { before: minDate } : undefined, maxDate ? { after: maxDate } : undefined].filter(Boolean)}
           />
+
+          {showTime && (
+            <div className={styles.timeSection}>
+              <label
+                htmlFor='appointment-time'
+                className={styles.timeLabel}
+              >
+                Time
+              </label>
+
+              <select
+                id='appointment-time'
+                className={styles.timeSelect}
+                value={pendingTime}
+                onChange={(event) => setPendingTime(event.target.value)}
+                disabled={!pendingDate}
+              >
+                <option value=''>Select time</option>
+
+                {timeSlots.map((time) => {
+                  const blocked = blockedTimes.includes(time);
+
+                  return (
+                    <option
+                      key={time}
+                      value={time}
+                      disabled={blocked}
+                    >
+                      {time}
+                      {blocked ? " — Unavailable" : ""}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+          )}
 
           {/* ----------------------------------------
               ACTIONS

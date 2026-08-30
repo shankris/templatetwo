@@ -1,0 +1,42 @@
+{
+  "card": {
+    "title": "Cash Allocation"
+  },
+  "data": {
+    "1d": {
+      "value": 22,
+      "variation": 2,
+      "description": "Cash in hand - $23,450"
+    },
+    "1w": {
+      "value": 24,
+      "variation": 4,
+      "description": "Cash in hand - $25,120"
+    },
+    "1m": {
+      "value": 44,
+      "variation": -2,
+      "description": "Cash in hand - $23,450"
+    },
+    "3m": {
+      "value": 27,
+      "variation": 5,
+      "description": "Cash in hand - $28,760"
+    },
+    "6m": {
+      "value": 25,
+      "variation": -3,
+      "description": "Cash in hand - $26,340"
+    },
+    "9m": {
+      "value": 23,
+      "variation": -2,
+      "description": "Cash in hand - $24,180"
+    },
+    "1y": {
+      "value": 21,
+      "variation": -4,
+      "description": "Cash in hand - $22,050"
+    }
+  }
+}

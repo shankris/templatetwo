@@ -71,22 +71,90 @@
     "slug": "appointment-date",
     "name": "Date Picker Appointment Date",
     "displayName": "Date Picker — Appointment Date",
-    "description": "A date picker configured for selecting an appointment date.",
+    "description": "A date picker configured for selecting an appointment date and time.",
     "component": "DatePicker",
     "category": "forms",
     "props": {
-      "validation": {
-        "minDate": "today+1",
-        "maxDate": "today+100"
-      },
       "datePicker": {
+        "validation": {
+          "minDate": "today+1",
+          "maxDate": "today+100"
+        },
         "range": false,
         "months": 1,
         "monthYearDropdown": false,
         "minAge": null,
-        "maxAge": null
+        "maxAge": null,
+        "showTime": true,
+        "startTime": "09:00",
+        "endTime": "17:00",
+        "timeInterval": 30
       },
       "width": 380
     }
+  },
+  {
+    "slug": "radial",
+    "name": "Radial",
+    "displayName": "Radial",
+    "description": "A Tabler-inspired radial portfolio allocation graph.",
+    "component": "Radial",
+    "category": "graphs"
+  },
+  {
+    "slug": "radial2",
+    "name": "Radial 2",
+    "displayName": "Radial 2",
+    "description": "A Tabler-inspired radial graph for displaying portfolio metrics.",
+    "component": "Radial2",
+    "category": "graphs"
+  },
+  {
+    "slug": "bar",
+    "name": "Bar",
+    "displayName": "Bar Graph",
+    "description": "A compact Tabler-inspired bar graph.",
+    "component": "Bar",
+    "category": "graphs"
+  },
+  {
+    "slug": "line",
+    "name": "Line",
+    "displayName": "Line Graph",
+    "description": "A compact Tabler-inspired line graph for displaying portfolio trends.",
+    "component": "Line",
+    "category": "graphs"
+  },
+  {
+    "slug": "progress",
+    "name": "Progress",
+    "displayName": "Progress",
+    "description": "A compact horizontal progress indicator for displaying portfolio allocation or completion values.",
+    "component": "Progress",
+    "category": "graphs"
+  },
+  {
+    "slug": "area",
+    "name": "Area",
+    "displayName": "Area Chart",
+    "description": "A reusable area chart for displaying trends over time.",
+    "component": "Area",
+    "category": "graphs"
+  },
+  {
+    "slug": "progress-small",
+    "name": "Progress Small",
+    "displayName": "Progress Small",
+    "description": "A compact progress indicator for displaying a metric and its completion level.",
+    "component": "ProgressSmall",
+    "category": "graphs"
+  },
+  {
+    "slug": "world-map",
+    "name": "WorldMap",
+    "displayName": "World Map",
+    "description": "An interactive world map for displaying web traffic by country.",
+    "component": "WorldMap",
+    "category": "graphs"
   }
 ]

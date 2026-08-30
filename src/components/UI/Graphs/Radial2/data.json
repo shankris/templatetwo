@@ -1,0 +1,49 @@
+{
+  "card": {
+    "title": "Active Users"
+  },
+
+  "data": {
+    "1d": {
+      "value": 25782,
+      "variation": -1,
+      "series": 75
+    },
+
+    "1w": {
+      "value": 26124,
+      "variation": 2,
+      "series": 78
+    },
+
+    "1m": {
+      "value": 27435,
+      "variation": 4,
+      "series": 82
+    },
+
+    "3m": {
+      "value": 28920,
+      "variation": 6,
+      "series": 86
+    },
+
+    "6m": {
+      "value": 30125,
+      "variation": 8,
+      "series": 89
+    },
+
+    "9m": {
+      "value": 31540,
+      "variation": 10,
+      "series": 92
+    },
+
+    "1y": {
+      "value": 32780,
+      "variation": 12,
+      "series": 95
+    }
+  }
+}

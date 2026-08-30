@@ -1,0 +1,42 @@
+{
+  "card": {
+    "title": "Today's Sales"
+  },
+  "data": {
+    "1d": {
+      "value": 6782,
+      "variation": 7,
+      "percentage": 72
+    },
+    "1w": {
+      "value": 7125,
+      "variation": 9,
+      "percentage": 76
+    },
+    "1m": {
+      "value": 7540,
+      "variation": 12,
+      "percentage": 81
+    },
+    "3m": {
+      "value": 7890,
+      "variation": 15,
+      "percentage": 86
+    },
+    "6m": {
+      "value": 8125,
+      "variation": 18,
+      "percentage": 89
+    },
+    "9m": {
+      "value": 8350,
+      "variation": 21,
+      "percentage": 92
+    },
+    "1y": {
+      "value": 8640,
+      "variation": 24,
+      "percentage": 95
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "card": {
+    "title": "Web Traffic"
+  },
+  "data": {
+    "IN": {
+      "country": "India",
+      "visitors": 28450
+    },
+    "US": {
+      "country": "United States",
+      "visitors": 18240
+    },
+    "GB": {
+      "country": "United Kingdom",
+      "visitors": 9430
+    },
+    "DE": {
+      "country": "Germany",
+      "visitors": 6210
+    },
+    "FR": {
+      "country": "France",
+      "visitors": 5140
+    },
+    "AU": {
+      "country": "Australia",
+      "visitors": 3870
+    },
+    "JP": {
+      "country": "Japan",
+      "visitors": 3290
+    },
+    "CA": {
+      "country": "Canada",
+      "visitors": 2940
+    },
+    "SG": {
+      "country": "Singapore",
+      "visitors": 2180
+    }
+  }
+}

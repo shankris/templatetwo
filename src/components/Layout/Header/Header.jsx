@@ -8,6 +8,7 @@ import { useState } from "react";
 import navigation from "@/data/navigation.json";
 import applicationNavigation from "@/data/applicationNavigation.json";
 import loggedInNavigation from "@/data/loggedInNavigation.json";
+import Brand from "../Brand/Brand";
 import PrimaryNavigation from "../PrimaryNavigation/PrimaryNavigation";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
@@ -39,10 +40,7 @@ export default function Header() {
     <>
       <header className={styles.header}>
         <div className={styles.content}>
-          <div className={styles.brand}>
-            Rapid<span>Prototypes</span>
-          </div>
-
+          <Brand />
           <PrimaryNavigation />
 
           <div className={styles.actions}>

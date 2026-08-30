@@ -6,6 +6,12 @@
     "icon": "home"
   },
   {
+    "id": "prototypes",
+    "label": "Prototypes",
+    "href": "/prototypes",
+    "icon": "grid"
+  },
+  {
     "id": "components",
     "label": "Components",
     "href": "/components",

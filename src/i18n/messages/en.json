@@ -1,6 +1,7 @@
 {
   "Header": {
     "home": "Home",
+    "prototypes": "Prototypes",
     "components": "Components",
     "about": "About",
     "contact": "Contact",
@@ -53,6 +54,15 @@
     "header": "Header",
     "sidebar": "Sidebar",
     "tabs": "Tabs",
+    "graphs": "Graphs",
+    "radial": "Radial One",
+    "radial2": "Radial Two",
+    "bar": "Bar",
+    "progress": "Progress",
+    "area": "Area",
+    "line": "Line",
+    "progressSmall": "Progress Small",
+    "worldMap": "World Map",
     "layout": "Layout",
     "container": "Container",
     "grid": "Grid",

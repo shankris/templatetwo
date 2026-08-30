@@ -1,0 +1,41 @@
+/* --------------------------------------------------
+   Brand
+
+   Shared application logo / wordmark styling.
+-------------------------------------------------- */
+
+.brand {
+  flex: 0 1 auto;
+
+  min-width: 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* --------------------------------------------------
+   Brand Secondary Text
+-------------------------------------------------- */
+
+.brand span {
+  display: block;
+
+  color: rgb(100, 100, 100);
+
+  font-weight: 300;
+  letter-spacing: 3px;
+
+  line-height: 0.9;
+}

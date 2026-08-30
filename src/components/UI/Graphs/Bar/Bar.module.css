@@ -1,0 +1,87 @@
+/* --------------------------------------------------
+   Metric
+-------------------------------------------------- */
+
+.metric {
+  display: flex;
+  align-items: baseline;
+
+  gap: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+
+/* --------------------------------------------------
+   Main Number
+-------------------------------------------------- */
+
+.value {
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1.2;
+
+  letter-spacing: -0.02em;
+
+  color: var(--text-primary);
+}
+
+
+/* --------------------------------------------------
+   Variation
+-------------------------------------------------- */
+
+.variation {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.125rem;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+
+/* --------------------------------------------------
+   Positive Variation
+-------------------------------------------------- */
+
+.variationPositive {
+  color: #2fb344;
+}
+
+
+/* --------------------------------------------------
+   Negative Variation
+-------------------------------------------------- */
+
+.variationNegative {
+  color: #d63939;
+}
+
+
+/* --------------------------------------------------
+   Chart Area
+-------------------------------------------------- */
+
+.chart {
+  width: 100%;
+  height: 70px;
+  min-width: 0;
+}
+
+
+/* --------------------------------------------------
+   No Data
+-------------------------------------------------- */
+
+.noData {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 80px;
+
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}

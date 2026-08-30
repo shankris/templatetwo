@@ -1,0 +1,167 @@
+/* --------------------------------------------------
+   Content
+-------------------------------------------------- */
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-width: 0;
+
+  justify-content: center;
+}
+
+
+/* --------------------------------------------------
+   Main Value
+-------------------------------------------------- */
+
+.value {
+  margin-bottom: 0.75rem;
+
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1.2;
+
+  letter-spacing: -0.02em;
+
+  color: var(--text-primary);
+}
+
+
+/* --------------------------------------------------
+   Progress Bar
+-------------------------------------------------- */
+
+.progress {
+  display: flex;
+
+  width: 100%;
+  height: 0.5rem;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: var(--bg-surface-elevated);
+}
+
+
+/* --------------------------------------------------
+   Filled Portion
+-------------------------------------------------- */
+
+.fill {
+  width: var(--progress-value);
+
+  flex-shrink: 0;
+
+  background: var(--progress-accent);
+
+  transition: width 250ms ease;
+}
+
+
+/* --------------------------------------------------
+   Remaining Portion
+-------------------------------------------------- */
+
+.remaining {
+  flex: 1;
+
+  min-width: 0;
+
+  background: var(--bg-surface-elevated);
+}
+
+
+/* --------------------------------------------------
+   No Data
+-------------------------------------------------- */
+
+.noData {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 80px;
+
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* --------------------------------------------------
+   Metric
+-------------------------------------------------- */
+
+.metric {
+  display: flex;
+  align-items: baseline;
+
+  gap: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+
+/* --------------------------------------------------
+   Main Value
+-------------------------------------------------- */
+
+.value {
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1.2;
+
+  letter-spacing: -0.02em;
+
+  color: var(--text-primary);
+}
+
+
+/* --------------------------------------------------
+   Variation
+-------------------------------------------------- */
+
+.variation {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.125rem;
+
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+
+/* --------------------------------------------------
+   Positive Variation
+-------------------------------------------------- */
+
+.variationPositive {
+  color: #2fb344;
+}
+
+
+/* --------------------------------------------------
+   Negative Variation
+-------------------------------------------------- */
+
+.variationNegative {
+  color: #d63939;
+}
+
+/* --------------------------------------------------
+   Progress Description
+-------------------------------------------------- */
+
+.description {
+  margin-bottom: 0.4rem;
+
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}

@@ -6,7 +6,6 @@
   --footer-height: 64px;
   --content-max-width: 1400px;
 
-
   --sidebar-expanded: 240px;
   --sidebar-collapsed: 64px;
 
@@ -22,8 +21,27 @@
   --heading-6: clamp(0.95rem, 1.25vw, 1.125rem);
 
   --space-sm: 0.5rem;
-  --space-md: 1rem;
+  --space-md: 10px;
   --space-lg: 2rem;
+
+  /* --------------------------------------------------
+   Vector Map
+-------------------------------------------------- */
+
+  --map-low: color-mix(in srgb,
+      var(--primary) 15%,
+      var(--bg-surface));
+
+  --map-border: var(--bg-surface);
+
+  --map-region: var(--border-subtle);
+
+
+  /* App surfaces */
+  --bg-app: #fbfbfb;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-hover: #f1f5f9;
 
   /* Global Shared Muted Accents */
   --muted-color: #6b7280;
@@ -32,11 +50,6 @@
   --muted-sand: #a39382;
   --muted-mauve: #8e7a8e;
   --muted-terracotta: #b87d6e;
-
-  /* LIGHT MODE DEFAULT SEMANTICS  */
-  --bg-app: #f8fafc;
-  --bg-surface: #ffffff;
-  --bg-surface-elevated: #f1f5f9;
 
   --text-primary: #0f172a;
   --text-secondary: #475569;
@@ -70,10 +83,13 @@
 /* src/styles/variables.css */
 
 [data-theme="dark"] {
+
   /* App surfaces */
   --bg-app: #0f172a;
   --bg-surface: #1e293b;
   --bg-surface-elevated: #334155;
+  --bg-hover: #334155;
+
 
   /* Text */
   --text-primary: #f8fafc;

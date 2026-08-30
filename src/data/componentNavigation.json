@@ -81,7 +81,53 @@
           }
         ]
       },
-
+      {
+        "id": "graphs",
+        "label": "Graphs",
+        "href": "/components/ui/graphs",
+        "children": [
+          {
+            "id": "radial",
+            "label": "Radial",
+            "href": "/components/ui/graphs/radial"
+          },
+          {
+            "id": "radial2",
+            "label": "Radial 2",
+            "href": "/components/ui/graphs/radial2"
+          },
+          {
+            "id": "bar",
+            "label": "Bar",
+            "href": "/components/ui/graphs/bar"
+          },
+          {
+            "id": "line",
+            "label": "Line",
+            "href": "/components/ui/graphs/line"
+          },
+          {
+            "id": "progress",
+            "label": "Progress",
+            "href": "/components/ui/graphs/progress"
+          },
+          {
+            "id": "area",
+            "label": "Area",
+            "href": "/components/ui/graphs/area"
+          },
+          {
+            "id": "progressSmall",
+            "label": "Progress Small",
+            "href": "/components/ui/graphs/progress-small"
+          },
+          {
+            "id": "worldMap",
+            "label": "World Map",
+            "href": "/components/ui/graphs/world-map"
+          }
+        ]
+      },
       {
         "id": "feedback",
         "label": "Feedback",

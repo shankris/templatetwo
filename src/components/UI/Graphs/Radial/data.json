@@ -1,0 +1,46 @@
+{
+  "type": "radial",
+
+  "card": {
+    "title": "Cash Allocation",
+    "subtitle": "Stock to Cash in hand"
+  },
+
+  "data": {
+    "1d": {
+      "invested": 750000,
+      "cash": 250000,
+      "total": 1000000
+    },
+    "1w": {
+      "invested": 765000,
+      "cash": 235000,
+      "total": 1000000
+    },
+    "1m": {
+      "invested": 780000,
+      "cash": 220000,
+      "total": 1000000
+    },
+    "3m": {
+      "invested": 810000,
+      "cash": 190000,
+      "total": 1000000
+    },
+    "6m": {
+      "invested": 835000,
+      "cash": 165000,
+      "total": 1000000
+    },
+    "9m": {
+      "invested": 850000,
+      "cash": 150000,
+      "total": 1000000
+    },
+    "1y": {
+      "invested": 875000,
+      "cash": 125000,
+      "total": 1000000
+    }
+  }
+}
