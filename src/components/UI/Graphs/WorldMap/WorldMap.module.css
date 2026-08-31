@@ -33,13 +33,9 @@
 
 .content {
   display: grid;
-
   grid-template-columns: minmax(0, 1fr) 10rem;
-
   align-items: stretch;
-
   gap: .5rem;
-
   width: 100%;
   min-width: 0;
 }
