@@ -1,0 +1,41 @@
+{
+  "style": {
+    "borderWidth": "1px",
+    "borderColor": "var(--border-subtle)",
+    "selectedBackground": "var(--selection-background)",
+    "textColor": "var(--text-primary)",
+    "labelColor": "var(--text-secondary)",
+    "borderRadius": "4px",
+    "padding": "6px 8px"
+  },
+  "fields": [
+    {
+      "id": "interests",
+      "label": "Interests",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+        {
+          "value": "sports",
+          "label": "Sports Updates",
+          "description": "Receive news and updates about your favourite sports."
+        },
+        {
+          "value": "design",
+          "label": "Design",
+          "description": "Get the latest design trends, tips, and inspiration."
+        },
+        {
+          "value": "photography",
+          "label": "Photography",
+          "description": "Receive photography tips, tutorials, and inspiration."
+        },
+        {
+          "value": "travel",
+          "label": "Travel",
+          "description": "Get travel tips, destination guides, and inspiration."
+        }
+      ]
+    }
+  ]
+}

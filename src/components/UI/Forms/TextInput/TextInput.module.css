@@ -1,0 +1,61 @@
+/* --------------------------------------------------
+   Input
+-------------------------------------------------- */
+
+.input {
+  display: block;
+  width: 100%;
+  padding: var(--input-padding, 10px 12px);
+  border:
+    var(--input-border-width, 1px) solid var(--input-border-color, var(--border-subtle));
+  border-radius: var(--input-border-radius, 6px);
+  background:
+    var(--input-background, var(--bg-surface));
+  color:
+    var(--input-text-color, var(--text-primary));
+  font: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: var(--input-placeholder-color,
+      var(--text-muted));
+}
+
+.input:focus {
+  border-color:
+    var(--input-focus-border-color,
+      var(--primary));
+}
+
+
+/* --------------------------------------------------
+   Floating Label
+-------------------------------------------------- */
+
+.floating .controlRow {
+  align-items: center;
+}
+
+.floating .control>input:focus+.floatingLabel,
+.floating .control>input:not(:placeholder-shown)+.floatingLabel {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 12px;
+}
+
+.floatingLabel {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  padding: 0 4px;
+  transform: translateY(-50%);
+  background: var(--input-background, var(--bg-surface));
+  color: var(--text-secondary);
+  pointer-events: none;
+  transition:
+    top 0.15s ease,
+    transform 0.15s ease,
+    font-size 0.15s ease;
+}

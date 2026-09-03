@@ -1,0 +1,28 @@
+{
+  "style": {
+    "borderWidth": "1px",
+    "borderColor": "var(--border-subtle)",
+    "focusBorderColor": "var(--primary)",
+    "textColor": "var(--text-primary)",
+    "backgroundColor": "var(--bg-surface)",
+    "labelColor": "var(--text-secondary)",
+    "placeholderColor": "var(--text-muted)",
+    "borderRadius": "6px",
+    "padding": "10px 12px"
+  },
+  "fields": [
+    {
+      "id": "firstName",
+      "label": "First name",
+      "type": "text",
+      "placeholder": "Enter your first name",
+      "required": true,
+      "helperText": "Enter your name exactly as it appears on your Aadhaar Card.",
+      "helpText": "We need your name to verify your identity and ensure that your account information matches your official identification.",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 50
+      }
+    }
+  ]
+}

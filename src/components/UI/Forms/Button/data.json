@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "primary": {
+      "label": "Primary Button"
+    },
+    "secondary": {
+      "label": "Secondary Button"
+    },
+    "ghost": {
+      "label": "Ghost Button"
+    }
+  }
+}

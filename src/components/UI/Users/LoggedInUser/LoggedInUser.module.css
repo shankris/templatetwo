@@ -1,0 +1,313 @@
+/* --------------------------------------------------
+   Wrapper
+-------------------------------------------------- */
+
+.wrapper {
+  position: relative;
+  width: var(--logged-in-user-width, 240px);
+  max-width: 100%;
+}
+
+
+/* --------------------------------------------------
+   User Button
+-------------------------------------------------- */
+
+.userButton {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  padding: 6px;
+  border: 0;
+  background-color: var(--bg-surface-elevated);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.userButton:hover {
+  background-color: var(--bg-hover);
+}
+
+
+/* --------------------------------------------------
+   Avatar
+-------------------------------------------------- */
+
+.avatar {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.initials {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+
+/* --------------------------------------------------
+   User Information
+-------------------------------------------------- */
+
+.userInfo {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  overflow: hidden;
+}
+
+
+/* --------------------------------------------------
+   User Role
+-------------------------------------------------- */
+
+.role {
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+
+/* --------------------------------------------------
+   Dropdown Chevron
+-------------------------------------------------- */
+
+.chevron {
+  flex: 0 0 auto;
+  color: var(--text-muted);
+  transition: transform 180ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+
+/* --------------------------------------------------
+   Account Menu
+-------------------------------------------------- */
+
+.details {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 260px;
+  padding: 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background-color: var(--bg-surface);
+  box-shadow: var(--box-shadow);
+}
+
+/* --------------------------------------------------
+   Account Information
+-------------------------------------------------- */
+
+.accountInfo {
+  border-radius: 6px;
+  transition: background-color 150ms ease;
+}
+
+.accountInfo:hover {
+  background-color: var(--bg-hover);
+}
+
+/* --------------------------------------------------
+   Menu Header
+-------------------------------------------------- */
+
+.detailsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 10px;
+}
+
+.detailsRole {
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+
+/* --------------------------------------------------
+   Email
+-------------------------------------------------- */
+
+.emailRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0 11px;
+  color: var(--text-muted);
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.emailRow svg {
+  flex: 0 0 auto;
+}
+
+.emailRow span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* --------------------------------------------------
+   Menu Section
+-------------------------------------------------- */
+
+.menuSection {
+  padding-top: 5px;
+}
+
+
+/* --------------------------------------------------
+   Menu Item
+-------------------------------------------------- */
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 34px;
+  gap: 9px;
+  padding: 6px 7px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.menuItem svg {
+  flex: 0 0 auto;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------
+   Menu Item Label
+-------------------------------------------------- */
+
+.menuItemLabel {
+  flex: 1;
+}
+
+
+/* --------------------------------------------------
+   Divider
+-------------------------------------------------- */
+
+.divider {
+  height: 1px;
+  margin: 8px 0;
+  background-color: var(--border-subtle);
+}
+
+
+/* --------------------------------------------------
+   Notification Toggle
+-------------------------------------------------- */
+
+.toggle {
+  position: relative;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 18px;
+  border-radius: 999px;
+  background-color: var(--border-bold);
+  transition: background-color 180ms ease;
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  transition: transform 180ms ease;
+}
+
+.toggleActive {
+  background-color: var(--primary);
+}
+
+.toggleActive .toggleKnob {
+  transform: translateX(12px);
+}
+
+
+/* --------------------------------------------------
+   Logout
+-------------------------------------------------- */
+
+.logout {
+  color: var(--text-secondary);
+}
+
+.logout:hover {
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------
+   Last Session
+-------------------------------------------------- */
+
+.lastSession {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 2px 7px 8px 32px;
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.sessionLabel {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sessionRelative {
+  font-weight: 400;
+}
+
+.sessionTime {
+  white-space: nowrap;
+}
+
+.sessionDuration {
+  font-size: 10px;
+  font-weight: 500;
+}

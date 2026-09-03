@@ -1,0 +1,227 @@
+/* --------------------------------------------------
+   Autocomplete
+-------------------------------------------------- */
+
+.autocomplete {
+  position: relative;
+  width: 100%;
+}
+
+
+/* --------------------------------------------------
+   Input
+-------------------------------------------------- */
+
+.input {
+  display: block;
+  width: 100%;
+  padding: var(--input-padding, 10px 12px);
+  border:
+    var(--input-border-width, 1px) solid var(--input-border-color, var(--border-subtle));
+  border-radius:
+    var(--input-border-radius, 6px);
+  background:
+    var(--input-background, var(--bg-surface));
+  color:
+    var(--input-text-color, var(--text-primary));
+  font: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color:
+    var(--input-placeholder-color, var(--text-muted));
+}
+
+.input:focus {
+  border-color:
+    var(--input-focus-border-color, var(--primary));
+}
+
+
+/* --------------------------------------------------
+   Results
+-------------------------------------------------- */
+
+.results {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  overflow: hidden;
+
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+
+  background: var(--bg-surface);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* --------------------------------------------------
+   Result
+-------------------------------------------------- */
+
+.result {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 56px;
+
+  padding: 8px 12px;
+  gap: 10px;
+
+  border: 0;
+
+  background: transparent;
+  color: var(--text-primary);
+
+  font: inherit;
+  text-align: left;
+
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.result:hover,
+.result.active {
+  background: var(--bg-hover);
+}
+
+
+/* --------------------------------------------------
+   Result / Selected Content
+-------------------------------------------------- */
+
+.resultContent,
+.selectedContent {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+
+  min-width: 0;
+  width: 0;
+}
+
+.resultName,
+.selectedName {
+  display: block;
+
+  overflow: hidden;
+
+  font-weight: 500;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resultDetails,
+.selectedDetails {
+  display: block;
+
+  overflow: hidden;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+  line-height: 1.4;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* --------------------------------------------------
+   Avatar
+-------------------------------------------------- */
+
+.avatar {
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 36px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+
+/* --------------------------------------------------
+   Selected User
+-------------------------------------------------- */
+
+.selected {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 46px;
+
+  padding: 6px 10px;
+  gap: 10px;
+
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+
+  background: var(--bg-surface);
+  color: var(--text-primary);
+
+  box-sizing: border-box;
+}
+
+.selected:hover {
+  border-color: var(--primary);
+}
+
+
+/* --------------------------------------------------
+   Clear Button
+-------------------------------------------------- */
+
+.clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  flex: 0 0 24px;
+
+  margin-left: auto;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--text-muted);
+
+  font: inherit;
+  font-size: 18px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.selected:hover .clear {
+  color: var(--text-primary);
+}
+
+
+/* --------------------------------------------------
+   Responsive
+-------------------------------------------------- */
+
+@media (max-width: 425px) {
+
+  .resultDetails,
+  .selectedDetails {
+    max-width: 220px;
+  }
+}

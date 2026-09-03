@@ -15,14 +15,39 @@
         "href": "/components/ui/forms",
         "children": [
           {
-            "id": "inputs",
-            "label": "Inputs",
-            "href": "/components/ui/forms/inputs"
+            "id": "text-input",
+            "label": "Text Input",
+            "href": "/components/ui/forms/text-input"
           },
           {
-            "id": "selects",
-            "label": "Selects",
-            "href": "/components/ui/forms/selects"
+            "id": "select",
+            "label": "Select",
+            "href": "/components/ui/forms/select"
+          },
+          {
+            "id": "text-area",
+            "label": "Text Area",
+            "href": "/components/ui/forms/text-area"
+          },
+          {
+            "id": "autocomplete",
+            "label": "Autocomplete",
+            "href": "/components/autocomplete"
+          },
+          {
+            "id": "radio",
+            "label": "Radio Button",
+            "href": "/components/ui/forms/radio"
+          },
+          {
+            "id": "checkbox",
+            "label": "Checkbox",
+            "href": "/components/ui/forms/checkbox"
+          },
+          {
+            "id": "button",
+            "label": "Button",
+            "href": "/components/ui/forms/button"
           },
           {
             "id": "datePickerNative",
@@ -78,6 +103,22 @@
             "id": "timeline",
             "label": "Timeline",
             "href": "/components/ui/data-display/timeline"
+          }
+        ]
+      },
+      {
+        "id": "users",
+        "label": "Users",
+        "children": [
+          {
+            "id": "logged-in-user",
+            "label": "Logged In User",
+            "href": "/components/users/logged-in-user"
+          },
+          {
+            "id": "guest-user",
+            "label": "Guest User",
+            "href": "/components/users/guest-user"
           }
         ]
       },

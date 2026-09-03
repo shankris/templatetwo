@@ -156,5 +156,93 @@
     "description": "An interactive world map for displaying web traffic by country.",
     "component": "WorldMap",
     "category": "graphs"
+  },
+  {
+    "slug": "logged-in-user",
+    "name": "LoggedInUser",
+    "displayName": "Logged In User",
+    "description": "A reusable logged-in user component with avatar, name, role, and expandable user details.",
+    "component": "LoggedInUser",
+    "category": "UI"
+  },
+  {
+    "slug": "guest-user",
+    "name": "Guest User",
+    "displayName": "Guest User",
+    "description": "A reusable guest user menu with previous session information, notification controls and login options.",
+    "component": "GuestUser",
+    "category": "users"
+  },
+  {
+    "slug": "text-input",
+    "name": "Text Input",
+    "displayName": "Text Input",
+    "description": "A reusable text input component supporting horizontal, vertical, and floating label layouts.",
+    "component": "TextInput",
+    "category": "forms"
+  },
+  {
+    "slug": "select",
+    "name": "Select",
+    "displayName": "Select",
+    "description": "A reusable native HTML select component supporting horizontal and vertical label layouts.",
+    "component": "Select",
+    "category": "forms"
+  },
+  {
+    "slug": "text-area",
+    "name": "Text Area",
+    "displayName": "Text Area",
+    "description": "A reusable multi-line text area component supporting horizontal and vertical label layouts.",
+    "component": "TextArea",
+    "category": "forms"
+  },
+  {
+    "slug": "radio",
+    "name": "Radio",
+    "displayName": "Radio Button",
+    "description": "A reusable radio button component with full-width selectable options and a ripple interaction.",
+    "component": "Radio",
+    "category": "forms"
+  },
+  {
+    "slug": "checkbox",
+    "name": "Checkbox",
+    "displayName": "Checkbox",
+    "description": "A reusable checkbox component with multiple selectable options, compact two-column layout, and ripple interaction.",
+    "component": "Checkbox",
+    "category": "forms"
+  },
+  {
+    "slug": "button",
+    "name": "Button",
+    "displayName": "Button",
+    "description": "A reusable button component supporting primary, secondary, and ghost variants with ripple interaction.",
+    "component": "Button",
+    "category": "forms"
+  },
+  {
+    "slug": "autocomplete",
+    "name": "Autocomplete",
+    "displayName": "Autocomplete",
+    "description": "A reusable autocomplete component with debounced search, keyboard navigation, and simple or rich selectable results.",
+    "component": "Autocomplete",
+    "category": "forms",
+    "props": {
+      "instances": [
+        {
+          "id": "employee-simple",
+          "label": "Simple Autocomplete",
+          "variant": "simple",
+          "placeholder": "Start typing an employee name..."
+        },
+        {
+          "id": "employee-rich",
+          "label": "Rich Autocomplete",
+          "variant": "rich",
+          "placeholder": "Start typing an employee name..."
+        }
+      ]
+    }
   }
 ]

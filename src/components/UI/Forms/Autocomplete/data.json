@@ -1,0 +1,13 @@
+{
+  "fields": [
+    {
+      "id": "employee",
+      "label": "Employee",
+      "variant": "rich",
+      "placeholder": "Start typing an employee name...",
+      "required": true,
+      "helperText": "Search by employee name or email.",
+      "helpText": "Select the employee you want to associate with this record."
+    }
+  ]
+}

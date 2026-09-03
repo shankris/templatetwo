@@ -1,0 +1,123 @@
+.field {
+  width: var(--option-width, 100%);
+  position: relative;
+}
+
+.label {
+  margin-bottom: 6px;
+  color: var(--input-label-color, var(--text-secondary));
+}
+
+.required {
+  margin-left: 4px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 6px;
+}
+
+.option {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  background: var(--input-background, var(--bg-surface));
+  color: var(--input-text-color, var(--text-primary));
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.35s ease;
+  border-radius: 4px;
+  margin: 4px 0;
+  border: 1px solid var(--border-bold);
+  isolation: isolate;
+}
+
+.option input,
+.optionContent {
+  position: relative;
+  z-index: 1;
+}
+
+.option input {
+  margin-top: 3px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.optionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.optionTitle {
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.optionDescription {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.selected {
+  background: var(--selection-background,
+      var(--bg-surface-secondary));
+}
+
+.ripple {
+  position: absolute;
+  left: var(--ripple-x);
+  top: var(--ripple-y);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.18;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  animation: ripple 0.5s ease-out;
+  z-index: 0;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0.18;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(70);
+  }
+}
+
+.horizontal {
+  display: grid;
+  grid-template-columns: var(--label-width, 120px) 1fr;
+  align-items: start;
+  gap: 12px;
+}
+
+.horizontal .label {
+  margin-bottom: 0;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 425px) {
+  .options {
+    grid-template-columns: 1fr;
+  }
+}

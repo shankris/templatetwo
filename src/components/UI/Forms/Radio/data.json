@@ -1,0 +1,41 @@
+{
+  "style": {
+    "borderWidth": "1px",
+    "borderColor": "var(--border-subtle)",
+    "selectedBackground": "var(--selection-background)",
+    "textColor": "var(--text-primary)",
+    "labelColor": "var(--text-secondary)",
+    "borderRadius": "6px",
+    "padding": "10px 12px"
+  },
+  "fields": [
+    {
+      "id": "notification",
+      "label": "Notification Preference",
+      "type": "radio",
+      "required": true,
+      "options": [
+        {
+          "value": "email",
+          "label": "Email Notifications",
+          "description": "Receive important updates and account activity by email."
+        },
+        {
+          "value": "sms",
+          "label": "SMS Notifications",
+          "description": "Get important alerts and reminders directly on your phone."
+        },
+        {
+          "value": "push",
+          "label": "Push Notifications",
+          "description": "Receive notifications directly in your browser or device."
+        },
+        {
+          "value": "none",
+          "label": "No Notifications",
+          "description": "Don't receive optional notifications from this application."
+        }
+      ]
+    }
+  ]
+}

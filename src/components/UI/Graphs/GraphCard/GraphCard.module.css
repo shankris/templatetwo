@@ -11,6 +11,7 @@
   width: 100%;
   max-width: 340px;
   min-width: 0;
+
   height: 100%;
 
   padding: 1rem 1.25rem;
@@ -20,8 +21,6 @@
 
   border: 1px solid var(--border-subtle);
   border-radius: 0.375rem;
-
-  /* overflow: hidden; */
 
   /* --------------------------------------------------
      Tabler-style subtle elevation
@@ -41,6 +40,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  width: 100%;
+  min-width: 0;
+
+  gap: 0.75rem;
 }
 
 
@@ -50,6 +54,7 @@
 
 .heading {
   min-width: 0;
+  flex: 1;
 }
 
 
@@ -64,6 +69,7 @@
 
   font-size: 12px;
   font-weight: 300;
+
   line-height: 1.4;
 
   letter-spacing: 0.04em;
@@ -98,8 +104,11 @@
 .action {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 
   flex-shrink: 0;
+
+  min-width: 0;
 }
 
 
@@ -131,4 +140,23 @@
   .card {
     padding: 0.75rem 0.875rem;
   }
+
+  .header {
+    gap: 0.5rem;
+  }
+}
+
+/* --------------------------------------------------
+   Period Selector
+
+   Displayed in the GraphCard header when Radial2
+   manages its own period.
+-------------------------------------------------- */
+
+.periods {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.125rem;
+  flex-shrink: 0;
 }

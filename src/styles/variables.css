@@ -37,6 +37,14 @@
   --map-region: var(--border-subtle);
 
 
+  /* --------------------------------------------------
+   Selection
+-------------------------------------------------- */
+
+  --selection: #f97316;
+  --selection-hover: #ea580c;
+  --selection-background: rgba(249, 115, 22, 0.10);
+
   /* App surfaces */
   --bg-app: #fbfbfb;
   --bg-surface: #ffffff;
@@ -78,11 +86,27 @@
 
   --muted-terracotta-bg: rgba(168, 106, 91, 0.12);
   --muted-terracotta-text: #5c342b;
+
+  /* --------------------------------------------------
+   Form Selection
+-------------------------------------------------- */
+
+  --selection-background: #dbeafe;
 }
 
 /* src/styles/variables.css */
 
 [data-theme="dark"] {
+
+
+
+  /* --------------------------------------------------
+   Selection
+-------------------------------------------------- */
+
+  --selection: #fb923c;
+  --selection-hover: #fdba74;
+  --selection-background: rgba(251, 146, 60, 0.14);
 
   /* App surfaces */
   --bg-app: #0f172a;
@@ -121,6 +145,13 @@
 
   --muted-terracotta-bg: rgba(219, 155, 140, 0.15);
   --muted-terracotta-text: #f2ceb8;
+
+  /* --------------------------------------------------
+   Form Selection
+-------------------------------------------------- */
+
+  --selection-background: #1e40af;
+
 }
 
 

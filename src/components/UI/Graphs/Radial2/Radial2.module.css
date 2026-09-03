@@ -1,3 +1,7 @@
+/* --------------------------------------------------
+   Wrapper
+-------------------------------------------------- */
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -8,6 +12,74 @@
   min-width: 0;
   min-height: 0;
 }
+
+
+/* --------------------------------------------------
+   Period Selector
+
+   Compact period controls displayed at the
+   top-right of the card when Radial2 controls
+   its own period.
+-------------------------------------------------- */
+
+.periods {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 0.125rem;
+
+  margin-bottom: 0.25rem;
+}
+
+
+/* --------------------------------------------------
+   Period Button
+-------------------------------------------------- */
+
+.period {
+  padding: 0.125rem 0.3rem;
+
+  background: transparent;
+  border: 0;
+
+  border-radius: 0.2rem;
+
+  font-family: inherit;
+  font-size: 0.625rem;
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  transition:
+    background 150ms ease,
+    color 150ms ease;
+}
+
+
+/* --------------------------------------------------
+   Period Button Hover
+-------------------------------------------------- */
+
+.period:hover {
+  background: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+
+/* --------------------------------------------------
+   Active Period
+-------------------------------------------------- */
+
+.periodActive {
+  background: var(--bg-surface-elevated);
+  color: var(--primary);
+}
+
 
 /* --------------------------------------------------
    Main Metric
@@ -21,6 +93,7 @@
 
   padding-bottom: 0.25rem;
 }
+
 
 /* --------------------------------------------------
    Main Number
@@ -36,6 +109,7 @@
 
   color: var(--text-primary);
 }
+
 
 /* --------------------------------------------------
    Variation
@@ -62,6 +136,7 @@
   color: #2fb344;
 }
 
+
 /* --------------------------------------------------
    Negative Variation
 -------------------------------------------------- */
@@ -69,6 +144,7 @@
 .variationNegative {
   color: #d63939;
 }
+
 
 /* --------------------------------------------------
    Radial Chart
@@ -82,9 +158,11 @@
   flex: 1;
 
   width: 100%;
+
   min-width: 0;
   min-height: 190px;
 }
+
 
 /* --------------------------------------------------
    No Data
@@ -103,6 +181,7 @@
   color: var(--text-muted);
 }
 
+
 /* --------------------------------------------------
    Responsive
 -------------------------------------------------- */
@@ -117,6 +196,7 @@
   }
 }
 
+
 @media (max-width: 425px) {
   .value {
     font-size: 1.375rem;
@@ -124,5 +204,11 @@
 
   .chart {
     min-height: 150px;
+  }
+
+  .period {
+    padding-inline: 0.25rem;
+
+    font-size: 0.5625rem;
   }
 }

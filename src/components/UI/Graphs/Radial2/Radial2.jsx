@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import dynamic from "next/dynamic";
 import { TrendingDown, TrendingUp } from "lucide-react";
+
 import GraphCard from "../GraphCard/GraphCard";
 import data from "./data.json";
 
@@ -17,42 +19,94 @@ const Chart = dynamic(() => import("react-apexcharts"), {
    Tabler-inspired radial metric card.
 
    Props:
-   - period      : Selected dashboard period
+   - period      : Optional parent-controlled period
    - accentColor : Chart accent colour
+   - arc         : Arc size in degrees
+
+   Period behaviour:
+   - period supplied    : Parent controls period
+   - period not supplied: Component controls period
 
    Defaults:
-   - period      : 1m
-   - accentColor : var(--primary)
+   - internal period : 1m
+   - accentColor     : var(--primary)
+   - arc             : 300
 -------------------------------------------------- */
 
-export default function Radial2({ period = "1m", accentColor = "var(--primary)" }) {
+export default function Radial2({ period, accentColor = "var(--primary)", arc = 300 }) {
+  /* --------------------------------------------------
+     Internal Period
+
+     Used only when the parent does not provide a
+     period prop.
+  -------------------------------------------------- */
+
+  const [internalPeriod, setInternalPeriod] = useState("1m");
+
+  /* --------------------------------------------------
+     Determine Active Period
+
+     If the parent supplies a period, it takes
+     precedence.
+
+     Otherwise Radial2 manages its own period.
+  -------------------------------------------------- */
+
+  const isParentControlled = period !== undefined;
+
+  const activePeriod = isParentControlled ? period : internalPeriod;
+
+  /* --------------------------------------------------
+     Period Selection
+
+     These controls are displayed in the GraphCard
+     header only when Radial2 manages its own period.
+  -------------------------------------------------- */
+
+  const periods = ["1d", "1w", "3m", "6m", "1y"];
+
+  const periodSelector = !isParentControlled && (
+    <div className={styles.periods}>
+      {periods.map((item) => (
+        <button
+          key={item}
+          type='button'
+          className={`${styles.period} ${activePeriod === item ? styles.periodActive : ""}`}
+          onClick={() => setInternalPeriod(item)}
+        >
+          {item}
+        </button>
+      ))}
+    </div>
+  );
+
   /* --------------------------------------------------
      Get Data For Selected Period
   -------------------------------------------------- */
 
-  const currentData = data?.data?.[period];
+  const currentData = data?.data?.[activePeriod];
 
   /* --------------------------------------------------
      Handle Missing Period Data
-
-     We deliberately do not fall back to another period.
-     Showing another period could be misleading.
   -------------------------------------------------- */
 
   if (!currentData) {
     return (
-      <GraphCard title={data?.card?.title}>
+      <GraphCard
+        title={data?.card?.title}
+        action={periodSelector}
+      >
         <div className={styles.noData}>Data not available</div>
       </GraphCard>
     );
   }
 
   /* --------------------------------------------------
-   Variation
+     Variation
 
-   Positive = TrendingUp
-   Negative = TrendingDown
--------------------------------------------------- */
+     Positive = TrendingUp
+     Negative = TrendingDown
+  -------------------------------------------------- */
 
   const isPositive = currentData.variation >= 0;
 
@@ -61,15 +115,30 @@ export default function Radial2({ period = "1m", accentColor = "var(--primary)" 
   const VariationIcon = isPositive ? TrendingUp : TrendingDown;
 
   /* --------------------------------------------------
+     Calculate Arc Angles
+
+     360° = complete circle
+     300° = small gap
+     180° = half circle
+
+     The gap is centred at the bottom.
+  -------------------------------------------------- */
+
+  const normalizedArc = Math.min(Math.max(arc, 1), 360);
+
+  const gap = 360 - normalizedArc;
+
+  const startAngle = -90 + gap / 2;
+  const endAngle = 270 - gap / 2;
+
+  /* --------------------------------------------------
      ApexCharts Configuration
   -------------------------------------------------- */
 
   const options = {
     chart: {
       type: "radialBar",
-
       height: "100%",
-
       fontFamily: "inherit",
 
       toolbar: {
@@ -85,8 +154,8 @@ export default function Radial2({ period = "1m", accentColor = "var(--primary)" 
 
     plotOptions: {
       radialBar: {
-        startAngle: -90,
-        endAngle: 270,
+        startAngle,
+        endAngle,
 
         hollow: {
           margin: 0,
@@ -142,10 +211,13 @@ export default function Radial2({ period = "1m", accentColor = "var(--primary)" 
   -------------------------------------------------- */
 
   return (
-    <GraphCard title={data?.card?.title}>
+    <GraphCard
+      title={data?.card?.title}
+      action={periodSelector}
+    >
       <div className={styles.wrapper}>
         {/* --------------------------------------------------
-           Metric
+           Main Metric
         -------------------------------------------------- */}
 
         <div className={styles.metric}>

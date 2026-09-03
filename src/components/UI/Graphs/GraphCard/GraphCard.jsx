@@ -13,7 +13,7 @@ import styles from "./GraphCard.module.css";
    Props:
    - title    : Card heading
    - subtitle : Muted supporting text
-   - action   : Optional action element
+   - action   : Optional header action element
    - children : Graph content
 -------------------------------------------------- */
 
@@ -26,11 +26,22 @@ export default function GraphCard({ title, subtitle, action, children }) {
 
       {(title || subtitle || action) && (
         <header className={styles.header}>
+          {/* --------------------------------------------------
+             Card Heading
+          -------------------------------------------------- */}
+
           <div className={styles.heading}>
             {title && <h3 className={styles.title}>{title}</h3>}
 
             {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
           </div>
+
+          {/* --------------------------------------------------
+             Card Action
+
+             Used by individual graphs for optional controls
+             such as period selectors.
+          -------------------------------------------------- */}
 
           {action && <div className={styles.action}>{action}</div>}
         </header>

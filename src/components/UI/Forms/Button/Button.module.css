@@ -1,0 +1,136 @@
+/* --------------------------------------------------
+   Base
+-------------------------------------------------- */
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--button-width, auto);
+  min-height: 40px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* --------------------------------------------------
+   Content
+-------------------------------------------------- */
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------
+   Primary
+-------------------------------------------------- */
+
+.primary {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+/* --------------------------------------------------
+   Secondary
+-------------------------------------------------- */
+
+.secondary {
+  border: 1px solid var(--border-bold);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+.secondary:hover {
+  background: var(--bg-hover);
+}
+
+/* --------------------------------------------------
+   Ghost
+-------------------------------------------------- */
+
+.ghost {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--primary);
+}
+
+.ghost:hover {
+  background: var(--bg-hover);
+}
+
+/* --------------------------------------------------
+   Ripple
+-------------------------------------------------- */
+
+.ripple {
+  position: absolute;
+  left: var(--ripple-x);
+  top: var(--ripple-y);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.5s ease-out;
+}
+
+/* --------------------------------------------------
+   Ripple Colors
+-------------------------------------------------- */
+
+.primary .ripple {
+  background: #ffffff;
+  opacity: 0.22;
+}
+
+.secondary .ripple,
+.ghost .ripple {
+  background: var(--primary);
+  opacity: 0.18;
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(70);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------
+   Disabled
+-------------------------------------------------- */
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------
+   Focus
+-------------------------------------------------- */
+
+.button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}

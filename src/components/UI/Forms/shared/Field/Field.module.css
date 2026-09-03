@@ -1,0 +1,191 @@
+/* --------------------------------------------------
+   Base
+-------------------------------------------------- */
+
+.field {
+  width: var(--field-width, 100%);
+  position: relative;
+}
+
+
+/* --------------------------------------------------
+   Label
+-------------------------------------------------- */
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+}
+
+.required {
+  margin-left: 4px;
+}
+
+
+/* --------------------------------------------------
+   Control Row
+-------------------------------------------------- */
+
+.controlRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+
+/* --------------------------------------------------
+   Help Button
+-------------------------------------------------- */
+
+.helpContainer {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.helpButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--border-bold);
+  border-radius: 50%;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.helpButton:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.helpButton:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+
+/* --------------------------------------------------
+   Help Popover
+-------------------------------------------------- */
+
+.helpPopover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 20;
+  width: 300px;
+  max-width: min(300px, 80vw);
+  padding: 12px 14px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+  box-shadow: var(--shadow-md,
+      0 4px 12px rgba(0, 0, 0, 0.12));
+}
+
+
+/* --------------------------------------------------
+   Helper Text
+-------------------------------------------------- */
+
+.helperText {
+  margin-top: 5px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+/* --------------------------------------------------
+   Horizontal
+-------------------------------------------------- */
+
+.horizontal {
+  display: grid;
+  grid-template-columns:
+    var(--label-width, 120px) 1fr;
+  align-items: start;
+  gap: 12px;
+}
+
+.horizontal>.label {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.horizontal .controlRow {
+  min-width: 0;
+}
+
+
+/* --------------------------------------------------
+   Vertical
+-------------------------------------------------- */
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* --------------------------------------------------
+   Floating Label
+-------------------------------------------------- */
+
+.floating .controlRow {
+  align-items: center;
+}
+
+.floatingLabel {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  padding: 0 4px;
+  transform: translateY(-50%);
+  background: var(--input-background, var(--bg-surface));
+  color: var(--text-secondary);
+  pointer-events: none;
+  transition:
+    top 0.15s ease,
+    transform 0.15s ease,
+    font-size 0.15s ease;
+}
+
+
+/* --------------------------------------------------
+   Responsive
+-------------------------------------------------- */
+
+@media (max-width: 425px) {
+  .horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .horizontal>.label {
+    margin-top: 0;
+  }
+
+  .horizontal .controlRow {
+    width: 100%;
+  }
+}

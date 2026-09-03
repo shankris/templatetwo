@@ -1,0 +1,21 @@
+{
+  "user": {
+    "id": "user-001",
+    "name": "Shankar Krishnasamy",
+    "role": "UI Designer",
+    "email": "shankar@example.com",
+    "image": "/img/users/PawelKuna.jpg",
+    "status": "online",
+    "lastSession": {
+      "start": "2026-08-25T08:10:00",
+      "end": "2026-08-25T16:30:00"
+    }
+  },
+  "menu": {
+    "profile": true,
+    "settings": true,
+    "notifications": true,
+    "switchUser": true,
+    "logout": true
+  }
+}

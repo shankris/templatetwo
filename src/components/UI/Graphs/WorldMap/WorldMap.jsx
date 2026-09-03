@@ -204,6 +204,24 @@ export default function WorldMap({ accentColor = "var(--primary)" }) {
   };
 
   /* --------------------------------------------------
+   Focus Map On Country
+
+   Clicking a country in the traffic list focuses
+   the existing world map on that country.
+-------------------------------------------------- */
+
+  const handleCountryClick = (code) => {
+    if (!mapInstance.current) {
+      return;
+    }
+
+    mapInstance.current.setFocus({
+      region: code,
+      animate: true,
+    });
+  };
+
+  /* --------------------------------------------------
      Render
   -------------------------------------------------- */
 
@@ -252,6 +270,7 @@ export default function WorldMap({ accentColor = "var(--primary)" }) {
                 <div
                   key={country.code}
                   className={styles.country}
+                  onClick={() => handleCountryClick(country.code)}
                 >
                   {/* --------------------------------------------------
                    Country Flag

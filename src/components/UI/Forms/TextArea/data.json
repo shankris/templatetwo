@@ -1,0 +1,24 @@
+{
+  "style": {
+    "borderWidth": "1px",
+    "borderColor": "var(--border-subtle)",
+    "focusBorderColor": "var(--primary)",
+    "textColor": "var(--text-primary)",
+    "backgroundColor": "var(--bg-surface)",
+    "labelColor": "var(--text-secondary)",
+    "placeholderColor": "var(--text-muted)",
+    "borderRadius": "6px",
+    "padding": "10px 12px"
+  },
+
+  "fields": [
+    {
+      "id": "description",
+      "label": "Description",
+      "type": "textarea",
+      "placeholder": "Enter a description",
+      "rows": 4,
+      "required": false
+    }
+  ]
+}

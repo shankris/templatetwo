@@ -1,0 +1,59 @@
+/* --------------------------------------------------
+   Base
+-------------------------------------------------- */
+
+.field {
+  width: var(--select-width, 100%);
+  position: relative;
+}
+
+.field label {
+  color: var(--input-label-color, var(--text-secondary));
+}
+
+.field select {
+  width: 100%;
+  padding: var(--input-padding, 10px 12px);
+
+  border: var(--input-border-width, 1px) solid var(--input-border-color, var(--border-color));
+
+  border-radius: var(--input-border-radius, 6px);
+
+  background: var(--input-background, var(--bg-surface));
+  color: var(--input-text-color, inherit);
+
+  outline: none;
+  box-sizing: border-box;
+
+  cursor: pointer;
+}
+
+.field select:focus {
+  border-color: var(--input-focus-border-color,
+      var(--primary));
+}
+
+.required {
+  margin-left: 4px;
+}
+
+/* --------------------------------------------------
+   Horizontal
+-------------------------------------------------- */
+
+.horizontal {
+  display: grid;
+  grid-template-columns: var(--label-width, 120px) 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+/* --------------------------------------------------
+   Vertical
+-------------------------------------------------- */
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
