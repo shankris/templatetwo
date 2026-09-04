@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { CalendarDays, MapPin, X } from "lucide-react";
 
 import Field from "../shared/Field/Field";
 import styles from "./Autocomplete.module.css";
@@ -9,6 +10,7 @@ import users from "./users.json";
 
 const DEBOUNCE_DELAY = 500;
 const MAX_RESULTS = 8;
+const MAX_INITIAL_RESULTS = 20;
 
 /* --------------------------------------------------
    Autocomplete Component
@@ -52,6 +54,12 @@ function AutocompleteField({ field, value, onChange, width = "100%" }) {
   const inputRef = useRef(null);
 
   /* --------------------------------------------------
+     Initial Suggestions
+  -------------------------------------------------- */
+
+  const initialResults = users.results.slice(0, MAX_INITIAL_RESULTS);
+
+  /* --------------------------------------------------
      User Display Helpers
   -------------------------------------------------- */
 
@@ -71,9 +79,12 @@ function AutocompleteField({ field, value, onChange, width = "100%" }) {
   -------------------------------------------------- */
 
   useEffect(() => {
+    /*
+     * When the input is empty, the initial suggestions
+     * are handled by the focus event.
+     */
     if (!query.trim()) {
       setResults([]);
-      setIsOpen(false);
       return;
     }
 
@@ -106,6 +117,7 @@ function AutocompleteField({ field, value, onChange, width = "100%" }) {
     const handleOutsideClick = (event) => {
       if (containerRef.current && !containerRef.current.contains(event.target)) {
         setIsOpen(false);
+        setActiveIndex(-1);
       }
     };
 
@@ -137,12 +149,37 @@ function AutocompleteField({ field, value, onChange, width = "100%" }) {
   const handleClear = () => {
     setSelected(null);
     setQuery("");
-    setResults([]);
-    setIsOpen(false);
+    setResults(initialResults);
+    setIsOpen(true);
+    setActiveIndex(-1);
 
     onChange?.(null);
 
     inputRef.current?.focus();
+  };
+
+  /* --------------------------------------------------
+     Input Focus
+  -------------------------------------------------- */
+
+  const handleFocus = () => {
+    /*
+     * With an empty input, show the initial 20 users.
+     */
+    if (!query.trim()) {
+      setResults(initialResults);
+      setIsOpen(true);
+      setActiveIndex(-1);
+      return;
+    }
+
+    /*
+     * If the user has entered text and search results
+     * already exist, reopen the suggestion list.
+     */
+    if (results.length) {
+      setIsOpen(true);
+    }
   };
 
   /* --------------------------------------------------
@@ -191,8 +228,8 @@ function AutocompleteField({ field, value, onChange, width = "100%" }) {
         className={styles.autocomplete}
       >
         {/* --------------------------------------------------
-   Selected User
--------------------------------------------------- */}
+           Selected User
+        -------------------------------------------------- */}
 
         {selected ? (
           <div className={styles.selected}>
@@ -205,15 +242,27 @@ function AutocompleteField({ field, value, onChange, width = "100%" }) {
             )}
 
             <div className={styles.selectedContent}>
-              <span className={styles.selectedName}>{getName(selected)}</span>
+              <span className={styles.selectedName}>
+                <span>{selected.name.first}</span> <span className={styles.lastName}>{selected.name.last.toUpperCase()}</span>
+              </span>
 
               {variant === "rich" && (
                 <span className={styles.selectedDetails}>
-                  {getBirthday(selected)}
-                  {" · "}
-                  {selected.dob.age}
-                  {" · "}
-                  {getLocation(selected)}
+                  <span className={styles.detailItem}>
+                    <CalendarDays size={13} />
+                    {getBirthday(selected)}
+                  </span>
+
+                  <span className={styles.detailSeparator}>·</span>
+
+                  <span>{selected.dob.age}</span>
+
+                  <span className={styles.detailSeparator}>·</span>
+
+                  <span className={styles.detailItem}>
+                    <MapPin size={13} />
+                    {getLocation(selected)}
+                  </span>
                 </span>
               )}
             </div>
@@ -224,7 +273,10 @@ function AutocompleteField({ field, value, onChange, width = "100%" }) {
               aria-label='Clear selection'
               onClick={handleClear}
             >
-              ×
+              <X
+                size={16}
+                strokeWidth={2}
+              />
             </button>
           </div>
         ) : (
@@ -243,11 +295,7 @@ function AutocompleteField({ field, value, onChange, width = "100%" }) {
               required={required}
               autoComplete='off'
               onChange={(event) => setQuery(event.target.value)}
-              onFocus={() => {
-                if (results.length) {
-                  setIsOpen(true);
-                }
-              }}
+              onFocus={handleFocus}
               onKeyDown={handleKeyDown}
               className={styles.input}
             />
@@ -277,15 +325,27 @@ function AutocompleteField({ field, value, onChange, width = "100%" }) {
                     )}
 
                     <span className={styles.resultContent}>
-                      <span className={styles.resultName}>{getName(user)}</span>
+                      <span className={styles.resultName}>
+                        <span>{user.name.first}</span> <span className={styles.lastName}>{user.name.last.toUpperCase()}</span>
+                      </span>
 
                       {variant === "rich" && (
                         <span className={styles.resultDetails}>
-                          {getBirthday(user)}
-                          {" · "}
-                          {user.dob.age}
-                          {" · "}
-                          {getLocation(user)}
+                          <span className={styles.detailItem}>
+                            <CalendarDays size={13} />
+                            {getBirthday(user)}
+                          </span>
+
+                          <span className={styles.detailSeparator}>·</span>
+
+                          <span>{user.dob.age}</span>
+
+                          <span className={styles.detailSeparator}>·</span>
+
+                          <span className={styles.detailItem}>
+                            <MapPin size={13} />
+                            {getLocation(user)}
+                          </span>
                         </span>
                       )}
                     </span>

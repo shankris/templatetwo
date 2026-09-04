@@ -1,0 +1,22 @@
+[
+  {
+    "id": "question1",
+    "defaultOpen": true
+  },
+  {
+    "id": "question2",
+    "defaultOpen": false
+  },
+  {
+    "id": "question3",
+    "defaultOpen": false
+  },
+  {
+    "id": "question4",
+    "defaultOpen": false
+  },
+  {
+    "id": "question5",
+    "defaultOpen": false
+  }
+]

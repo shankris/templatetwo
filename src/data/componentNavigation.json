@@ -10,6 +10,23 @@
         "href": "/components/ui/buttons"
       },
       {
+        "id": "accordion",
+        "label": "Accordion",
+        "href": "/components/ui/accordion",
+        "children": [
+          {
+            "id": "image-accordion",
+            "label": "Image Accordion",
+            "href": "/components/ui/accordion/image-accordion"
+          },
+          {
+            "id": "faq-1",
+            "label": "FAQ 1",
+            "href": "/components/ui/accordion/faq-1"
+          }
+        ]
+      },
+      {
         "id": "forms",
         "label": "Forms",
         "href": "/components/ui/forms",
@@ -83,7 +100,22 @@
           }
         ]
       },
-
+      {
+        "id": "login",
+        "label": "Login",
+        "children": [
+          {
+            "id": "login-01",
+            "label": "Login 01",
+            "href": "/components/login-01"
+          },
+          {
+            "id": "login-02",
+            "label": "Login 02",
+            "href": "/components/login-02"
+          }
+        ]
+      },
       {
         "id": "dataDisplay",
         "label": "Data Display",

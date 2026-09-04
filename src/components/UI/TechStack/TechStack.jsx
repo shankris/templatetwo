@@ -18,7 +18,7 @@ const SPRING = {
 };
 
 export default function TechStack() {
-  const t = useTranslations("HomePage.techStack");
+  const t = useTranslations("Home");
 
   const mouseLeft = useMotionValue(-Infinity);
   const mouseRight = useMotionValue(-Infinity);
@@ -34,7 +34,7 @@ export default function TechStack() {
       {/* Desktop Tech Stack */}
 
       <div className={styles.sectionTitle}>
-        <span>Tech Stack</span>
+        <span>{t("techStackTitle")}</span>
       </div>
 
       <motion.div
@@ -67,7 +67,7 @@ export default function TechStack() {
             mouseLeft={mouseLeft}
             label={item.name}
             icon={item.icon}
-            description={t(item.description)}
+            description={t(`techStack.${item.description}`)}
           />
         ))}
       </motion.div>

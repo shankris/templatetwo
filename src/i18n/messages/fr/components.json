@@ -1,0 +1,60 @@
+{
+  "title": "Composants",
+  "description": "Une collection de composants d'interface réutilisables.",
+
+  "categories": {
+    "accordion": "Accordéon",
+    "faq": "FAQ",
+    "layoutAnimation": "Animation de mise en page",
+    "modal": "Fenêtre modale",
+    "tables": "Tableaux",
+    "toast": "Notification Toast"
+  },
+
+  "items": {
+    "imageAccordion": {
+      "name": "Accordéon d'images",
+      "description": "Accordéon avec des images"
+    },
+    "faq1": {
+      "name": "FAQ 1",
+      "description": "Utilise Motion pour l'animation"
+    },
+    "faq2": {
+      "name": "FAQ 2",
+      "description": "FAQ avec des onglets."
+    },
+    "faq3": {
+      "name": "FAQ 3",
+      "description": "FAQ avec des images"
+    },
+    "faq4": {
+      "name": "FAQ 4",
+      "description": "FAQ en accordéon"
+    },
+    "episodeGrid": {
+      "name": "Grille d'épisodes - Animation de mise en page",
+      "description": "Animation de mise en page avec CSS"
+    },
+    "modal": {
+      "name": "Fenêtre modale",
+      "description": "Composant de dialogue modal"
+    },
+    "dataTable": {
+      "name": "Tableau de données",
+      "description": "Tableau de données avec recherche, tri et pagination"
+    },
+    "salaryTable": {
+      "name": "Tableau de données - Filtres numériques",
+      "description": "Tableau de données démontrant le filtrage numérique et par date"
+    },
+    "marketTable": {
+      "name": "Tableau de marché",
+      "description": "Tableau de marché avec chronologie"
+    },
+    "toast1": {
+      "name": "Notification Toast 1",
+      "description": "Notification Toast utilisant l'animation Motion"
+    }
+  }
+}

@@ -44,13 +44,19 @@
    Results
 -------------------------------------------------- */
 
+/* --------------------------------------------------
+   Results
+-------------------------------------------------- */
+
 .results {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
   right: 0;
   z-index: 30;
-  overflow: hidden;
+
+  max-height: 448px;
+  overflow-y: auto;
 
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
@@ -73,7 +79,7 @@
   width: 100%;
   min-height: 56px;
 
-  padding: 8px 12px;
+  padding: 2px 12px;
   gap: 10px;
 
   border: 0;
@@ -86,6 +92,7 @@
 
   cursor: pointer;
   box-sizing: border-box;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .result:hover,
@@ -137,6 +144,18 @@
 
 
 /* --------------------------------------------------
+   Last Name
+-------------------------------------------------- */
+
+.lastName {
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0 4px;
+  font-weight: 300;
+}
+
+/* --------------------------------------------------
    Avatar
 -------------------------------------------------- */
 
@@ -146,7 +165,7 @@
 
   flex: 0 0 36px;
 
-  border-radius: 50%;
+  border-radius: 4px;
 
   object-fit: cover;
 }
@@ -202,11 +221,11 @@
 
   color: var(--text-muted);
 
-  font: inherit;
-  font-size: 18px;
-  line-height: 1;
-
   cursor: pointer;
+}
+
+.clear svg {
+  flex: 0 0 auto;
 }
 
 .selected:hover .clear {
@@ -224,4 +243,46 @@
   .selectedDetails {
     max-width: 220px;
   }
+}
+
+
+
+/* --------------------------------------------------
+   Detail Items
+-------------------------------------------------- */
+
+.detailItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  line-height: 1;
+}
+
+
+.detailSeparator {
+  flex: 0 0 auto;
+}
+
+.detailItem svg {
+  flex: 0 0 auto;
+}
+
+/* --------------------------------------------------
+   Detail Line
+-------------------------------------------------- */
+
+.resultDetails,
+.selectedDetails {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  overflow: hidden;
+
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+
+  white-space: nowrap;
 }

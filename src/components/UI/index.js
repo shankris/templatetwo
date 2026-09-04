@@ -5,6 +5,9 @@ export { default as MultiStepForm1 } from "./Forms/MultiStepForm1/MultiStepForm1
 export { default as DatePickerNative } from "./DatePickers/DatePickerNative/DatePickerNative";
 export { default as DatePicker } from "./DatePickers/DatePicker/DatePicker";
 
+export { default as ImageAccordion } from "./Accordion/ImageAccordion/ImageAccordion";
+export { default as Faq1 } from "./Accordion/Faq1/Faq1";
+
 export { default as GraphCard } from "./Graphs/GraphCard/GraphCard";
 export { default as Radial } from "./Graphs/Radial/Radial";
 export { default as Radial2 } from "./Graphs/Radial2/Radial2";
@@ -26,3 +29,6 @@ export { default as Autocomplete } from "./Forms/Autocomplete/Autocomplete";
 export { default as Radio } from "./Forms/Radio/Radio";
 export { default as Checkbox } from "./Forms/Checkbox/Checkbox";
 export { default as Button } from "./Forms/Button/Button";
+
+export { default as Login01 } from "./Login/Login01/Login01";
+export { default as Login02 } from "./Login/Login02/Login02";

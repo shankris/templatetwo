@@ -1,0 +1,60 @@
+{
+  "title": "Componentes",
+  "description": "Una colección de componentes de interfaz reutilizables.",
+
+  "categories": {
+    "accordion": "Acordeón",
+    "faq": "Preguntas frecuentes",
+    "layoutAnimation": "Animación de diseño",
+    "modal": "Ventana modal",
+    "tables": "Tablas",
+    "toast": "Notificación Toast"
+  },
+
+  "items": {
+    "imageAccordion": {
+      "name": "Acordeón de imágenes",
+      "description": "Acordeón con imágenes"
+    },
+    "faq1": {
+      "name": "Preguntas frecuentes 1",
+      "description": "Utiliza Motion para animación"
+    },
+    "faq2": {
+      "name": "Preguntas frecuentes 2",
+      "description": "Preguntas frecuentes con pestañas."
+    },
+    "faq3": {
+      "name": "Preguntas frecuentes 3",
+      "description": "Preguntas frecuentes con imágenes"
+    },
+    "faq4": {
+      "name": "Preguntas frecuentes 4",
+      "description": "Acordeón de preguntas frecuentes"
+    },
+    "episodeGrid": {
+      "name": "Cuadrícula de episodios - Animación de diseño",
+      "description": "Animación de diseño usando CSS"
+    },
+    "modal": {
+      "name": "Ventana modal",
+      "description": "Componente de diálogo modal"
+    },
+    "dataTable": {
+      "name": "Tabla de datos",
+      "description": "Tabla de datos con búsqueda, ordenación y paginación"
+    },
+    "salaryTable": {
+      "name": "Tabla de datos - Filtros numéricos",
+      "description": "Tabla de datos que demuestra el filtrado numérico y por fecha"
+    },
+    "marketTable": {
+      "name": "Tabla de mercado",
+      "description": "Tabla de mercado con línea de tiempo"
+    },
+    "toast1": {
+      "name": "Notificación Toast 1",
+      "description": "Notificación Toast usando animación Motion"
+    }
+  }
+}

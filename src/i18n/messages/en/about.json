@@ -1,0 +1,6 @@
+{
+  "title": "About",
+  "intro": "Welcome to TemplateTwo.",
+  "description": "TemplateTwo is a reusable Next.js template designed to provide a solid foundation for modern web applications.",
+  "details": "It includes responsive layouts, navigation, internationalization, theme support, and reusable interface components."
+}

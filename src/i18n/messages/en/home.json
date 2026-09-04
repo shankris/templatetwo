@@ -1,0 +1,19 @@
+{
+  "intro": "Test - Refine - Validate",
+  "title": "Bring Your Applications to Life",
+  "description": "Transform your applications into intuitive, engaging experiences with Modular, Responsive, and Accessible Components",
+  "techStackTitle": "Tech Stack",
+
+  "techStack": {
+    "html": "Foundation of every web page, provides semantic structure and accessible content.",
+    "css": "Used to create responsive layouts, and consistent visual experiences.",
+    "javascript": "Brings interfaces to life with dynamic behavior, interactions and logic",
+    "nextjs": "A React framework for building fast, scalable, modern web applications and websites.",
+    "react": "A component-based library for creating reusable, interactive, and maintainable user interfaces.",
+    "gsap": "A powerful animation library for creating smooth, precise, and engaging web animations.",
+    "motion": "A flexible animation library for building fluid, interactive, and expressive React interfaces.",
+    "figma": "Used for designing interfaces, exploring ideas and creating prototypes.",
+    "adobexd": "A design and prototyping tool used to create interface concepts and user experiences.",
+    "photoshop": "Used for image editing, visual assets, composition, and creating polished digital graphics."
+  }
+}

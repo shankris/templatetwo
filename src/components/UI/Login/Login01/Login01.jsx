@@ -11,29 +11,14 @@ export default function LoginForm() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-
-    ```
-setLoading(true);
-
-// Replace this with your real authentication logic.
-await new Promise((resolve) => setTimeout(resolve, 2000));
-
-setLoading(false);
-setEmail("");
-setPassword("");
-```;
   }
 
   return (
     <div className={styles.wrapper}>
-      {" "}
       <div className={styles.container}>
-        {" "}
         <div className={styles.loginHeader}>
-          {" "}
           <h1 className={styles.brandTitle}>Welcome Back</h1> <p className={styles.brandSubtitle}>Sign in to continue to your account </p>{" "}
         </div>
-        ```
         <form
           className={styles.loginForm}
           onSubmit={handleSubmit}

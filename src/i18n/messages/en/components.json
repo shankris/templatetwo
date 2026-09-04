@@ -1,0 +1,84 @@
+{
+  "title": "Components",
+  "description": "A collection of reusable interface components.",
+
+  "categories": {
+    "accordion": "Accordion",
+    "faq": "FAQ",
+    "layoutAnimation": "Layout Animation",
+    "modal": "Modal",
+    "tables": "Tables",
+    "toast": "Toast"
+  },
+
+  "faq1Content": {
+    "title": "Frequently Asked Questions",
+    "question1": {
+      "title": "What is Pulse and how does it streamline daily project management?",
+      "content": "Pulse is an all-in-one productivity platform designed to help individuals and teams organize tasks, track project progress, and automate daily workflows. It combines real-time collaboration with intuitive visual boards to keep every project structured, clear, and on schedule."
+    },
+    "question2": {
+      "title": "How do I set up my account and start my first project?",
+      "content": "Simply download the app or log in on your browser, create your workspace, and select a starter template. From there, you can create customized task boards, set deadlines, and begin assigning responsibilities immediately without any complex initial setup."
+    },
+    "question3": {
+      "title": "Is my data securely stored and synced across all devices?",
+      "content": "Yes. Pulse uses end-to-end encryption to protect your data both in transit and at rest. Your information automatically syncs across all iOS, Android, and web platforms in real time, ensuring seamless transitions between mobile devices and your desktop."
+    },
+    "question4": {
+      "title": "What features are included in the Free versus Pro subscriptions?",
+      "content": "The Free plan includes core task tracking, up to three active projects, and basic file sharing. Upgrading to Pro unlocks unlimited projects, advanced analytics, custom automation workflows, priority customer support, and expanded integration options for growing teams."
+    },
+    "question5": {
+      "title": "How do I invite team members and manage their permissions?",
+      "content": "Navigate to your Workspace Settings and select Invite Members. Enter their email addresses and assign specific permissions, such as Admin, Editor, or Viewer. This ensures team members only access relevant boards while keeping sensitive administrative controls secure."
+    }
+  },
+
+  "items": {
+    "imageAccordion": {
+      "name": "Image Accordion",
+      "description": "Accordion with Images"
+    },
+    "faq1": {
+      "name": "FAQ 1",
+      "description": "Uses Motion for animation"
+    },
+    "faq2": {
+      "name": "FAQ 2",
+      "description": "FAQ with Tabs."
+    },
+    "faq3": {
+      "name": "FAQ 3",
+      "description": "FAQ with Images"
+    },
+    "faq4": {
+      "name": "FAQ 4",
+      "description": "Accordion FAQ"
+    },
+    "episodeGrid": {
+      "name": "Episode Grid - Layout Animation",
+      "description": "Layout Animation using CSS"
+    },
+    "modal": {
+      "name": "Modal",
+      "description": "Modal dialog component"
+    },
+    "dataTable": {
+      "name": "DataTable",
+      "description": "DataTable with search, sorting and pagination"
+    },
+    "salaryTable": {
+      "name": "DataTable - Numeric Filters",
+      "description": "DataTable demonstrating numeric and date filtering"
+    },
+    "marketTable": {
+      "name": "Market Table",
+      "description": "Market Table with Timeline"
+    },
+    "toast1": {
+      "name": "Toast Notification 1",
+      "description": "Toast Notification using Motion animation"
+    }
+  }
+}

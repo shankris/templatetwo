@@ -1,0 +1,31 @@
+{
+  "Header": {
+    "home": "Accueil",
+    "prototypes": "Prototypes",
+    "components": "Composants",
+    "about": "À propos",
+    "contact": "Contact",
+    "dashboard": "Tableau de bord",
+    "overview": "Aperçu",
+    "activity": "Activité",
+    "analytics": "Analytique",
+    "settings": "Paramètres",
+    "application": "Application"
+  },
+
+  "UserMenu": {
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "logout": "Déconnexion",
+    "openUserMenu": "Ouvrir le menu utilisateur",
+    "openAccountMenu": "Ouvrir le menu du compte",
+    "welcome": "Bienvenue",
+    "login": "Se connecter",
+    "register": "S'inscrire"
+  },
+
+  "Footer": {
+    "projectTemplate": "RapidPrototypes",
+    "copyright": "© 2026"
+  }
+}

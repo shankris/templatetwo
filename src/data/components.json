@@ -244,5 +244,37 @@
         }
       ]
     }
+  },
+  {
+    "slug": "login-01",
+    "name": "Login01",
+    "displayName": "Login 01",
+    "description": "A reusable centered login form with a clean, responsive layout.",
+    "component": "Login01",
+    "category": "login"
+  },
+  {
+    "slug": "login-02",
+    "name": "Login02",
+    "displayName": "Login 02",
+    "description": "A reusable login form with a modern responsive layout.",
+    "component": "Login02",
+    "category": "login"
+  },
+  {
+    "slug": "image-accordion",
+    "name": "Image Accordion",
+    "displayName": "Image Accordion",
+    "description": "An interactive image accordion with expandable panels.",
+    "component": "ImageAccordion",
+    "category": "accordion"
+  },
+  {
+    "slug": "faq-1",
+    "name": "Faq1",
+    "displayName": "FAQ 1",
+    "description": "A reusable FAQ accordion with animated expandable questions and answers.",
+    "component": "Faq1",
+    "category": "accordion"
   }
 ]

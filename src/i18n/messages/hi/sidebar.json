@@ -1,0 +1,63 @@
+{
+  "dashboard": "डैशबोर्ड",
+  "components": "कंपोनेंट्स",
+
+  "date-picker": "तिथि चयनकर्ता",
+  "datePickerBasic": "बेसिक तिथि चयनकर्ता",
+  "datePickerYear": "जन्म तिथि चयन",
+  "datePickerAppointment": "अपॉइंटमेंट की तारीख",
+  "datePickerNative": "नेटिव तिथि चयनकर्ता",
+
+  "ui": "यूआई",
+
+  "forms": "फॉर्म",
+  "multiStepForm1": "मल्टी-स्टेप फॉर्म 1",
+  "text-input": "टेक्स्ट इनपुट",
+  "select": "चयन करें",
+  "text-area": "टेक्स्ट एरिया",
+  "radio": "रेडियो बटन",
+  "checkbox": "चेकबॉक्स",
+  "button": "बटन",
+  "autocomplete": "ऑटो-कंपलीट",
+
+  "login": "लॉगिन",
+  "login-01": "लॉगिन 01",
+  "login-02": "लॉगिन 02",
+
+  "dataDisplay": "डेटा डिस्प्ले",
+  "tables": "तालिकाएं",
+  "cards": "कार्ड्स",
+  "timeline": "टाइमलाइन",
+
+  "users": "उपयोगकर्ता",
+  "logged-in-user": "लॉग-इन उपयोगकर्ता",
+  "guest-user": "गेस्ट उपयोगकर्ता",
+
+  "feedback": "प्रतिक्रिया",
+  "alerts": "अलर्ट्स",
+  "modals": "मोडल्स",
+
+  "navigation": "नेविगेशन",
+  "header": "हेडर",
+  "sidebar": "साइडबार",
+  "tabs": "टैब्स",
+
+  "graphs": "ग्राफ़",
+  "radial": "रेडियल वन",
+  "radial2": "रेडियल टू",
+  "bar": "बार",
+  "progress": "प्रगति",
+  "area": "एरिया",
+  "line": "लाइन",
+  "progressSmall": "स्मॉल प्रोग्रेस",
+  "worldMap": "विश्व मानचित्र",
+
+  "layout": "लेआउट",
+  "container": "कंटेनर",
+  "grid": "ग्रिड",
+  "devicePreview": "डिवाइस पूर्वावलोकन",
+
+  "settings": "सेटिंग्स",
+  "collapse": "साइडबार समेटें",
+  "expand": "साइडबार विस्तार करें"
+}

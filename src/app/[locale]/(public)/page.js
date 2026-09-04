@@ -12,7 +12,7 @@ export default async function HomePage() {
       <section className={styles.heroSection}>
         <h1 className={styles.hero}>{t("title")}</h1>
         <div className={styles.subHead}>{t("description")}</div>
-        <BentoGrid />
+        {/* <BentoGrid /> */}
         <TechStack />
       </section>
 

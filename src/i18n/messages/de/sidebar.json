@@ -1,0 +1,63 @@
+{
+  "dashboard": "Dashboard",
+  "components": "Komponenten",
+
+  "date-picker": "Datumsauswahl",
+  "datePickerBasic": "Einfache Datumsauswahl",
+  "datePickerYear": "Geburtsdatumsauswahl",
+  "datePickerAppointment": "Termindatum",
+  "datePickerNative": "Native Datumsauswahl",
+
+  "ui": "Benutzeroberfläche",
+
+  "forms": "Formulare",
+  "multiStepForm1": "Mehrstufiges Formular 1",
+  "text-input": "Texteingabe",
+  "select": "Auswahl",
+  "text-area": "Textbereich",
+  "radio": "Radio-Button",
+  "checkbox": "Kontrollkästchen",
+  "button": "Schaltfläche",
+  "autocomplete": "Autovervollständigung",
+
+  "login": "Anmeldung",
+  "login-01": "Anmeldung 01",
+  "login-02": "Anmeldung 02",
+
+  "dataDisplay": "Datenanzeige",
+  "tables": "Tabellen",
+  "cards": "Karten",
+  "timeline": "Zeitleiste",
+
+  "users": "Benutzer",
+  "logged-in-user": "Angemeldeter Benutzer",
+  "guest-user": "Gastbenutzer",
+
+  "feedback": "Feedback",
+  "alerts": "Hinweise",
+  "modals": "Modale Fenster",
+
+  "navigation": "Navigation",
+  "header": "Kopfzeile",
+  "sidebar": "Seitenleiste",
+  "tabs": "Tabs",
+
+  "graphs": "Diagramme",
+  "radial": "Radial Eins",
+  "radial2": "Radial Zwei",
+  "bar": "Balken",
+  "progress": "Fortschritt",
+  "area": "Fläche",
+  "line": "Linie",
+  "progressSmall": "Fortschritt Klein",
+  "worldMap": "Weltkarte",
+
+  "layout": "Layout",
+  "container": "Container",
+  "grid": "Raster",
+  "devicePreview": "Gerätevorschau",
+
+  "settings": "Einstellungen",
+  "collapse": "Seitenleiste einklappen",
+  "expand": "Seitenleiste ausklappen"
+}

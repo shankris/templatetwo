@@ -1,0 +1,18 @@
+{
+  "intro": "Tester - Peaufiner - Valider",
+  "title": "Donnez vie à vos applications",
+  "description": "Transformez vos applications en expériences intuitives et captivantes grâce à des composants modulaires, adaptatifs et accessibles",
+
+  "techStack": {
+    "html": "Fondation de chaque page web, il fournit une structure sémantique et un contenu accessible.",
+    "css": "Utilisé pour créer des mises en page adaptatives et des expériences visuelles cohérentes.",
+    "javascript": "Donne vie aux interfaces grâce à un comportement dynamique, des interactions et de la logique.",
+    "nextjs": "Un framework React pour créer des applications web et des sites rapides, évolutifs et modernes.",
+    "react": "Une bibliothèque basée sur des composants pour créer des interfaces utilisateur réutilisables, interactives et faciles à maintenir.",
+    "gsap": "Une puissante bibliothèque d'animation pour créer des animations web fluides, précises et captivantes.",
+    "motion": "Une bibliothèque d'animation flexible pour créer des interfaces React fluides, interactives et expressives.",
+    "figma": "Utilisé pour concevoir des interfaces, explorer des idées et créer des prototypes.",
+    "adobexd": "Un outil de conception et de prototypage utilisé pour créer des concepts d'interface et des expériences utilisateur.",
+    "photoshop": "Utilisé pour la retouche d'images, les éléments visuels, la composition et la création de graphismes numériques soignés."
+  }
+}

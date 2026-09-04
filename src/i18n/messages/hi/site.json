@@ -1,0 +1,31 @@
+{
+  "Header": {
+    "home": "होम",
+    "prototypes": "प्रोटोटाइप्स",
+    "components": "कंपोनेंट्स",
+    "about": "हमारे बारे में",
+    "contact": "संपर्क करें",
+    "dashboard": "डैशबोर्ड",
+    "overview": "ओवरव्यू",
+    "activity": "गतिविधि",
+    "analytics": "एनालिटिक्स",
+    "settings": "सेटिंग्स",
+    "application": "एप्लिकेशन"
+  },
+
+  "UserMenu": {
+    "profile": "प्रोफ़ाइल",
+    "settings": "सेटिंग्स",
+    "logout": "लॉग आउट",
+    "openUserMenu": "उपयोगकर्ता मेनू खोलें",
+    "openAccountMenu": "खाता मेनू खोलें",
+    "welcome": "स्वागत है",
+    "login": "लॉग इन करें",
+    "register": "पंजीकरण करें"
+  },
+
+  "Footer": {
+    "projectTemplate": "RapidPrototypes",
+    "copyright": "© 2026"
+  }
+}

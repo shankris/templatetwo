@@ -1,0 +1,32 @@
+[
+  {
+    "id": "canada",
+    "name": "Canada",
+    "image": "/Img/ImageAccordion/2.jpg",
+    "description": "canada"
+  },
+  {
+    "id": "newZealand",
+    "name": "New Zealand",
+    "image": "/Img/ImageAccordion/6.jpg",
+    "description": "newZealand"
+  },
+  {
+    "id": "indonesia",
+    "name": "Indonesia",
+    "image": "/Img/ImageAccordion/4.jpg",
+    "description": "indonesia"
+  },
+  {
+    "id": "southAfrica",
+    "name": "South Africa",
+    "image": "/Img/ImageAccordion/5.jpg",
+    "description": "southAfrica"
+  },
+  {
+    "id": "spain",
+    "name": "Spain",
+    "image": "/Img/ImageAccordion/3.jpg",
+    "description": "spain"
+  }
+]

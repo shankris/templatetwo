@@ -1,0 +1,63 @@
+{
+  "dashboard": "Dashboard",
+  "components": "Components",
+
+  "date-picker": "Date Picker",
+  "datePickerBasic": "Basic Date Picker",
+  "datePickerYear": "Date of Birth Selection",
+  "datePickerAppointment": "Appointment Date",
+  "datePickerNative": "Date Picker Native",
+
+  "ui": "UI",
+
+  "forms": "Forms",
+  "multiStepForm1": "Multi Step Form 1",
+  "text-input": "Text Input",
+  "select": "Select",
+  "text-area": "Text Area",
+  "radio": "Radio Button",
+  "checkbox": "Checkbox",
+  "button": "Button",
+  "autocomplete": "Autocomplete",
+
+  "login": "Login",
+  "login-01": "Login 01",
+  "login-02": "Login 02",
+
+  "dataDisplay": "Data Display",
+  "tables": "Tables",
+  "cards": "Cards",
+  "timeline": "Timeline",
+
+  "users": "Users",
+  "logged-in-user": "Logged in user",
+  "guest-user": "Guest user",
+
+  "feedback": "Feedback",
+  "alerts": "Alerts",
+  "modals": "Modals",
+
+  "navigation": "Navigation",
+  "header": "Header",
+  "sidebar": "Sidebar",
+  "tabs": "Tabs",
+
+  "graphs": "Graphs",
+  "radial": "Radial One",
+  "radial2": "Radial Two",
+  "bar": "Bar",
+  "progress": "Progress",
+  "area": "Area",
+  "line": "Line",
+  "progressSmall": "Progress Small",
+  "worldMap": "World Map",
+
+  "layout": "Layout",
+  "container": "Container",
+  "grid": "Grid",
+  "devicePreview": "Device Preview",
+
+  "settings": "Settings",
+  "collapse": "Collapse sidebar",
+  "expand": "Expand sidebar"
+}

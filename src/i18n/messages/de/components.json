@@ -1,0 +1,60 @@
+{
+  "title": "Komponenten",
+  "description": "Eine Sammlung wiederverwendbarer Benutzeroberflächen-Komponenten.",
+
+  "categories": {
+    "accordion": "Akkordeon",
+    "faq": "FAQ",
+    "layoutAnimation": "Layout-Animation",
+    "modal": "Modales Fenster",
+    "tables": "Tabellen",
+    "toast": "Toast-Benachrichtigung"
+  },
+
+  "items": {
+    "imageAccordion": {
+      "name": "Bild-Akkordeon",
+      "description": "Akkordeon mit Bildern"
+    },
+    "faq1": {
+      "name": "FAQ 1",
+      "description": "Verwendet Motion für Animationen"
+    },
+    "faq2": {
+      "name": "FAQ 2",
+      "description": "FAQ mit Tabs."
+    },
+    "faq3": {
+      "name": "FAQ 3",
+      "description": "FAQ mit Bildern"
+    },
+    "faq4": {
+      "name": "FAQ 4",
+      "description": "Akkordeon-FAQ"
+    },
+    "episodeGrid": {
+      "name": "Episoden-Raster - Layout-Animation",
+      "description": "Layout-Animation mit CSS"
+    },
+    "modal": {
+      "name": "Modales Fenster",
+      "description": "Modal-Dialog-Komponente"
+    },
+    "dataTable": {
+      "name": "Datentabelle",
+      "description": "Datentabelle mit Suche, Sortierung und Paginierung"
+    },
+    "salaryTable": {
+      "name": "Datentabelle - Numerische Filter",
+      "description": "Datentabelle zur Demonstration numerischer und Datums-Filterung"
+    },
+    "marketTable": {
+      "name": "Markttabelle",
+      "description": "Markttabelle mit Zeitleiste"
+    },
+    "toast1": {
+      "name": "Toast-Benachrichtigung 1",
+      "description": "Toast-Benachrichtigung mit Motion-Animation"
+    }
+  }
+}

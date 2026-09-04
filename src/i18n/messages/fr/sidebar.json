@@ -1,0 +1,63 @@
+{
+  "dashboard": "Tableau de bord",
+  "components": "Composants",
+
+  "date-picker": "Sélecteur de date",
+  "datePickerBasic": "Sélecteur de date simple",
+  "datePickerYear": "Sélection de la date de naissance",
+  "datePickerAppointment": "Date de rendez-vous",
+  "datePickerNative": "Sélecteur de date natif",
+
+  "ui": "Interface utilisateur",
+
+  "forms": "Formulaires",
+  "multiStepForm1": "Formulaire multi-étapes 1",
+  "text-input": "Champ de texte",
+  "select": "Liste déroulante",
+  "text-area": "Zone de texte",
+  "radio": "Bouton radio",
+  "checkbox": "Case à cocher",
+  "button": "Bouton",
+  "autocomplete": "Saisie automatique",
+
+  "login": "Connexion",
+  "login-01": "Connexion 01",
+  "login-02": "Connexion 02",
+
+  "dataDisplay": "Affichage des données",
+  "tables": "Tableaux",
+  "cards": "Cartes",
+  "timeline": "Chronologie",
+
+  "users": "Utilisateurs",
+  "logged-in-user": "Utilisateur connecté",
+  "guest-user": "Utilisateur invité",
+
+  "feedback": "Retours",
+  "alerts": "Alertes",
+  "modals": "Fenêtres modales",
+
+  "navigation": "Navigation",
+  "header": "En-tête",
+  "sidebar": "Barre latérale",
+  "tabs": "Onglets",
+
+  "graphs": "Graphiques",
+  "radial": "Radial Un",
+  "radial2": "Radial Deux",
+  "bar": "Barres",
+  "progress": "Progression",
+  "area": "Aires",
+  "line": "Lignes",
+  "progressSmall": "Petite progression",
+  "worldMap": "Carte du monde",
+
+  "layout": "Mise en page",
+  "container": "Conteneur",
+  "grid": "Grille",
+  "devicePreview": "Aperçu sur appareil",
+
+  "settings": "Paramètres",
+  "collapse": "Réduire la barre latérale",
+  "expand": "Développer la barre latérale"
+}
